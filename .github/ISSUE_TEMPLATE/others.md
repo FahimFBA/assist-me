@@ -1,7 +1,9 @@
 ---
 name: Other Issue 📝
 about: For any other type of issue that doesn't fit into Bug or Feature Request categories
-
+title: "[Other] Give it a suitable title"
+labels: ''
+assignees: ''
 ---
 
 **Description**
