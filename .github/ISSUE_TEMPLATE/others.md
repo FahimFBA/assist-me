@@ -1,5 +1,5 @@
 ---
-name: Other Issue
+name: Other Issue 📝
 about: For any other type of issue that doesn't fit into Bug or Feature Request categories
 
 ---
