@@ -25,3 +25,35 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list -->
+
+
+
+
+# AssistMe
+A personalized web application to satisfy all your need with integrating an AI Assistant 😊
+
+## Feature
+
+* Individual and Organization Account
+* Personalized Dashboard
+* AI Assistant
+* Chatbot
+* To-Do List
+* Notes
+* Weather
+* News
+* GitHub Integration
+* Google Calendar Integration
+* Google Drive Integration
+* Google Meet Integration
+* Google Tasks Integration
+* Google Keep Integration
+* Google Contacts Integration
+* Financial Management
+* Personalized Settings
+* Grade Management
+
+## Tech Stack
+
+
+
