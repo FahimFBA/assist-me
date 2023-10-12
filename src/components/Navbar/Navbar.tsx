@@ -1,12 +1,4 @@
-import { useEffect } from "react";
-// import AOS from "aos";
-
 const Navbar = () => {
-  useEffect(() => {
-    // AOS.init({
-    //   duration: 1000, // Set animation duration (in milliseconds)
-    // });
-  }, []);
   return (
     <nav
       className="navbar navbar-expand-lg fixed-top bg-dark"

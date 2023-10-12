@@ -14,7 +14,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./styles/plugin.css";
 import "./styles/style.css";
 
-// import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css"; // Import AOS styles
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
