@@ -1,15 +1,42 @@
 import Navbar from "../components/Navbar/Navbar";
 import AOS from "aos";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Footer from "../components/Footer/Footer";
+// @ts-ignore
+import Typed from "typed.js";
 
 const Home = () => {
+  // Create reference to store the DOM element containing the animation
+  const el = useRef(null);
   useEffect(() => {
     window.addEventListener("load", () =>
       AOS.init({
         duration: 800,
       }),
     );
+  }, []);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: [
+        "Technical Writing",
+        "News Article",
+        "SEO Content",
+        "Product Description",
+      ],
+      startDelay: 100,
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 100,
+      smartBackspace: true,
+      loop: true,
+      showCursor: true,
+    });
+
+    // Destropying
+    return () => {
+      typed.destroy();
+    };
   }, []);
   return (
     <div className="wrapper d-flex flex-column justify-between">
@@ -43,10 +70,8 @@ const Home = () => {
                       A 10X Faster Way To Write Your <br />
                       <span
                         className="fw-bold text-gradient-2 typed-animation"
-                        data-strings='["Technical Writing", "News Article", "SEO Content", "Product Description"]'
-                      >
-                        Product Description
-                      </span>
+                        ref={el}
+                      ></span>
                     </h1>
                     <a
                       href="login.html"
