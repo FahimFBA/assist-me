@@ -1,7 +1,5 @@
-import Navbar from "../components/Navbar/Navbar";
 import AOS from "aos";
 import { useEffect, useRef } from "react";
-import Footer from "../components/Footer/Footer";
 // @ts-ignore
 import Typed from "typed.js";
 
@@ -40,9 +38,6 @@ const Home = () => {
   }, []);
   return (
     <div className="wrapper d-flex flex-column justify-between">
-      {/* <!-- Navbar --> */}
-      <Navbar />
-
       <main
         style={{
           marginTop: "120px",
@@ -2729,9 +2724,6 @@ const Home = () => {
           </div>
         </section>
       </main>
-
-      {/* <!-- Footer --> */}
-      <Footer />
     </div>
   );
 };

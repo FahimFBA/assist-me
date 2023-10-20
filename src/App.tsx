@@ -8,10 +8,12 @@ import {
   ErrorPage,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Navbar, Footer } from "./components/Layout";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -21,6 +23,7 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
