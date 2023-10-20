@@ -20,6 +20,7 @@
   },
   "pre-commit": "lint-staged",
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@reduxjs/toolkit": "^1.9.7",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.2",
