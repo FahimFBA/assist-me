@@ -1,4 +1,3 @@
-import AOS from "aos";
 import { useEffect, useRef } from "react";
 // @ts-ignore
 import Typed from "typed.js";
@@ -6,13 +5,6 @@ import Typed from "typed.js";
 const Home = () => {
   // Create reference to store the DOM element containing the animation
   const el = useRef(null);
-  useEffect(() => {
-    window.addEventListener("load", () =>
-      AOS.init({
-        duration: 800,
-      }),
-    );
-  }, []);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -36,6 +28,7 @@ const Home = () => {
       typed.destroy();
     };
   }, []);
+
   return (
     <div className="wrapper d-flex flex-column justify-between">
       <main
