@@ -5,6 +5,9 @@ import Signup from "./Signup";
 import ResetPassword from "./ResetPassword";
 import ForgotPassword from "./ForgotPassword";
 import ErrorPage from "./ErrorPage";
+import Pricing from "./Pricing";
+import UseCases from "./UseCases";
+import Contact from "./Contact";
 
 export {
   Home,
@@ -14,4 +17,7 @@ export {
   ForgotPassword,
   Dashboard,
   ErrorPage,
+  Pricing,
+  UseCases,
+  Contact,
 };

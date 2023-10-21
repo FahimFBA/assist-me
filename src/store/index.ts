@@ -4,6 +4,20 @@ import { sysmtemSlice, resetSystem, themeSwitch } from "./Slices/systemSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 
+import { userDataSlice, loginSuccess, logoutSuccess } from "./Slices/userSlice";
+
+// API
+import {
+  userAuthAPI,
+  useEmailLoginMutation,
+  useEmailSignupMutation,
+  useGoogleSignupMutation,
+  useLogoutMutation,
+  useSendResetPassWordEmailMutation,
+  useSetNewPassWordMutation,
+  useUpdateUserProfileMutation,
+} from "./API/userAuthAPI";
+
 const persistConfig = {
   key: "root",
   storage,
@@ -14,14 +28,21 @@ const persistedSystemReducer = persistReducer(
   sysmtemSlice.reducer,
 );
 
+const persistedUserReducer = persistReducer(
+  persistConfig,
+  userDataSlice.reducer,
+);
+
 export const store = configureStore({
   reducer: {
     system: persistedSystemReducer,
+    user: persistedUserReducer,
+    [userAuthAPI.reducerPath]: userAuthAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }).concat(),
+    }).concat(userAuthAPI.middleware),
 });
 
 export const persistedStore = persistStore(store);
@@ -34,4 +55,17 @@ export {
   // system actions
   resetSystem,
   themeSwitch,
+
+  // user actions
+  loginSuccess,
+  logoutSuccess,
+
+  // userAuthAPI
+  useEmailLoginMutation,
+  useEmailSignupMutation,
+  useGoogleSignupMutation,
+  useLogoutMutation,
+  useSendResetPassWordEmailMutation,
+  useSetNewPassWordMutation,
+  useUpdateUserProfileMutation,
 };

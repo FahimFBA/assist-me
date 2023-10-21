@@ -1,6 +1,48 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { IUserSignInData } from "../types/interface";
+import { useEmailSignupMutation, useGoogleSignupMutation } from "../store";
+import { toast } from "react-toastify";
 
 const Signup = () => {
+  const initialState: IUserSignInData = {
+    email: "",
+    password: "",
+  };
+
+  const navigate = useNavigate();
+  const [data, setData] = useState(initialState);
+
+  const [emailSignup] = useEmailSignupMutation();
+  const [googleSignup] = useGoogleSignupMutation();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setData({ ...data, [e.target.name]: e.target.value });
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await toast
+      .promise(emailSignup(data).unwrap(), {
+        pending: "Creating user...",
+        success: "User created successfully",
+        error: "Error creating user",
+      })
+      .then(() => setData(initialState))
+      .then(() => navigate("/dashboard"))
+      .catch((err) => toast.error(err));
+  };
+
+  const GoogleAuth = async () =>
+    await toast
+      .promise(googleSignup(null).unwrap(), {
+        pending: "Creating user...",
+        success: "Successfully created user!",
+        error: "Could not create user!",
+      })
+      .then((res) => console.log(res))
+      .then(() => navigate("/dashboard"))
+      .catch((err) => toast.error(err));
+
   return (
     <div
       className="wrapper d-flex flex-column justify-between"
@@ -68,7 +110,11 @@ const Signup = () => {
                       />
                     </Link>
                     <div className="vstack gap-4 mt-10">
-                      <button type="button" className="btn account-btn py-4">
+                      <button
+                        onClick={GoogleAuth}
+                        type="button"
+                        className="btn account-btn py-4"
+                      >
                         <img
                           src="/images/icons/google.svg"
                           alt=""
@@ -92,7 +138,7 @@ const Signup = () => {
                       <span>Or register with email</span>
                     </div>
 
-                    <form action="#" className="vstack gap-4">
+                    <form onSubmit={onSubmit} className="vstack gap-4">
                       <div className="text-start">
                         <div className="input-group with-icon">
                           <span className="icon">
@@ -116,6 +162,10 @@ const Signup = () => {
                             type="email"
                             className="form-control rounded-2 py-4"
                             placeholder="Enter Your Email"
+                            name="email"
+                            value={data.email}
+                            onChange={handleChange}
+                            required
                           />
                         </div>
                       </div>
@@ -141,31 +191,10 @@ const Signup = () => {
                             type="password"
                             className="form-control rounded-2 py-4"
                             placeholder="Password"
-                          />
-                        </div>
-                      </div>
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="1.5"
-                              viewBox="0 0 24 24"
-                            >
-                              <path stroke="none" d="M0 0h24v24H0z" />
-                              <path d="M12 3a12 12 0 0 0 8.5 3A12 12 0 0 1 12 21 12 12 0 0 1 3.5 6 12 12 0 0 0 12 3" />
-                              <circle cx="12" cy="11" r="1" />
-                              <path d="M12 12v2.5" />
-                            </svg>
-                          </span>
-                          <input
-                            type="password"
-                            className="form-control rounded-2 py-4"
-                            placeholder="Confirm Password"
+                            name="password"
+                            value={data.password}
+                            onChange={handleChange}
+                            required
                           />
                         </div>
                       </div>
