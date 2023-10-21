@@ -33,7 +33,7 @@ const Home = () => {
     <div className="wrapper d-flex flex-column justify-between">
       <main
         style={{
-          marginTop: "120px",
+          marginTop: "80px",
         }}
         className="flex-grow-1"
       >
