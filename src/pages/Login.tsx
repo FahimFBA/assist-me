@@ -1,6 +1,48 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { IUserSignInData } from "../types/interface";
+import { useState } from "react";
+import { useEmailLoginMutation, useGoogleSignupMutation } from "../store";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const initialState: IUserSignInData = {
+    email: "",
+    password: "",
+  };
+
+  const navigate = useNavigate();
+
+  const [data, setData] = useState(initialState);
+
+  const [emailLogin] = useEmailLoginMutation();
+  const [googleSignup] = useGoogleSignupMutation();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setData({ ...data, [e.target.name]: e.target.value });
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await toast
+      .promise(emailLogin(data).unwrap(), {
+        pending: "Logging in...",
+        success: "Login successful",
+        error: "Login failed",
+      })
+      .then(() => setData(initialState))
+      .then(() => navigate("/profile"))
+      .catch((err) => toast.error(err));
+  };
+
+  const GoogleAuth = async () =>
+    await toast
+      .promise(googleSignup(null).unwrap(), {
+        pending: "Creating user...",
+        success: "Successfully created user!",
+        error: "Could not create user!",
+      })
+      .then(() => navigate("/dashboard"))
+      .catch((err) => toast.error(err));
+
   return (
     <div
       className="wrapper d-flex flex-column justify-between"
@@ -68,7 +110,11 @@ const Login = () => {
                       />
                     </Link>
                     <div className="vstack gap-4 mt-10">
-                      <button type="button" className="btn account-btn py-4">
+                      <button
+                        onClick={GoogleAuth}
+                        type="button"
+                        className="btn account-btn py-4"
+                      >
                         <img
                           src="/images/icons/google.svg"
                           alt=""
@@ -92,7 +138,7 @@ const Login = () => {
                       <span>Or sign in with email</span>
                     </div>
 
-                    <form action="#" className="vstack gap-4">
+                    <form onSubmit={onSubmit} className="vstack gap-4">
                       <div className="text-start">
                         <div className="input-group with-icon">
                           <span className="icon">
@@ -116,6 +162,10 @@ const Login = () => {
                             type="email"
                             className="form-control rounded-2 py-4"
                             placeholder="Enter Your Email"
+                            required
+                            name="email"
+                            onChange={handleChange}
+                            value={data.email}
                           />
                         </div>
                       </div>
@@ -141,6 +191,10 @@ const Login = () => {
                             type="password"
                             className="form-control rounded-2 py-4"
                             placeholder="Password"
+                            required
+                            name="password"
+                            onChange={handleChange}
+                            value={data.password}
                           />
                         </div>
                         <div className="form-text mt-2">
