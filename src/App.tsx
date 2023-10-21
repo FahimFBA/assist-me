@@ -41,14 +41,12 @@ const App = () => {
         dispatch(logoutSuccess());
       }
     });
-  }, []);
 
-  useEffect(() => {
-    window.addEventListener("load", () =>
-      AOS.init({
-        duration: 800,
-      }),
-    );
+    // AOS library
+    // window.addEventListener("load", () => );
+    AOS.init({
+      duration: 800,
+    });
   }, []);
 
   return (
