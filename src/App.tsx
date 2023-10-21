@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Home,
   Signup,
@@ -9,8 +10,17 @@ import {
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar, Footer } from "./components/Layout";
+import AOS from "aos";
 
 const App = () => {
+  useEffect(() => {
+    window.addEventListener("load", () =>
+      AOS.init({
+        duration: 800,
+      }),
+    );
+  }, []);
+
   return (
     <BrowserRouter>
       <Navbar />
