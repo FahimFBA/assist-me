@@ -55,7 +55,10 @@ A personalized web application to satisfy all your needs by integrating an AI As
 * Personalized Settings
 * Grade Management
 
-## Tech Stack
+<!-- ## Tech Stack -->
 
 
 
+## ⭐ Stargazers
+
+[![Stargazers repo roster for @FahimFBA/assist-me](https://reporoster.com/stars/FahimFBA/assist-me)](https://github.com/FahimFBA/assist-me/stargazers)
