@@ -30,7 +30,9 @@ If you are developing a production application, we recommend updating the config
 
 
 # AssistMe
-A personalized web application to satisfy all your need with integrating an AI Assistant 😊
+A personalized web application to satisfy all your needs by integrating an AI Assistant 😊
+
+### Don't forget to ⭐ the repository.
 
 ## Feature
 
