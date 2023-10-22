@@ -62,3 +62,8 @@ A personalized web application to satisfy all your needs by integrating an AI As
 ## ⭐ Stargazers
 
 [![Stargazers repo roster for @FahimFBA/assist-me](https://reporoster.com/stars/FahimFBA/assist-me)](https://github.com/FahimFBA/assist-me/stargazers)
+
+
+
+## 🍴 Forkers
+[![Forkers repo roster for @FahimFBA/assist-me](https://reporoster.com/forks/FahimFBA/assist-me)](https://github.com/FahimFBA/assist-me/network/members)
