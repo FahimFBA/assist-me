@@ -3,6 +3,7 @@ import { IUserSignInData } from "../types/interface";
 import { useState } from "react";
 import { useEmailLoginMutation, useGoogleSignupMutation } from "../store";
 import { toast } from "react-toastify";
+import { FaLock } from "react-icons/fa";
 
 const Login = () => {
   const initialState: IUserSignInData = {
@@ -172,20 +173,7 @@ const Login = () => {
                       <div className="text-start">
                         <div className="input-group with-icon">
                           <span className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="1.5"
-                              viewBox="0 0 24 24"
-                            >
-                              <path stroke="none" d="M0 0h24v24H0z" />
-                              <path d="M12 3a12 12 0 0 0 8.5 3A12 12 0 0 1 12 21 12 12 0 0 1 3.5 6 12 12 0 0 0 12 3" />
-                              <circle cx="12" cy="11" r="1" />
-                              <path d="M12 12v2.5" />
-                            </svg>
+                            <FaLock strokeWidth={1.5} />
                           </span>
                           <input
                             type="password"
