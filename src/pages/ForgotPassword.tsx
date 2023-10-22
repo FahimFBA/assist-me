@@ -1,15 +1,23 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import { FaArrowLeft, FaRegEnvelope } from "react-icons/fa";
 import { GrFormClose } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import PassInputField from "../components/PassInputField";
 
 const ForgotPassword = () => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+
+  const handlePasswordReset = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Implement your password reset logic here, e.g., send a reset link to the provided email.
+  };
+
   return (
     <div
       className="wrapper d-flex flex-column justify-between"
-      style={{
-        marginTop: "80px",
-        marginBottom: "40px",
-      }}
+      style={{ marginTop: "80px", marginBottom: "40px" }}
     >
       <main className="flex-grow-1">
         <section className="account-section password-reset-page py-6 h-full">
@@ -59,19 +67,15 @@ const ForgotPassword = () => {
                         Password Reset Request
                       </p>
                     </div>
-                    <form action="#" className="vstack gap-4">
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <FaRegEnvelope strokeWidth={1.5} />
-                          </span>
-                          <input
-                            type="email"
-                            className="form-control rounded-2 py-4"
-                            placeholder="Enter Your Email"
-                          />
-                        </div>
-                      </div>
+                    <form
+                      onSubmit={handlePasswordReset}
+                      className="vstack gap-4"
+                    >
+                      <PassInputField
+                        placeholder="Enter Your Email"
+                        onChange={handleEmailChange}
+                        icon={<FaRegEnvelope strokeWidth={1.5} />}
+                      />
                       <div className="text-center">
                         <button
                           type="submit"

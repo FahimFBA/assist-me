@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IUserSignInData } from "../types/interface";
 import { useEmailSignupMutation, useGoogleSignupMutation } from "../store";
@@ -6,8 +6,9 @@ import { toast } from "react-toastify";
 import { FaLock, FaRegEnvelope, FaApple } from "react-icons/fa";
 import { GrFormClose } from "react-icons/gr";
 import { FcGoogle } from "react-icons/fc";
+import InputField from "../components/InputField";
 
-const Signup = () => {
+const Signup: React.FC = () => {
   const initialState: IUserSignInData = {
     email: "",
     password: "",
@@ -49,10 +50,7 @@ const Signup = () => {
   return (
     <div
       className="wrapper d-flex flex-column justify-between"
-      style={{
-        marginTop: "80px",
-        marginBottom: "40px",
-      }}
+      style={{ marginTop: "80px", marginBottom: "40px" }}
     >
       <main className="flex-grow-1">
         <section className="account-section login-page py-6 h-full">
@@ -113,44 +111,26 @@ const Signup = () => {
                         <span>Continue With Apple</span>
                       </button>
                     </div>
-
                     <div className="divider-with-text my-10">
                       <span>Or register with email</span>
                     </div>
-
                     <form onSubmit={onSubmit} className="vstack gap-4">
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <FaRegEnvelope strokeWidth={1.5} />
-                          </span>
-                          <input
-                            type="email"
-                            className="form-control rounded-2 py-4"
-                            placeholder="Enter Your Email"
-                            name="email"
-                            value={data.email}
-                            onChange={handleChange}
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <FaLock strokeWidth={1.5} />
-                          </span>
-                          <input
-                            type="password"
-                            className="form-control rounded-2 py-4"
-                            placeholder="Password"
-                            name="password"
-                            value={data.password}
-                            onChange={handleChange}
-                            required
-                          />
-                        </div>
-                      </div>
+                      <InputField
+                        type="email"
+                        placeholder="Enter Your Email"
+                        name="email"
+                        value={data.email}
+                        onChange={handleChange}
+                        icon={<FaRegEnvelope strokeWidth={1.5} />}
+                      />
+                      <InputField
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={data.password}
+                        onChange={handleChange}
+                        icon={<FaLock strokeWidth={1.5} />}
+                      />
                       <div className="text-center">
                         <button
                           type="submit"
@@ -163,8 +143,7 @@ const Signup = () => {
                         <p>
                           Already have an account?
                           <Link to="/login" className="text-decoration-none">
-                            {" "}
-                            Log in{" "}
+                            Log in
                           </Link>
                         </p>
                       </div>
