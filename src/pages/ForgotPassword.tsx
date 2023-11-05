@@ -49,7 +49,7 @@ const ForgotPassword = () => {
                       <g
                         stroke="currentColor"
                         stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                         stroke-width="2"
                       >
                         <path d="M18 6 6 18M6 6l12 12" />
@@ -73,7 +73,7 @@ const ForgotPassword = () => {
                           <g
                             stroke="currentColor"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                             stroke-width="1.5"
                           >
                             <path d="M5 12h14M5 12l4 4m-4-4 4-4" />
@@ -96,7 +96,7 @@ const ForgotPassword = () => {
                               <g
                                 stroke="currentColor"
                                 stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinejoin="round"
                                 stroke-width="1.2"
                               >
                                 <path d="M2.25 5.25a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5v-7.5Z" />

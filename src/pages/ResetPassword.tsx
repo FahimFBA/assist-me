@@ -49,7 +49,7 @@ const ResetPassword = () => {
                       <g
                         stroke="currentColor"
                         stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                         stroke-width="2"
                       >
                         <path d="M18 6 6 18M6 6l12 12" />
@@ -73,7 +73,7 @@ const ResetPassword = () => {
                           <g
                             stroke="currentColor"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinejoin="round"
                             stroke-width="1.5"
                           >
                             <path d="M5 12h14M5 12l4 4m-4-4 4-4" />
@@ -91,7 +91,7 @@ const ResetPassword = () => {
                               fill="none"
                               stroke="currentColor"
                               stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinejoin="round"
                               stroke-width="1.5"
                               viewBox="0 0 24 24"
                             >
