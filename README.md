@@ -30,7 +30,9 @@ If you are developing a production application, we recommend updating the config
 
 
 # AssistMe
-A personalized web application to satisfy all your need with integrating an AI Assistant 😊
+A personalized web application to satisfy all your needs by integrating an AI Assistant 😊
+
+### Don't forget to ⭐ the repository.
 
 ## Feature
 
@@ -53,7 +55,15 @@ A personalized web application to satisfy all your need with integrating an AI A
 * Personalized Settings
 * Grade Management
 
-## Tech Stack
+<!-- ## Tech Stack -->
 
 
 
+## ⭐ Stargazers
+
+[![Stargazers repo roster for @FahimFBA/assist-me](https://reporoster.com/stars/FahimFBA/assist-me)](https://github.com/FahimFBA/assist-me/stargazers)
+
+
+
+## 🍴 Forkers
+[![Forkers repo roster for @FahimFBA/assist-me](https://reporoster.com/forks/FahimFBA/assist-me)](https://github.com/FahimFBA/assist-me/network/members)

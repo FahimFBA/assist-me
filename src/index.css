@@ -1,0 +1,5 @@
+@media screen and (min-width: 500px) and (max-width: 700px) {
+.review-card.rounded.h-full.p-6.border.bg-dark-blue-3.border-white.border-opacity-10 {
+    margin: 0.9rem !important; 
+}
+}

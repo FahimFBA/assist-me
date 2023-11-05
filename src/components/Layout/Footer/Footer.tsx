@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="footer bg-striped pt-10 pt-lg-15">
+    <footer className="footer pt-10 pt-lg-15">
       <div className="container">
         <div className="row g-10">
           <div className="col-lg-9 col-xl-8 order-lg-2">

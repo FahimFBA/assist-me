@@ -66,7 +66,7 @@ const ResetPassword = () => {
                               fill="none"
                               stroke="currentColor"
                               stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinejoin="round"
                               stroke-width="1.5"
                               viewBox="0 0 24 24"
                             >
