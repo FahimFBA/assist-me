@@ -537,7 +537,7 @@ const Home = () => {
         </section>
 
         {/* <!-- Use cases --> */}
-        <section className="bg-striped bg-striped-sm bg-striped-bottom bg-dark-blue-4 py-20 py-lg-30">
+        <section className="bg-dark-blue-4 py-20 py-lg-30">
           <div className="container">
             <div className="row justify-center mb-18">
               <div className="col-lg-9">
