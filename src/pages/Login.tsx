@@ -1,28 +1,24 @@
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IUserSignInData } from "../types/interface";
-import { useState } from "react";
 import { useEmailLoginMutation, useGoogleSignupMutation } from "../store";
 import { toast } from "react-toastify";
 import { FaLock, FaRegEnvelope, FaApple } from "react-icons/fa";
 import { GrFormClose } from "react-icons/gr";
 import { FcGoogle } from "react-icons/fc";
+import InputField from "../components/InputField";
 
-const Login = () => {
+const Login: React.FC = () => {
   const initialState: IUserSignInData = {
     email: "",
     password: "",
   };
-
   const navigate = useNavigate();
-
   const [data, setData] = useState(initialState);
-
   const [emailLogin] = useEmailLoginMutation();
   const [googleSignup] = useGoogleSignupMutation();
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setData({ ...data, [e.target.name]: e.target.value });
-
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await toast
@@ -35,7 +31,6 @@ const Login = () => {
       .then(() => navigate("/profile"))
       .catch((err) => toast.error(err));
   };
-
   const GoogleAuth = async () =>
     await toast
       .promise(googleSignup(null).unwrap(), {
@@ -45,14 +40,10 @@ const Login = () => {
       })
       .then(() => navigate("/dashboard"))
       .catch((err) => toast.error(err));
-
   return (
     <div
       className="wrapper d-flex flex-column justify-between"
-      style={{
-        marginTop: "80px",
-        marginBottom: "40px",
-      }}
+      style={{ marginTop: "80px", marginBottom: "40px" }}
     >
       <main className="flex-grow-1">
         <section className="account-section login-page py-6 h-full">
@@ -113,51 +104,33 @@ const Login = () => {
                         <span>Continue With Apple</span>
                       </button>
                     </div>
-
                     <div className="divider-with-text my-10">
                       <span>Or sign in with email</span>
                     </div>
-
                     <form onSubmit={onSubmit} className="vstack gap-4">
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <FaRegEnvelope strokeWidth={1.5} />
-                          </span>
-                          <input
-                            type="email"
-                            className="form-control rounded-2 py-4"
-                            placeholder="Enter Your Email"
-                            required
-                            name="email"
-                            onChange={handleChange}
-                            value={data.email}
-                          />
-                        </div>
-                      </div>
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <FaLock strokeWidth={1.5} />
-                          </span>
-                          <input
-                            type="password"
-                            className="form-control rounded-2 py-4"
-                            placeholder="Password"
-                            required
-                            name="password"
-                            onChange={handleChange}
-                            value={data.password}
-                          />
-                        </div>
-                        <div className="form-text mt-2">
-                          <Link
-                            to="/forgot-password"
-                            className="text-decoration-none"
-                          >
-                            Forgot Password?
-                          </Link>
-                        </div>
+                      <InputField
+                        type="email"
+                        placeholder="Enter Your Email"
+                        name="email"
+                        value={data.email}
+                        onChange={handleChange}
+                        icon={<FaRegEnvelope strokeWidth={1.5} />}
+                      />
+                      <InputField
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={data.password}
+                        onChange={handleChange}
+                        icon={<FaLock strokeWidth={1.5} />}
+                      />
+                      <div className="form-text mt-2">
+                        <Link
+                          to="/forgot-password"
+                          className="text-decoration-none"
+                        >
+                          Forgot Password?
+                        </Link>
                       </div>
                       <div className="text-center">
                         <button
@@ -186,5 +159,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
