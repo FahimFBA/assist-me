@@ -1,13 +1,23 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import { GrFormClose } from "react-icons/gr";
+import PassInputField from "../components/PassInputField";
+import { FaLock } from "react-icons/fa";
+import { BsArrowLeft } from "react-icons/bs";
 
 const ResetPassword = () => {
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+
+  const handleResetPassword = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <div
       className="wrapper d-flex flex-column justify-between"
-      style={{
-        marginTop: "80px",
-        marginBottom: "40px",
-      }}
+      style={{ marginTop: "80px", marginBottom: "40px" }}
     >
       <main className="flex-grow-1">
         <section className="account-section password-reset-page py-6 h-full">
@@ -41,20 +51,7 @@ const ResetPassword = () => {
                     to="index.html"
                     className="icon bg-gradient-3 text-white w-12 h-12 rounded p-3 border border-white border-opacity-10 d-flex align-center justify-center ms-auto"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <g
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      >
-                        <path d="M18 6 6 18M6 6l12 12" />
-                      </g>
-                    </svg>
+                    <GrFormClose strokeWidth={2} />
                   </Link>
                 </div>
                 <div className="account-wrapper h-full d-flex flex-column justify-center">
@@ -64,50 +61,19 @@ const ResetPassword = () => {
                         to="/login"
                         className="btn btn-sm p-0 d-flex align-center text-decoration-none w-8 h-8 justify-center"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          width="24"
-                        >
-                          <g
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          >
-                            <path d="M5 12h14M5 12l4 4m-4-4 4-4" />
-                          </g>
-                        </svg>
+                        <BsArrowLeft strokeWidth={0.5} size={25} />
                       </Link>
                       <p className="lead fw-normal mb-0">Enter new password</p>
                     </div>
-                    <form action="#" className="vstack gap-4">
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="1.5"
-                              viewBox="0 0 24 24"
-                            >
-                              <path stroke="none" d="M0 0h24v24H0z" />
-                              <path d="M12 3a12 12 0 0 0 8.5 3A12 12 0 0 1 12 21 12 12 0 0 1 3.5 6 12 12 0 0 0 12 3" />
-                              <circle cx="12" cy="11" r="1" />
-                              <path d="M12 12v2.5" />
-                            </svg>
-                          </span>
-                          <input
-                            type="password"
-                            className="form-control rounded-2 py-4"
-                            placeholder="New password"
-                          />
-                        </div>
-                      </div>
+                    <form
+                      onSubmit={handleResetPassword}
+                      className="vstack gap-4"
+                    >
+                      <PassInputField
+                        placeholder="New password"
+                        onChange={handlePasswordChange}
+                        icon={<FaLock strokeWidth={1.5} />}
+                      />
                       <div className="text-center">
                         <button
                           type="submit"

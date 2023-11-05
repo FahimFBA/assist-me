@@ -1,13 +1,23 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import { FaArrowLeft, FaRegEnvelope } from "react-icons/fa";
+import { GrFormClose } from "react-icons/gr";
+import PassInputField from "../components/PassInputField";
 
 const ForgotPassword = () => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+
+  const handlePasswordReset = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Implement your password reset logic here, e.g., send a reset link to the provided email.
+  };
+
   return (
     <div
       className="wrapper d-flex flex-column justify-between"
-      style={{
-        marginTop: "80px",
-        marginBottom: "40px",
-      }}
+      style={{ marginTop: "80px", marginBottom: "40px" }}
     >
       <main className="flex-grow-1">
         <section className="account-section password-reset-page py-6 h-full">
@@ -41,20 +51,7 @@ const ForgotPassword = () => {
                     to="/"
                     className="icon bg-gradient-3 text-white w-12 h-12 rounded p-3 border border-white border-opacity-10 d-flex align-center justify-center ms-auto"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <g
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      >
-                        <path d="M18 6 6 18M6 6l12 12" />
-                      </g>
-                    </svg>
+                    <GrFormClose strokeWidth={2} />
                   </Link>
                 </div>
                 <div className="account-wrapper h-full d-flex flex-column justify-center">
@@ -64,53 +61,21 @@ const ForgotPassword = () => {
                         to="/login"
                         className="btn btn-sm p-0 d-flex align-center text-decoration-none w-8 h-8 justify-center"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          width="24"
-                        >
-                          <g
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          >
-                            <path d="M5 12h14M5 12l4 4m-4-4 4-4" />
-                          </g>
-                        </svg>
+                        <FaArrowLeft strokeWidth={2} />
                       </Link>
                       <p className="lead fw-normal mb-0">
                         Password Reset Request
                       </p>
                     </div>
-                    <form action="#" className="vstack gap-4">
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 18 18"
-                            >
-                              <g
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="1.2"
-                              >
-                                <path d="M2.25 5.25a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5v-7.5Z" />
-                                <path d="M2.25 5.25 9 9.75l6.75-4.5" />
-                              </g>
-                            </svg>
-                          </span>
-                          <input
-                            type="email"
-                            className="form-control rounded-2 py-4"
-                            placeholder="Enter Your Email"
-                          />
-                        </div>
-                      </div>
+                    <form
+                      onSubmit={handlePasswordReset}
+                      className="vstack gap-4"
+                    >
+                      <PassInputField
+                        placeholder="Enter Your Email"
+                        onChange={handleEmailChange}
+                        icon={<FaRegEnvelope strokeWidth={1.5} />}
+                      />
                       <div className="text-center">
                         <button
                           type="submit"

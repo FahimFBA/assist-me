@@ -1,6 +1,24 @@
 import { useEffect, useRef } from "react";
 // @ts-ignore
 import Typed from "typed.js";
+// import { FaRegEnvelope } from "react-icons/fa";
+import {
+  TbAlpha,
+  TbArtboard,
+  TbBrandJuejin,
+  TbBrandBlogger,
+  TbAd,
+} from "react-icons/tb";
+import { IoMdCheckmark } from "react-icons/io";
+import { FaRegNewspaper, FaStar } from "react-icons/fa";
+import { BsArrowUpRight } from "react-icons/bs";
+import { BiTargetLock } from "react-icons/bi";
+import { LuLayoutList } from "react-icons/lu";
+import { TfiLayoutMediaCenterAlt } from "react-icons/tfi";
+import { LuGanttChartSquare } from "react-icons/lu";
+import { PiNotebookLight } from "react-icons/pi";
+import { HiOutlineArrowTrendingDown } from "react-icons/hi2";
+// import { BiTargetLock } from "react-icons/bi";
 
 const Home = () => {
   // Create reference to store the DOM element containing the animation
@@ -132,21 +150,7 @@ const Home = () => {
               >
                 <div className="d-flex flex-column gap-6 flex-lg-row">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      className="w-full h-full"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M30.167 10c-1.833 4.855-3.167 8.188-4 10m0 0c-3.132 6.813-6.188 10-10 10-4 0-8-4-8-10s4-10 8-10c3.778 0 6.892 3.31 10 10Zm0 0c.853 1.837 2.187 5.17 4 10" />
-                      </g>
-                    </svg>
+                    <TbAlpha size={30} strokeWidth={1.5} />
                   </div>
                   <div className="content">
                     <h4 className="mb-4 text-white">
@@ -167,22 +171,7 @@ const Home = () => {
               >
                 <div className="d-flex flex-column gap-6 flex-lg-row">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      className="w-full h-full"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M3.333 20 20 32.37 36.666 20" />
-                        <path d="M11.667 15 20 21.667 28.334 15m-10.001-5L20 11.333 21.666 10 20 8.666 18.333 10Z" />
-                      </g>
-                    </svg>
+                    <TbBrandJuejin size={30} strokeWidth={1.5} />
                   </div>
                   <div className="content">
                     <h4 className="mb-4 text-white">
@@ -203,21 +192,7 @@ const Home = () => {
               >
                 <div className="d-flex flex-column gap-6 flex-lg-row">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      className="w-full h-full"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M10 29.334 6.667 27.5v-4.166m0-6.668V12.5L10 10.666m6.667-3.833L20 5l3.334 1.833M30 10.666l3.333 1.834v4.166m0 6.668V27.5L30 29.367m-6.666 3.799L20 35l-3.333-1.834M20 20l3.333-1.834M30 14.333l3.333-1.833M20 20v4.167m0 6.667V35m0-15-3.333-1.867M10 14.333 6.667 12.5" />
-                      </g>
-                    </svg>
+                    <TbArtboard size={30} strokeWidth={1.5} />
                   </div>
                   <div className="content">
                     <h4 className="mb-4 text-white">
@@ -261,64 +236,19 @@ const Home = () => {
                   </p>
                   <ul className="list-unstyled list-check mb-8">
                     <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                        className="icon"
-                      >
-                        <g>
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.5"
-                            d="m3.75 9 3.75 3.75 7.5-7.5"
-                          />
-                        </g>
-                      </svg>
+                      <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
                         Start creating powerful content, for your next ads
                       </span>
                     </li>
                     <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                        className="icon"
-                      >
-                        <g>
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.5"
-                            d="m3.75 9 3.75 3.75 7.5-7.5"
-                          />
-                        </g>
-                      </svg>
+                      <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
                         Let's Communicate with your customers with emotions
                       </span>
                     </li>
                     <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                        className="icon"
-                      >
-                        <g>
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.5"
-                            d="m3.75 9 3.75 3.75 7.5-7.5"
-                          />
-                        </g>
-                      </svg>
+                      <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
                         Use visuals like images, videos, or infographics to make
                         your content more engaging
@@ -330,20 +260,7 @@ const Home = () => {
                     className="arrow-link arrow-link-primary-dark text-primary-dark gap-3"
                   >
                     <span>Get Started Free</span>
-                    <svg
-                      className="icon"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                        stroke="currentColor"
-                        strokeWidth="1.21"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <BsArrowUpRight size={20} strokeWidth={1.5} />
                   </a>
                 </div>
               </div>
@@ -383,20 +300,8 @@ const Home = () => {
                     className="arrow-link arrow-link-primary-dark text-primary-dark gap-3"
                   >
                     <span>Request A Demo</span>
-                    <svg
-                      className="icon"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                        stroke="currentColor"
-                        strokeWidth="1.21"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+
+                    <BsArrowUpRight size={20} strokeWidth={1.5} />
                   </a>
                 </div>
               </div>
@@ -433,64 +338,19 @@ const Home = () => {
                   </p>
                   <ul className="list-unstyled list-check mb-8">
                     <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                        className="icon"
-                      >
-                        <g>
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.5"
-                            d="m3.75 9 3.75 3.75 7.5-7.5"
-                          />
-                        </g>
-                      </svg>
+                      <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
                         Start creating powerful content, for your next ads
                       </span>
                     </li>
                     <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                        className="icon"
-                      >
-                        <g>
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.5"
-                            d="m3.75 9 3.75 3.75 7.5-7.5"
-                          />
-                        </g>
-                      </svg>
+                      <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
                         Let's Communicate with your customers with emotions
                       </span>
                     </li>
                     <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                        className="icon"
-                      >
-                        <g>
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.5"
-                            d="m3.75 9 3.75 3.75 7.5-7.5"
-                          />
-                        </g>
-                      </svg>
+                      <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
                         Use visuals like images, videos, or infographics to make
                         your content more engaging
@@ -502,20 +362,7 @@ const Home = () => {
                     className="arrow-link arrow-link-primary-dark text-primary-dark gap-3"
                   >
                     <span>Get Started Free</span>
-                    <svg
-                      className="icon"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                        stroke="currentColor"
-                        strokeWidth="1.21"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                    <BsArrowUpRight size={20} strokeWidth={1.5} />
                   </a>
                 </div>
               </div>
@@ -564,21 +411,7 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="150">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 40 40"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M13.333 35h13.334A8.333 8.333 0 0 0 35 26.667v-5a5 5 0 0 0-5-5h-1.667v-3.334A8.333 8.333 0 0 0 20 5h-6.667A8.333 8.333 0 0 0 5 13.333v13.334A8.333 8.333 0 0 0 13.333 35Z" />
-                        <path d="M11.667 14.167a2.5 2.5 0 0 1 2.5-2.5h5a2.5 2.5 0 1 1 0 5h-5a2.5 2.5 0 0 1-2.5-2.5Zm0 11.666a2.5 2.5 0 0 1 2.5-2.5h11.666a2.5 2.5 0 1 1 0 5H14.167a2.5 2.5 0 0 1-2.5-2.5Z" />
-                      </g>
-                    </svg>
+                    <TbBrandBlogger size={30} />
                   </div>
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">Writing Blog Content</h5>
@@ -593,20 +426,7 @@ const Home = () => {
                       className="arrow-link arrow-link-primary-dark gap-3 fs-sm"
                     >
                       <span>Try Blog Content</span>
-                      <svg
-                        className="icon"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                          stroke="currentColor"
-                          strokeWidth="1.21"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <BsArrowUpRight size={15} strokeWidth={1} />
                     </a>
                   </div>
                 </div>
@@ -614,21 +434,7 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="200">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 64 64"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M8 18.667a5.333 5.333 0 0 1 5.333-5.334h37.334A5.334 5.334 0 0 1 56 18.667v26.666a5.333 5.333 0 0 1-5.333 5.334H13.333A5.333 5.333 0 0 1 8 45.333V18.667Z" />
-                        <path d="M18.667 40V29.333a5.334 5.334 0 0 1 10.666 0V40m-10.666-5.333h10.666m16-10.667v16h-4a4 4 0 1 1 4-4" />
-                      </g>
-                    </svg>
+                    <TbAd size={35} strokeWidth={1} />
                   </div>
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">Digital Ad Copy</h5>
@@ -643,20 +449,7 @@ const Home = () => {
                       className="arrow-link arrow-link-primary-dark gap-3 fs-sm"
                     >
                       <span>Try Digital Ad</span>
-                      <svg
-                        className="icon"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                          stroke="currentColor"
-                          strokeWidth="1.21"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <BsArrowUpRight size={15} strokeWidth={1} />
                     </a>
                   </div>
                 </div>
@@ -664,20 +457,7 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="250">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 64 64"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M10.667 13.333a2.667 2.667 0 0 1 2.666-2.666h37.334a2.667 2.667 0 0 1 2.666 2.666v37.334a2.667 2.667 0 0 1-2.666 2.666H13.333a2.667 2.667 0 0 1-2.666-2.666V13.333Zm0 8h42.666m-32-10.666v10.666" />
-                      </g>
-                    </svg>
+                    <FaRegNewspaper size={27} />
                   </div>
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">Website Copy</h5>
@@ -692,20 +472,7 @@ const Home = () => {
                       className="arrow-link arrow-link-primary-dark gap-3 fs-sm"
                     >
                       <span>Try Website Copy</span>
-                      <svg
-                        className="icon"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                          stroke="currentColor"
-                          strokeWidth="1.21"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <BsArrowUpRight size={15} strokeWidth={1} />
                     </a>
                   </div>
                 </div>
@@ -713,21 +480,7 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="300">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 64 64"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M24 32a8 8 0 1 0 16.001 0A8 8 0 0 0 24 32Z" />
-                        <path d="M10.667 32a21.334 21.334 0 1 0 42.667 0 21.334 21.334 0 0 0-42.667 0ZM32 5.333v5.334m0 42.666v5.334M53.333 32h5.334M5.333 32h5.334" />
-                      </g>
-                    </svg>
+                    <BiTargetLock size={30} />
                   </div>
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">Social Media Content</h5>
@@ -742,20 +495,7 @@ const Home = () => {
                       className="arrow-link arrow-link-primary-dark gap-3 fs-sm"
                     >
                       <span>Try Social Media Content</span>
-                      <svg
-                        className="icon"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                          stroke="currentColor"
-                          strokeWidth="1.21"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <BsArrowUpRight size={15} strokeWidth={1} />
                     </a>
                   </div>
                 </div>
@@ -763,20 +503,7 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="150">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 64 64"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M34.667 13.333H56M34.667 24H48M34.667 40H56M34.667 50.667H48M8 13.333a2.667 2.667 0 0 1 2.667-2.666h10.666A2.667 2.667 0 0 1 24 13.333V24a2.667 2.667 0 0 1-2.667 2.667H10.667A2.667 2.667 0 0 1 8 24V13.333ZM8 40a2.667 2.667 0 0 1 2.667-2.667h10.666A2.667 2.667 0 0 1 24 40v10.667a2.667 2.667 0 0 1-2.667 2.666H10.667A2.667 2.667 0 0 1 8 50.667V40Z" />
-                      </g>
-                    </svg>
+                    <LuLayoutList size={25} />
                   </div>
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">Landing Page Copy</h5>
@@ -791,20 +518,7 @@ const Home = () => {
                       className="arrow-link arrow-link-primary-dark gap-3 fs-sm"
                     >
                       <span>Try Landing Page Copy</span>
-                      <svg
-                        className="icon"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                          stroke="currentColor"
-                          strokeWidth="1.21"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <BsArrowUpRight size={15} strokeWidth={1} />
                     </a>
                   </div>
                 </div>
@@ -812,20 +526,7 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="200">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 64 64"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M8 13.333a2.667 2.667 0 0 1 2.667-2.666h42.666A2.667 2.667 0 0 1 56 13.333V40a2.667 2.667 0 0 1-2.667 2.667H10.667A2.667 2.667 0 0 1 8 40V13.333Zm10.667 40h26.666M24 42.667v10.666m16-10.666v10.666M24 32v-3.2m8 3.2v-5.6m8 5.6V21.6" />
-                      </g>
-                    </svg>
+                    <TfiLayoutMediaCenterAlt size={25} />
                   </div>
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">Marketing Copy</h5>
@@ -840,20 +541,7 @@ const Home = () => {
                       className="arrow-link arrow-link-primary-dark gap-3 fs-sm"
                     >
                       <span>Try Marketing Copy</span>
-                      <svg
-                        className="icon"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                          stroke="currentColor"
-                          strokeWidth="1.21"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <BsArrowUpRight size={15} strokeWidth={1} />
                     </a>
                   </div>
                 </div>
@@ -861,21 +549,7 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="250">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 64 64"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M10.667 21.333a10.667 10.667 0 0 1 10.666-10.666h21.334a10.667 10.667 0 0 1 10.666 10.666v21.334a10.667 10.667 0 0 1-10.666 10.666H21.333a10.667 10.667 0 0 1-10.666-10.666V21.333Z" />
-                        <path d="M24 21.333a8 8 0 0 0 16 0" />
-                      </g>
-                    </svg>
+                    <LuGanttChartSquare size={27} />
                   </div>
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">eCommerce Copy</h5>
@@ -890,20 +564,7 @@ const Home = () => {
                       className="arrow-link arrow-link-primary-dark gap-3 fs-sm"
                     >
                       <span>Try eCommerce Copy</span>
-                      <svg
-                        className="icon"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                          stroke="currentColor"
-                          strokeWidth="1.21"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <BsArrowUpRight size={15} strokeWidth={1} />
                     </a>
                   </div>
                 </div>
@@ -911,20 +572,7 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="300">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 64 64"
-                    >
-                      <g
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                      >
-                        <path d="M32 10.667 10.667 21.333 32 32l21.333-10.667L32 10.667ZM10.667 32 32 42.667 53.333 32M10.667 42.667 32 53.333l21.333-10.666" />
-                      </g>
-                    </svg>
+                    <PiNotebookLight size={30} strokeWidth={1} />
                   </div>
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">Product Description</h5>
@@ -939,20 +587,7 @@ const Home = () => {
                       className="arrow-link arrow-link-primary-dark gap-3 fs-sm"
                     >
                       <span>Try Product Description</span>
-                      <svg
-                        className="icon"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 12.6667L12.6667 4M12.6667 4V12.32M12.6667 4H4.34667"
-                          stroke="currentColor"
-                          strokeWidth="1.21"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <BsArrowUpRight size={15} strokeWidth={1} />
                     </a>
                   </div>
                 </div>
@@ -1001,46 +636,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         This is the best thing that has happened to my team in a
@@ -1067,46 +671,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Aliqua id fugiat nostrud irure ex duis ea quis id quis
@@ -1133,46 +706,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Comfortable to wear for long periods of time. The
@@ -1200,46 +742,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Through my interactions with users, I have seen how
@@ -1266,46 +777,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         I feel proud to be part of this technological
@@ -1333,46 +813,10 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+                        <FaStar size={20} style={{ color: "yellow" }} />
+                        <FaStar size={20} style={{ color: "yellow" }} />
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         This is the best thing that has happened to my team in a
@@ -1399,46 +843,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Aliqua id fugiat nostrud irure ex duis ea quis id quis
@@ -1465,46 +878,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Comfortable to wear for long periods of time. The
@@ -1532,46 +914,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Through my interactions with users, I have seen how
@@ -1598,46 +949,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         I feel proud to be part of this technological
@@ -1672,46 +992,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         This is the best thing that has happened to my team in a
@@ -1738,46 +1027,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Aliqua id fugiat nostrud irure ex duis ea quis id quis
@@ -1804,46 +1062,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Comfortable to wear for long periods of time. The
@@ -1871,46 +1098,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Through my interactions with users, I have seen how
@@ -1937,46 +1133,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         I feel proud to be part of this technological
@@ -2004,46 +1169,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         This is the best thing that has happened to my team in a
@@ -2070,46 +1204,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Aliqua id fugiat nostrud irure ex duis ea quis id quis
@@ -2136,46 +1239,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Comfortable to wear for long periods of time. The
@@ -2203,46 +1275,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         Through my interactions with users, I have seen how
@@ -2269,46 +1310,15 @@ const Home = () => {
                     </div>
                     <div className="">
                       <div className="stars d-flex items-center gap-1 mb-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 15 14"
-                          className="w-4 h-4 text-primary-dark"
-                        >
-                          <path d="m4.824 4.225-4.253.617-.075.015A.667.667 0 0 0 .202 5.98l3.082 3-.727 4.236-.009.073a.667.667 0 0 0 .976.63l3.804-2 3.796 2 .066.03a.666.666 0 0 0 .902-.733l-.728-4.237 3.083-3 .052-.056a.667.667 0 0 0-.422-1.08l-4.253-.618L7.922.372a.667.667 0 0 0-1.196 0L4.824 4.225Z" />
-                        </svg>
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
+
+                        <FaStar size={20} style={{ color: "yellow" }} />
                       </div>
                       <p className="review-text mb-0">
                         I feel proud to be part of this technological
@@ -2674,34 +1684,14 @@ const Home = () => {
                     <a href="login.html" className="btn btn-primary-dark">
                       Get Started Free
                     </a>
-                    <div className="cta-image-container mt-10">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 34 90"
-                        className="text-primary-dark arrow-shape"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M3.724 2.303c8.095 4.54 13.968 13.648 16.408 22.434 2.336 8.415 2.426 20.276-5.705 25.79-2.961 2.01-7.092 2.24-8.781-1.444-1.571-3.422.29-7.096 3.683-8.452 9.162-3.663 16.334 8.02 18.234 15.324a30.563 30.563 0 0 1 .279 14.195c-.952 4.334-2.866 9.283-6.298 12.254-.494.427-1.3-.29-.971-.84 1.77-2.928 3.677-5.571 4.79-8.851 1.155-3.405 1.62-7.048 1.44-10.626-.358-7.103-3.568-15.745-10.125-19.354-3.476-1.912-10.316-1.353-10.055 3.973.107 2.158 1.647 4.035 3.933 3.81 2.086-.209 4.001-1.766 5.333-3.279 5.427-6.16 4.857-15.89 2.67-23.215a39.21 39.21 0 0 0-5.682-11.577c-2.69-3.76-6.017-6.61-9.592-9.472-.35-.277.039-.896.44-.67Z"
+                    <div className="cta-image-container">
+                      <div>
+                        <HiOutlineArrowTrendingDown
+                          size={100}
+                          strokeWidth={1.5}
+                          style={{ color: "#f5f777" }}
                         />
-                        <path
-                          fill="currentColor"
-                          d="M1.562.977c9.931 2.79 17.058 11.508 19.312 21.4 1.085 4.762 1.187 9.7.548 14.54-.653 4.937-1.854 10.549-4.949 14.589-2.156 2.82-7.305 5.961-10.266 2.388-2.608-3.142-2.18-9.094.45-12.093 2.945-3.356 8.048-2.969 11.491-.718 4.112 2.688 6.675 7.596 8.265 12.12 3.48 9.905 2.395 21.33-3.11 30.327-.527.858-1.947.203-1.423-.676 3.935-6.565 5.559-14.253 4.688-21.84-.443-3.864-1.552-7.677-3.306-11.147-2.011-3.973-5.078-8.396-9.854-8.994-5.273-.66-7.99 4.089-7.3 8.82.403 2.76 1.938 4.99 5.042 4.079 2.519-.74 4.35-3.051 5.51-5.296 3.708-7.194 4.563-16.802 3.066-24.658C17.848 13.969 11.217 4.92 1.373 1.995.736 1.812.917.797 1.563.977Z"
-                        />
-                        <path
-                          fill="currentColor"
-                          d="M21.218 73.052c.375 2.062.446 4.204.634 6.29.088.987.18 1.975.266 2.964.04.457-.025 2.873.383 3.085.21.11 2.177-1.456 2.452-1.64l2.452-1.641c1.595-1.065 3.329-2.678 5.205-3.148.671-.169 1.174.542.746 1.106-.792 1.05-1.99 1.644-3.08 2.36-1.23.812-2.464 1.62-3.695 2.432-1.142.748-3.43 3.037-4.974 2.3-1.476-.7-.955-3.793-1.042-5.105-.198-2.945-.602-5.957-.531-8.906a.595.595 0 0 1 1.184-.097Z"
-                        />
-                        <path
-                          fill="currentColor"
-                          d="M21.773 73.169c-.032 2.254-.679 4.55-.972 6.789-.338 2.597-.601 5.224-.564 7.844-.465-.225-.933-.454-1.398-.68a76.772 76.772 0 0 0 6.002-4.227c1.876-1.465 3.568-3.521 5.632-4.678.6-.336 1.581.26 1.137.983-1.181 1.924-3.415 3.456-5.165 4.844a64.808 64.808 0 0 1-6.607 4.574c-.694.421-1.465-.14-1.385-.91.27-2.565.462-5.128.849-7.683.348-2.297.616-4.895 1.59-7.019.19-.398.887-.308.88.163Z"
-                        />
-                        <path
-                          fill="currentColor"
-                          d="M22.85 71.546c-.873 5.764-1.778 11.525-2.588 17.298-.462-.304-.922-.605-1.384-.91 2.439-1.254 4.864-2.527 7.207-3.954 2.158-1.317 4.212-3.127 6.536-4.109.733-.31 1.331.688.841 1.25-1.713 1.972-4.396 3.318-6.619 4.634-2.326 1.378-4.712 2.663-7.172 3.78-.633.287-1.294-.395-1.174-1.015 1.098-5.725 2.104-11.464 3.137-17.2.137-.79 1.337-.563 1.215.226Z"
-                        />
-                      </svg>
+                      </div>
                       <div className="cta-img rounded-top-4">
                         <img
                           src="/images/screens/screen-1.jpg"

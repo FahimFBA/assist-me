@@ -1,25 +1,24 @@
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IUserSignInData } from "../types/interface";
-import { useState } from "react";
 import { useEmailLoginMutation, useGoogleSignupMutation } from "../store";
 import { toast } from "react-toastify";
+import { FaLock, FaRegEnvelope, FaApple } from "react-icons/fa";
+import { GrFormClose } from "react-icons/gr";
+import { FcGoogle } from "react-icons/fc";
+import InputField from "../components/InputField";
 
-const Login = () => {
+const Login: React.FC = () => {
   const initialState: IUserSignInData = {
     email: "",
     password: "",
   };
-
   const navigate = useNavigate();
-
   const [data, setData] = useState(initialState);
-
   const [emailLogin] = useEmailLoginMutation();
   const [googleSignup] = useGoogleSignupMutation();
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setData({ ...data, [e.target.name]: e.target.value });
-
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await toast
@@ -32,7 +31,6 @@ const Login = () => {
       .then(() => navigate("/profile"))
       .catch((err) => toast.error(err));
   };
-
   const GoogleAuth = async () =>
     await toast
       .promise(googleSignup(null).unwrap(), {
@@ -42,14 +40,10 @@ const Login = () => {
       })
       .then(() => navigate("/dashboard"))
       .catch((err) => toast.error(err));
-
   return (
     <div
       className="wrapper d-flex flex-column justify-between"
-      style={{
-        marginTop: "80px",
-        marginBottom: "40px",
-      }}
+      style={{ marginTop: "80px", marginBottom: "40px" }}
     >
       <main className="flex-grow-1">
         <section className="account-section login-page py-6 h-full">
@@ -83,20 +77,7 @@ const Login = () => {
                     to="/"
                     className="icon bg-gradient-3 text-white w-12 h-12 rounded p-3 border border-white border-opacity-10 d-flex align-center justify-center ms-auto"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <g
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      >
-                        <path d="M18 6 6 18M6 6l12 12" />
-                      </g>
-                    </svg>
+                    <GrFormClose strokeWidth={2} />
                   </Link>
                 </div>
                 <div className="account-wrapper h-full d-flex flex-column justify-center">
@@ -115,96 +96,41 @@ const Login = () => {
                         type="button"
                         className="btn account-btn py-4"
                       >
-                        <img
-                          src="/images/icons/google.svg"
-                          alt=""
-                          width="24"
-                          className="img-fluid icon"
-                        />
+                        <FcGoogle strokeWidth={1.5} size={20} />{" "}
                         <span>Continue With Google</span>
                       </button>
                       <button type="button" className="btn account-btn py-4">
-                        <img
-                          src="/images/icons/apple.svg"
-                          alt=""
-                          width="24"
-                          className="img-fluid icon"
-                        />
+                        <FaApple size={23} strokeWidth={1.5} />
                         <span>Continue With Apple</span>
                       </button>
                     </div>
-
                     <div className="divider-with-text my-10">
                       <span>Or sign in with email</span>
                     </div>
-
                     <form onSubmit={onSubmit} className="vstack gap-4">
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 18 18"
-                            >
-                              <g
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="1.2"
-                              >
-                                <path d="M2.25 5.25a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5v-7.5Z" />
-                                <path d="M2.25 5.25 9 9.75l6.75-4.5" />
-                              </g>
-                            </svg>
-                          </span>
-                          <input
-                            type="email"
-                            className="form-control rounded-2 py-4"
-                            placeholder="Enter Your Email"
-                            required
-                            name="email"
-                            onChange={handleChange}
-                            value={data.email}
-                          />
-                        </div>
-                      </div>
-                      <div className="text-start">
-                        <div className="input-group with-icon">
-                          <span className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="1.5"
-                              viewBox="0 0 24 24"
-                            >
-                              <path stroke="none" d="M0 0h24v24H0z" />
-                              <path d="M12 3a12 12 0 0 0 8.5 3A12 12 0 0 1 12 21 12 12 0 0 1 3.5 6 12 12 0 0 0 12 3" />
-                              <circle cx="12" cy="11" r="1" />
-                              <path d="M12 12v2.5" />
-                            </svg>
-                          </span>
-                          <input
-                            type="password"
-                            className="form-control rounded-2 py-4"
-                            placeholder="Password"
-                            required
-                            name="password"
-                            onChange={handleChange}
-                            value={data.password}
-                          />
-                        </div>
-                        <div className="form-text mt-2">
-                          <Link
-                            to="/forgot-password"
-                            className="text-decoration-none"
-                          >
-                            Forgot Password?
-                          </Link>
-                        </div>
+                      <InputField
+                        type="email"
+                        placeholder="Enter Your Email"
+                        name="email"
+                        value={data.email}
+                        onChange={handleChange}
+                        icon={<FaRegEnvelope strokeWidth={1.5} />}
+                      />
+                      <InputField
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={data.password}
+                        onChange={handleChange}
+                        icon={<FaLock strokeWidth={1.5} />}
+                      />
+                      <div className="form-text mt-2">
+                        <Link
+                          to="/forgot-password"
+                          className="text-decoration-none"
+                        >
+                          Forgot Password?
+                        </Link>
                       </div>
                       <div className="text-center">
                         <button
@@ -233,5 +159,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
