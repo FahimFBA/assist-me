@@ -17,16 +17,10 @@ const Dashboard = () => {
       .then(() => navigate("/login"));
 
   return (
-    <div className="container">
-      <br />
-      <br />
-      <br />
-      <br />
+    <div className="">
       This is the dashboard which is under development
       <br />
-      <br />
       <button onClick={appSignout}>click to logout</button>
-      <br />
     </div>
   );
 };

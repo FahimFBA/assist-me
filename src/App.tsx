@@ -10,6 +10,8 @@ import {
   Pricing,
   UseCases,
   Contact,
+  Tasks,
+  Email,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AOS from "aos";
@@ -67,6 +69,8 @@ const App = () => {
 
         <Route element={<ProtectedRoutes />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/tasks" element={<Tasks />} />
+          <Route path="/email" element={<Email />} />
         </Route>
 
         <Route path="*" element={<ErrorPage />} />
