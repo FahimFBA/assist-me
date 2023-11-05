@@ -91,7 +91,7 @@ const Signup = () => {
                       <g
                         stroke="currentColor"
                         stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                         stroke-width="2"
                       >
                         <path d="M18 6 6 18M6 6l12 12" />
@@ -150,7 +150,7 @@ const Signup = () => {
                               <g
                                 stroke="currentColor"
                                 stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinejoin="round"
                                 stroke-width="1.2"
                               >
                                 <path d="M2.25 5.25a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5v-7.5Z" />
@@ -177,7 +177,7 @@ const Signup = () => {
                               fill="none"
                               stroke="currentColor"
                               stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeLinejoin="round"
                               stroke-width="1.5"
                               viewBox="0 0 24 24"
                             >
