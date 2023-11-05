@@ -3,6 +3,9 @@ import { IUserSignInData } from "../types/interface";
 import { useState } from "react";
 import { useEmailLoginMutation, useGoogleSignupMutation } from "../store";
 import { toast } from "react-toastify";
+import { FaLock, FaRegEnvelope, FaApple } from "react-icons/fa";
+import { GrFormClose } from "react-icons/gr";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const initialState: IUserSignInData = {
@@ -83,20 +86,7 @@ const Login = () => {
                     to="/"
                     className="icon bg-gradient-3 text-white w-12 h-12 rounded p-3 border border-white border-opacity-10 d-flex align-center justify-center ms-auto"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <g
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        strokeLinejoin="round"
-                        stroke-width="2"
-                      >
-                        <path d="M18 6 6 18M6 6l12 12" />
-                      </g>
-                    </svg>
+                    <GrFormClose strokeWidth={2} />
                   </Link>
                 </div>
                 <div className="account-wrapper h-full d-flex flex-column justify-center">
@@ -115,21 +105,11 @@ const Login = () => {
                         type="button"
                         className="btn account-btn py-4"
                       >
-                        <img
-                          src="/images/icons/google.svg"
-                          alt=""
-                          width="24"
-                          className="img-fluid icon"
-                        />
+                        <FcGoogle strokeWidth={1.5} size={20} />{" "}
                         <span>Continue With Google</span>
                       </button>
                       <button type="button" className="btn account-btn py-4">
-                        <img
-                          src="/images/icons/apple.svg"
-                          alt=""
-                          width="24"
-                          className="img-fluid icon"
-                        />
+                        <FaApple size={23} strokeWidth={1.5} />
                         <span>Continue With Apple</span>
                       </button>
                     </div>
@@ -142,21 +122,7 @@ const Login = () => {
                       <div className="text-start">
                         <div className="input-group with-icon">
                           <span className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 18 18"
-                            >
-                              <g
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                strokeLinejoin="round"
-                                stroke-width="1.2"
-                              >
-                                <path d="M2.25 5.25a1.5 1.5 0 0 1 1.5-1.5h10.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5v-7.5Z" />
-                                <path d="M2.25 5.25 9 9.75l6.75-4.5" />
-                              </g>
-                            </svg>
+                            <FaRegEnvelope strokeWidth={1.5} />
                           </span>
                           <input
                             type="email"
@@ -172,20 +138,7 @@ const Login = () => {
                       <div className="text-start">
                         <div className="input-group with-icon">
                           <span className="icon">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              strokeLinejoin="round"
-                              stroke-width="1.5"
-                              viewBox="0 0 24 24"
-                            >
-                              <path stroke="none" d="M0 0h24v24H0z" />
-                              <path d="M12 3a12 12 0 0 0 8.5 3A12 12 0 0 1 12 21 12 12 0 0 1 3.5 6 12 12 0 0 0 12 3" />
-                              <circle cx="12" cy="11" r="1" />
-                              <path d="M12 12v2.5" />
-                            </svg>
+                            <FaLock strokeWidth={1.5} />
                           </span>
                           <input
                             type="password"
