@@ -8,6 +8,8 @@ import ErrorPage from "./ErrorPage";
 import Pricing from "./Pricing";
 import UseCases from "./UseCases";
 import Contact from "./Contact";
+import Email from "./Email";
+import Tasks from "./Tasks";
 
 export {
   Home,
@@ -20,4 +22,6 @@ export {
   Pricing,
   UseCases,
   Contact,
+  Email,
+  Tasks,
 };
