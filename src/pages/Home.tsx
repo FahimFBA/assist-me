@@ -27,10 +27,7 @@ const Home = () => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        "Technical Writing",
-        "News Article",
-        "SEO Content",
-        "Product Description",
+        "ToDo",
       ],
       startDelay: 100,
       typeSpeed: 100,
