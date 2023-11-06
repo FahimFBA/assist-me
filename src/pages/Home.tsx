@@ -31,6 +31,7 @@ const Home = () => {
         "Markdown Support",
         "Customized Notification",
         "Gmail Integration",
+        "Google Calendar Integration",
       ],
       startDelay: 100,
       typeSpeed: 100,
