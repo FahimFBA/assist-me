@@ -32,6 +32,7 @@ const Home = () => {
         "Customized Notification",
         "Gmail Integration",
         "Google Calendar Integration",
+        "GitHub Integration",
       ],
       startDelay: 100,
       typeSpeed: 100,
