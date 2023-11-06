@@ -27,10 +27,14 @@ const Home = () => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        "Technical Writing",
-        "News Article",
-        "SEO Content",
-        "Product Description",
+        "ToDo",
+        "Markdown Support",
+        "Customized Notification",
+        "Gmail Integration",
+        "Google Calendar Integration",
+        "GitHub Integration",
+        "Weather Forecast",
+        "Artificial Intelligence (AI) Chatbot"
       ],
       startDelay: 100,
       typeSpeed: 100,
