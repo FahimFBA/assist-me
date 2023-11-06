@@ -33,6 +33,7 @@ const Home = () => {
         "Gmail Integration",
         "Google Calendar Integration",
         "GitHub Integration",
+        "Weather Forecast",
       ],
       startDelay: 100,
       typeSpeed: 100,
