@@ -28,6 +28,7 @@ const Home = () => {
     const typed = new Typed(el.current, {
       strings: [
         "ToDo",
+        "Markdown Support",
       ],
       startDelay: 100,
       typeSpeed: 100,
