@@ -30,6 +30,7 @@ const Home = () => {
         "ToDo",
         "Markdown Support",
         "Customized Notification",
+        "Gmail Integration",
       ],
       startDelay: 100,
       typeSpeed: 100,
