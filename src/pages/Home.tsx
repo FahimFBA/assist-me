@@ -29,6 +29,7 @@ const Home = () => {
       strings: [
         "ToDo",
         "Markdown Support",
+        "Customized Notification",
       ],
       startDelay: 100,
       typeSpeed: 100,
