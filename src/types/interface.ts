@@ -16,3 +16,12 @@ export interface UserState {
   email: string;
   photoURL: string;
 }
+
+export interface ITaskProps {
+  id: string;
+  title: string;
+  description: string;
+  status: string;
+  deadline: string;
+  label: string;
+}
