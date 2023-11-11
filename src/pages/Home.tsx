@@ -70,14 +70,14 @@ const Home = () => {
                 <div className="text-center">
                   <div className="position-relative z-1">
                     <p className="text-primary-dark" data-aos="fade-up-sm">
-                      Best AI Copywriting Tool
+                      Personalized Web Application
                     </p>
                     <h1
                       className="text-white mb-8"
                       data-aos="fade-up-sm"
                       data-aos-delay="150"
                     >
-                      A 10X Faster Way To Write Your <br />
+                      An Application That You Need EVERYDAY! <br />
                       <span
                         className="fw-bold text-gradient-2 typed-animation"
                         ref={el}
@@ -89,7 +89,7 @@ const Home = () => {
                       data-aos="fade-up-sm"
                       data-aos-delay="200"
                     >
-                      Start Writing - It's Free
+                      Start Using - It's Free!
                     </a>
                   </div>
                   <div data-aos="fade-up-sm" data-aos-delay="300">
@@ -109,9 +109,12 @@ const Home = () => {
                     </div>
                   </div>
                   <ul className="d-flex flex-wrap gap-4 gap-md-8 gap-lg-10 align-center justify-center mt-8 mb-0">
-                    <li>Write Blogs 10X Faster</li>
-                    <li>Write Higher Converting Posts</li>
-                    <li>Write More Engaging Emails</li>
+                    <li>Manage Your Day To Day Tasks</li>
+                    <li>Grade Your Students Directly</li>
+                    <li>Check Your GMail Directly</li>
+                    <li>Check Latest News</li>
+                    <li>Get Real Time Weather Update</li>
+                    <li>Get Your Own Personalized Dashboard</li>
                   </ul>
                   <div className="d-flex gap-8 align-center justify-center mt-12 review-badges">
                     <img
@@ -140,9 +143,9 @@ const Home = () => {
                 data-aos="fade-up-sm"
                 data-aos-delay="50"
               >
-                Generate Creative AI Copy On-The-Spot,{" "}
+                Generate Important Tasks & Workflows On-The-Spot,{" "}
                 <br className="d-none d-lg-block" />
-                Across Your Favorite Tools
+                Across All Your Devices
               </h1>
             </div>
 
@@ -158,12 +161,12 @@ const Home = () => {
                   </div>
                   <div className="content">
                     <h4 className="mb-4 text-white">
-                      Generates quality contents
+                      Write Down Your Tasks & Notes
                     </h4>
                     <p>
-                      This tool helps you find the right keywords to target for
-                      your content. By using the Google Keyword Planner, you can
-                      see how often people
+                      Write down your tasks and notes, and get notified when you
+                      need to complete them. You can also set reminders for
+                      important tasks.
                     </p>
                   </div>
                 </div>
@@ -182,9 +185,9 @@ const Home = () => {
                       Provides Useful Suggestions
                     </h4>
                     <p>
-                      GenAI writing tools can analyze data and generate insights
-                      to help writers create more compelling and informative
-                      content.
+                      AssistMe writing tools can analyze data and generate
+                      insights to help you make better decisions. It can also
+                      help you to write better content.
                     </p>
                   </div>
                 </div>
@@ -203,8 +206,9 @@ const Home = () => {
                       Improves Products Productivity
                     </h4>
                     <p>
-                      Emotions are a powerful tool in advertising. Use emotions
-                      that resonate with your audience to create a connection.
+                      Improve your productivity by using AssistMe writing tools
+                      that includes Google and GitHub integration right out of
+                      the box to help you get more done.
                     </p>
                   </div>
                 </div>
