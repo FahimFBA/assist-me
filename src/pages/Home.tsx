@@ -34,7 +34,7 @@ const Home = () => {
         "Google Calendar Integration",
         "GitHub Integration",
         "Weather Forecast",
-        "Artificial Intelligence (AI) Chatbot"
+        "Artificial Intelligence (AI) Chatbot",
       ],
       startDelay: 100,
       typeSpeed: 100,
