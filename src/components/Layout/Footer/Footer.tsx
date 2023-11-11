@@ -6,6 +6,8 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
+import Logo from "../../Logo";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -109,14 +111,9 @@ const Footer = () => {
           </div>
           <div className="col-lg-3 order-lg-1 me-auto">
             <div className="footer-widget text-center text-lg-start">
-              <a href="">
-                <img
-                  src="/images/logo.svg"
-                  alt=""
-                  className="img-fluid"
-                  width="135"
-                />
-              </a>
+              <Link to="/">
+                <Logo />
+              </Link>
               <p className="fs-sm mb-0 mt-4">
                 A Magical Tool to Optimize you content for the first know who
                 you're targeting. Identify your target audience.

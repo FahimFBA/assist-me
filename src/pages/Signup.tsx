@@ -7,6 +7,7 @@ import { FaLock, FaRegEnvelope, FaApple } from "react-icons/fa";
 import { GrFormClose } from "react-icons/gr";
 import { FcGoogle } from "react-icons/fc";
 import InputField from "../components/InputField";
+import Logo from "../components/Logo";
 
 const Signup: React.FC = () => {
   const initialState: IUserSignInData = {
@@ -90,12 +91,7 @@ const Signup: React.FC = () => {
                 <div className="account-wrapper h-full d-flex flex-column justify-center">
                   <div className="text-center">
                     <Link to="/">
-                      <img
-                        src="/images/logo.svg"
-                        alt=""
-                        className="img-fluid"
-                        width="165"
-                      />
+                      <Logo />
                     </Link>
                     <div className="vstack gap-4 mt-10">
                       <button

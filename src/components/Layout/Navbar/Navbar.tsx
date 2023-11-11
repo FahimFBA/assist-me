@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CustomNavlink from "./CustomNavlink";
 import { useState } from "react";
+import Logo from "../../Logo";
 
 const Navbar = () => {
   const [showNavbar, setShowNavBar] = useState<boolean>(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
       <div className="container">
         {/* <!-- Logo --> */}
         <Link className="navbar-brand" to="/">
-          <img src="/images/logo.svg" alt="" width="165" />
+          <Logo />
         </Link>
 
         {/* <!-- Navbar toggler button --> */}
