@@ -54,7 +54,3 @@ A personalized web application to satisfy all your needs by integrating an AI As
 - Grade Management
 
 <!-- ## Tech Stack -->
-
-## 🍴 Forkers
-
-[![Forkers repo roster for @FahimFBA/assist-me](https://reporoster.com/forks/FahimFBA/assist-me)](https://github.com/FahimFBA/assist-me/network/members)
