@@ -13,7 +13,7 @@ const Navbar = () => {
     >
       <div className="container">
         {/* <!-- Logo --> */}
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand ms-3" to="/">
           <Logo />
         </Link>
 

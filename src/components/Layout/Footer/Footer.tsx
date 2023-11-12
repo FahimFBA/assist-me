@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="row g-6">
               <div className="col-md-4 col-lg-4">
                 <div className="footer-widget text-center text-md-start">
-                  <h6 className="text-white mb-2">Gen AI</h6>
+                  <h6 className="text-white mb-2">AssistMe</h6>
                   <ul className="link-list list-unstyled mb-0">
                     <li>
                       <a href="about.html">About</a>
