@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CreateModal = ({
+const TaskModal = ({
   button,
   title,
   children,
@@ -94,4 +94,4 @@ const CreateModal = ({
   );
 };
 
-export default CreateModal;
+export default TaskModal;

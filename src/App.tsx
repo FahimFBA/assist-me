@@ -25,7 +25,6 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
       if (user) {
         const uid = user.uid;
         const photoURL = user.photoURL as string;

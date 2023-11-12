@@ -1,9 +1,13 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { ITaskProps } from "../../types/interface";
 import { StatusEnum } from "../../types/enums";
 import { BsPencil, BsTrash, BsClock } from "react-icons/bs";
 import DeleteModal from "../Modal/DeleteModal";
 import dayjs from "dayjs";
+import TaskModal from "../Modal/TaskModal";
+import TaskForm from "../Forms/TaskForm";
+import { toast } from "react-toastify";
+import { useEditOneTaskMutation } from "../../store/API/taskAPI";
 
 interface ITaskComponentProps extends ITaskProps {
   deleteTask: (id: string) => void;
@@ -18,6 +22,30 @@ const Task: FC<ITaskComponentProps> = ({
   title,
   deleteTask,
 }) => {
+  const [data, setData] = useState({
+    id,
+    title,
+    deadline,
+    status,
+    label,
+    description,
+  });
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+
+  const [editOneTask] = useEditOneTaskMutation();
+  const onSubmit = async () => {
+    await toast.promise(editOneTask(data).unwrap(), {
+      pending: "Updating task...",
+      success: "Task updated successfully",
+      error: "Error updating task",
+    });
+  };
+
   return (
     <div className="card col-4">
       <div className="card-body">
@@ -34,7 +62,9 @@ const Task: FC<ITaskComponentProps> = ({
         </div>
         <div className="d-flex align-center gap-3 mb-3 font-weight-light">
           <BsClock />
-          {dayjs(deadline).format("dddd, MMMM D, YYYY")}
+          {deadline
+            ? dayjs(deadline).format("dddd, MMMM D, YYYY")
+            : "No Deadline"}
         </div>
         <p className="card-text">{description}</p>
         <div className="d-flex gap-2">
@@ -48,10 +78,19 @@ const Task: FC<ITaskComponentProps> = ({
               {status}
             </span>
           )}
-          <span className="px-5 rounded-pill text-bg-success py-1">
-            <BsPencil />
-          </span>
-
+          <TaskModal
+            button={
+              <span className="px-5 rounded-pill text-bg-success py-1">
+                <BsPencil />
+              </span>
+            }
+            title="Edit Task Task"
+            onCancel={() => console.log("cancel")}
+            onClose={() => console.log("close")}
+            onConfirm={onSubmit}
+          >
+            <TaskForm {...data} handleInput={handleInput} />
+          </TaskModal>
           <DeleteModal
             button={
               <span className="px-5 rounded-pill text-bg-danger py-1">

@@ -29,7 +29,7 @@ const Login: React.FC = () => {
         error: "Login failed",
       })
       .then(() => setData(initialState))
-      .then(() => navigate("/profile"))
+      .then(() => navigate("/dashboard"))
       .catch((err) => toast.error(err));
   };
   const GoogleAuth = async () =>
