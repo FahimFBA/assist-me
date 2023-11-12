@@ -7,9 +7,12 @@ import {
   deleteDoc,
   doc,
   // getDoc,
+  query,
+  where,
   getDocs,
 } from "firebase/firestore";
 import { db } from "../../config/firebase-config";
+import { NewTaskType } from "../../types/types";
 
 const tasksCollectionName = "tasks";
 
@@ -18,9 +21,19 @@ export const taskAPI = createApi({
   baseQuery: fakeBaseQuery(),
   tagTypes: ["Tasks"],
   endpoints: (builder) => ({
-    getAllTasks: builder.query<ITaskProps[], null>({
-      queryFn: async () => {
-        const getAlltasks = await getDocs(collection(db, tasksCollectionName));
+    getAllTasks: builder.query<
+      ITaskProps[],
+      {
+        userID: string;
+      }
+    >({
+      queryFn: async ({ userID }) => {
+        const requestQuery = query(
+          collection(db, tasksCollectionName),
+          where("userOwner", "==", userID),
+        );
+
+        const getAlltasks = await getDocs(requestQuery);
 
         const querySnapshot = getAlltasks.docs.map((doc) => {
           return {
@@ -64,20 +77,22 @@ export const taskAPI = createApi({
       invalidatesTags: ["Tasks"],
     }),
 
-    createOneTask: builder.mutation<
-      string,
-      Pick<
-        ITaskProps,
-        "deadline" | "description" | "label" | "status" | "title"
-      >
-    >({
-      queryFn: async ({ deadline, description, label, status, title }) => {
+    createOneTask: builder.mutation<string, NewTaskType>({
+      queryFn: async ({
+        deadline,
+        description,
+        label,
+        status,
+        title,
+        userOwner,
+      }) => {
         await addDoc(collection(db, tasksCollectionName), {
           deadline,
           description,
           label,
           status,
           title,
+          userOwner,
         });
         try {
           return {

@@ -7,17 +7,20 @@ import Task from "../components/Tasks/Task";
 import { toast } from "react-toastify";
 import CreateModal from "../components/Modal/CreateModal";
 import React from "react";
-import { ITaskProps } from "../types/interface";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import { NewTaskType } from "../types/types";
 
 const Tasks = () => {
-  const [newTask, setNewTask] = React.useState<
-    Pick<ITaskProps, "deadline" | "description" | "label" | "status" | "title">
-  >({
+  const userID = useSelector((state: RootState) => state.user.uid);
+
+  const [newTask, setNewTask] = React.useState<NewTaskType>({
     deadline: "",
     description: "",
     label: "",
     status: "",
     title: "",
+    userOwner: userID,
   });
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -26,7 +29,9 @@ const Tasks = () => {
       [e.target.name]: e.target.value,
     });
 
-  const { data, isError, isFetching, isLoading } = useGetAllTasksQuery(null);
+  const { data, isError, isFetching, isLoading } = useGetAllTasksQuery({
+    userID,
+  });
   const [deleteOneTask] = useDeleteOneTaskMutation();
   const [createOneTask] = useCreateOneTaskMutation();
 
