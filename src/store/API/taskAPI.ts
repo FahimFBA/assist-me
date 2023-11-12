@@ -10,9 +10,10 @@ import {
   query,
   where,
   getDocs,
+  updateDoc,
 } from "firebase/firestore";
 import { db } from "../../config/firebase-config";
-import { NewTaskType } from "../../types/types";
+import { NewTaskType, UpdateTaskType } from "../../types/types";
 
 const tasksCollectionName = "tasks";
 
@@ -106,6 +107,29 @@ export const taskAPI = createApi({
       },
       invalidatesTags: ["Tasks"],
     }),
+    editOneTask: builder.mutation<string, UpdateTaskType>({
+      queryFn: async ({ deadline, description, label, status, title, id }) => {
+        try {
+          const docRef = doc(db, tasksCollectionName, id);
+          await updateDoc(docRef, {
+            deadline,
+            description,
+            label,
+            status,
+            title,
+          });
+
+          return {
+            data: "Task Updated Successfully",
+          };
+        } catch (err) {
+          return {
+            error: (err as Error)?.message,
+          };
+        }
+      },
+      invalidatesTags: ["Tasks"],
+    }),
   }),
 });
 
@@ -113,4 +137,5 @@ export const {
   useGetAllTasksQuery,
   useDeleteOneTaskMutation,
   useCreateOneTaskMutation,
+  useEditOneTaskMutation,
 } = taskAPI;

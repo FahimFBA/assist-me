@@ -15,3 +15,8 @@ export type NewTaskType = Pick<
   ITaskProps,
   "deadline" | "description" | "label" | "status" | "title" | "userOwner"
 >;
+
+export type UpdateTaskType = Pick<
+  ITaskProps,
+  "deadline" | "description" | "label" | "status" | "title" | "id"
+>;

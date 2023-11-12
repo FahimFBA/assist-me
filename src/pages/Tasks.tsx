@@ -5,23 +5,24 @@ import {
 } from "../store/API/taskAPI";
 import Task from "../components/Tasks/Task";
 import { toast } from "react-toastify";
-import CreateModal from "../components/Modal/CreateModal";
+import TaskModal from "../components/Modal/TaskModal";
 import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import { NewTaskType } from "../types/types";
+import TaskForm from "../components/Forms/TaskForm";
 
 const Tasks = () => {
   const userID = useSelector((state: RootState) => state.user.uid);
-
-  const [newTask, setNewTask] = React.useState<NewTaskType>({
+  const initialState: NewTaskType = {
     deadline: "",
     description: "",
     label: "",
     status: "",
     title: "",
     userOwner: userID,
-  });
+  };
+  const [newTask, setNewTask] = React.useState<NewTaskType>(initialState);
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>
     setNewTask({
@@ -44,11 +45,13 @@ const Tasks = () => {
   };
 
   const onSubmit = () => {
-    toast.promise(createOneTask(newTask).unwrap(), {
-      pending: "Creating task...",
-      success: "Task created successfully",
-      error: "Error creating task",
-    });
+    toast
+      .promise(createOneTask(newTask).unwrap(), {
+        pending: "Creating task...",
+        success: "Task created successfully",
+        error: "Error creating task",
+      })
+      .then(() => setNewTask(initialState));
   };
 
   if (isLoading || isFetching) {
@@ -59,70 +62,15 @@ const Tasks = () => {
   }
   return (
     <div className="row">
-      <CreateModal
+      <TaskModal
         button={<button className="btn btn-primary">Create Task</button>}
         title="Create Task"
         onCancel={() => console.log("cancel")}
         onClose={() => console.log("close")}
         onConfirm={onSubmit}
       >
-        <form
-          onSubmit={(e: React.ChangeEvent<HTMLFormElement>) =>
-            e.preventDefault()
-          }
-        >
-          <label htmlFor="" className="">
-            Title
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            onChange={handleInput}
-            name="title"
-            value={newTask?.title}
-          />
-          <label htmlFor="" className="">
-            Deadline
-          </label>
-          <input
-            type="date"
-            className="form-control"
-            onChange={handleInput}
-            name="deadline"
-            value={newTask?.deadline}
-          />
-          <label htmlFor="" className="">
-            Description
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            onChange={handleInput}
-            name="description"
-            value={newTask?.description}
-          />
-          <label htmlFor="" className="">
-            Status
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            onChange={handleInput}
-            name="status"
-            value={newTask?.status}
-          />
-          <label htmlFor="" className="">
-            Label
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            onChange={handleInput}
-            name="label"
-            value={newTask?.label}
-          />
-        </form>
-      </CreateModal>
+        <TaskForm {...newTask} handleInput={handleInput} />
+      </TaskModal>
       {data?.map((task) => {
         return <Task key={task.id} {...task} deleteTask={deleteTask} />;
       })}
