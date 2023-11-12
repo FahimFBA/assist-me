@@ -70,14 +70,14 @@ const Home = () => {
                 <div className="text-center">
                   <div className="position-relative z-1">
                     <p className="text-primary-dark" data-aos="fade-up-sm">
-                      Best AI Copywriting Tool
+                      Personalized Web Application
                     </p>
                     <h1
                       className="text-white mb-8"
                       data-aos="fade-up-sm"
                       data-aos-delay="150"
                     >
-                      A 10X Faster Way To Write Your <br />
+                      An Application That You Need EVERYDAY! <br />
                       <span
                         className="fw-bold text-gradient-2 typed-animation"
                         ref={el}
@@ -89,7 +89,7 @@ const Home = () => {
                       data-aos="fade-up-sm"
                       data-aos-delay="200"
                     >
-                      Start Writing - It's Free
+                      Start Using - It's Free
                     </a>
                   </div>
                   <div data-aos="fade-up-sm" data-aos-delay="300">
@@ -109,9 +109,12 @@ const Home = () => {
                     </div>
                   </div>
                   <ul className="d-flex flex-wrap gap-4 gap-md-8 gap-lg-10 align-center justify-center mt-8 mb-0">
-                    <li>Write Blogs 10X Faster</li>
-                    <li>Write Higher Converting Posts</li>
-                    <li>Write More Engaging Emails</li>
+                    <li>Manage Your Day To Day Tasks</li>
+                    <li>Use As Your All In One Grading Application</li>
+                    <li>Check Your GMail Directly</li>
+                    <li>Check Latest News Directly Within A Single Application</li>
+                    <li>Get Real Time Weather Update</li>
+                    <li>Get Your Own Personalized Dashboard</li>
                   </ul>
                   <div className="d-flex gap-8 align-center justify-center mt-12 review-badges">
                     <img
@@ -140,9 +143,9 @@ const Home = () => {
                 data-aos="fade-up-sm"
                 data-aos-delay="50"
               >
-                Generate Creative AI Copy On-The-Spot,{" "}
+                Generate Important Tasks & Workflows On-The-Spot,{" "}
                 <br className="d-none d-lg-block" />
-                Across Your Favorite Tools
+                Across All Your Devices
               </h1>
             </div>
 
@@ -158,12 +161,13 @@ const Home = () => {
                   </div>
                   <div className="content">
                     <h4 className="mb-4 text-white">
-                      Generates quality contents
+                      Write Down Your Tasks & Notes
                     </h4>
                     <p>
-                      This tool helps you find the right keywords to target for
-                      your content. By using the Google Keyword Planner, you can
-                      see how often people
+                      This tool helps you to write down your tasks and notes,
+                      and get them done on time. It also helps you to manage
+                      custom notifications and workflows. You can also set
+                      specific time for your tasks and notes.
                     </p>
                   </div>
                 </div>
@@ -182,9 +186,9 @@ const Home = () => {
                       Provides Useful Suggestions
                     </h4>
                     <p>
-                      GenAI writing tools can analyze data and generate insights
-                      to help writers create more compelling and informative
-                      content.
+                      AssistMe writing tools can analyze data and generate
+                      insights to help you make better decisions. It can
+                      also help you to write better content faster.
                     </p>
                   </div>
                 </div>
@@ -203,8 +207,9 @@ const Home = () => {
                       Improves Products Productivity
                     </h4>
                     <p>
-                      Emotions are a powerful tool in advertising. Use emotions
-                      that resonate with your audience to create a connection.
+                      Improve your productivity by using AssistMe writing tools
+                      that includes Google and GitHub integration right out of
+                      the box to help you get more done.
                     </p>
                   </div>
                 </div>
@@ -213,7 +218,7 @@ const Home = () => {
 
             <div className="text-center mt-12">
               <a href="login.html" className="btn btn-primary-dark">
-                Try a demo
+                Try a demo using the free tier
               </a>
             </div>
           </div>
@@ -231,31 +236,32 @@ const Home = () => {
                 <div className="content">
                   <p className="text-primary-dark">Features 1</p>
                   <h1 className="text-white mb-8">
-                    Let's Create AI-Powered Content With A Single Click.
+                    Let's Create AI-Powered Content With A Single Click
                   </h1>
                   <p className="mb-6">
-                    To create powerful content, you need to know who you're
-                    targeting. Identify your target audience and understand
-                    their needs, interests, and pain points.
+                    To create powerful content, initially you need to have
+                    the knowledge of AI prompts. But you don't need to
+                    worry anything if you simply use AssistMe. It will
+                    help you on the go based on your personal preferences.
                   </p>
                   <ul className="list-unstyled list-check mb-8">
                     <li>
                       <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
-                        Start creating powerful content, for your next ads
+                        Start creating powerful content, for your next tasks
                       </span>
                     </li>
                     <li>
                       <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
-                        Let's Communicate with your customers with emotions
+                        Let's Manage your timeline, schedule and appointments
                       </span>
                     </li>
                     <li>
                       <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
                         Use visuals like images, videos, or infographics to make
-                        your content more engaging
+                        your content more refreshing
                       </span>
                     </li>
                   </ul>
@@ -291,13 +297,15 @@ const Home = () => {
                 <div className="content">
                   <p className="text-primary-dark">Features 2</p>
                   <h1 className="text-white mb-8">
-                    A Magical Tool To Optimize Your Content For First Page
-                    Rankings
+                    A Magical Tool To Optimize Your Productivity
                   </h1>
                   <p className="mb-6">
-                    A Magical Tool to Optimize you content for the first know
-                    who you're targeting. Identify your target audience and
-                    understand their needs, interests, and pain points.
+                    AssistMe always focusses on your productivity. It
+                    provides you with the best suggestions to improve your
+                    productivity. It also helps you to manage custom
+                    notifications and workflows. You can also set specific
+                    time for your tasks and notes. You can choose exactly which
+                    notifications you want to receive and when.
                   </p>
                   <a
                     href="login.html"
@@ -332,32 +340,35 @@ const Home = () => {
                 <div className="content">
                   <p className="text-primary-dark">Features 3</p>
                   <h1 className="text-white mb-8">
-                    Write Blog Posts, Stories, & Even Books With
-                    <span className="text-primary-dark">GenAI</span>.
+                    Check Your GMail & GitHub Directly Within A Single Application Using{" "}
+                    <span className="text-primary-dark">AssistMe</span>.
                   </h1>
                   <p className="mb-6">
-                    To create powerful content, you need to know who you're
-                    targeting. Identify your target audience and understand
-                    their needs, interests, and pain points.
+                    AssistMe provides your Google Mail and GitHub notifications (Issues & Pull Requests)
+                    directly within it. Therefore, you don't need to open your Gmail or GitHub
+                    separately. You can also manage your Gmail and GitHub notifications
+                    within AssistMe.
                   </p>
                   <ul className="list-unstyled list-check mb-8">
                     <li>
                       <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
-                        Start creating powerful content, for your next ads
+                        Start working on your other tasks instead of wasting time on
+                        checking your Gmail or GitHub as AssistMe has got you covered!
                       </span>
                     </li>
                     <li>
                       <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
-                        Let's Communicate with your customers with emotions
+                        Let's Manage your timeline, schedule and appointments from your Gmail
+                        and GitHub notifications
                       </span>
                     </li>
                     <li>
                       <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
-                        Use visuals like images, videos, or infographics to make
-                        your content more engaging
+                        Use prioritization to make your GMail and GitHub notifications
+                        based on pre-defined rules.
                       </span>
                     </li>
                   </ul>
@@ -398,14 +409,15 @@ const Home = () => {
                     data-aos="fade-up-sm"
                     data-aos-delay="50"
                   >
-                    GenAI Use Cases
+                    AssistMe Use Cases
                   </p>
                   <h1
                     className="text-white mb-0"
                     data-aos="fade-up-sm"
                     data-aos-delay="100"
                   >
-                    Write Better Content Faster, The Future Of AI Writing Tools
+                    Manage Your Time & Tasks Efficiently With AssistMe,
+                    The Future Of AIO (All In One) Specialized Writing Tool
                     is Here
                   </h1>
                 </div>
@@ -420,8 +432,10 @@ const Home = () => {
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">Writing Blog Content</h5>
                     <p className="mb-0">
-                      Writing blog content with GenAI, make sure you have a
-                      clear understanding of who your audience is.
+                      Writing blog content with AssistMe, make you stand out
+                      in your tasks as you are getting a complete package
+                      of features including AI-powered content generation
+                      and Markdown support.
                     </p>
                   </div>
                   <div className="flex-shrink-0">
