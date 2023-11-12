@@ -124,8 +124,8 @@ const Footer = () => {
 
         <div className="text-center py-6 mt-8">
           <p className="fs-sm mb-0">
-            Copyright <span className="text-primary-dark">GenAI</span>. Design
-            By Marvel_Theme
+            Copyright <span className="text-primary-dark">AssistMe</span>. Design
+            By Team Iphim
           </p>
         </div>
       </div>
