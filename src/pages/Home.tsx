@@ -449,13 +449,14 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+              {/* Change the logo */}
               <div className="col" data-aos="fade-up-sm" data-aos-delay="200">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
                     <TbAd size={35} strokeWidth={1} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Digital Ad Copy</h5>
+                    <h5 className="text-white mb-4">Device Synchronization</h5>
                     <p className="mb-0">
                       A Magical Tool to Optimize you content for the first know
                       who you're targeting. Identify your target.
