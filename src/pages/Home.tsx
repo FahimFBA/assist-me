@@ -22,6 +22,7 @@ import { LuGanttChartSquare } from "react-icons/lu";
 import { PiNotebookLight } from "react-icons/pi";
 import { HiOutlineArrowTrendingDown } from "react-icons/hi2";
 import { TbNote } from "react-icons/tb";
+import { TbLayoutDashboard } from "react-icons/tb";
 // import { BiTargetLock } from "react-icons/bi";
 
 const Home = () => {
@@ -457,13 +458,14 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="200">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <TbAd size={35} strokeWidth={1} />
+                    <TbLayoutDashboard size={35} strokeWidth={1} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Device Synchronization</h5>
+                    <h5 className="text-white mb-4">Customized Dashboard</h5>
                     <p className="mb-0">
-                      A Magical Tool to Optimize you content for the first know
-                      who you're targeting. Identify your target.
+                      It's your application, and everything within it is owned by YOU!
+                      Customize the dashboard as you like. You have the full accessibility
+                      to modify them as you want!
                     </p>
                   </div>
                   <div className="flex-shrink-0">
