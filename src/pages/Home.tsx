@@ -17,7 +17,7 @@ import { IoMdCheckmark } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 // import { FaRegNewspaper } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
-import { BiTargetLock } from "react-icons/bi";
+// import { BiTargetLock } from "react-icons/bi";
 import { LuLayoutList } from "react-icons/lu";
 // import { TfiLayoutMediaCenterAlt } from "react-icons/tfi";
 // import { LuGanttChartSquare } from "react-icons/lu";
