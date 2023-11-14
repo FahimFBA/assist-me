@@ -25,6 +25,7 @@ import { TbNote } from "react-icons/tb";
 import { TbLayoutDashboard } from "react-icons/tb";
 import { TbDeviceIpadMinus } from "react-icons/tb";
 import { TbDeviceDesktopSearch } from "react-icons/tb";
+import { TbBrandGithub } from "react-icons/tb";
 import { TbBrandGoogle } from "react-icons/tb";
 // import { BiTargetLock } from "react-icons/bi";
 
@@ -560,7 +561,7 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="200">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <TfiLayoutMediaCenterAlt size={25} />
+                    <TbBrandGoogle size={25} />
                   </div>
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">GMail Integration</h5>
@@ -585,13 +586,16 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="250">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <LuGanttChartSquare size={27} />
+                    <TbBrandGithub size={27} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">eCommerce Copy</h5>
+                    <h5 className="text-white mb-4">GitHub Integration</h5>
                     <p className="mb-0">
-                      Writing blog content with GenAI, make sure you have a
-                      clear understanding of who your audience is.
+                      You don't need to open GitHub in your browser or mobile
+                      client for checking notifications of pull requests,
+                      issues and so on. AssistMe has all of them for you.
+                      Simply connect your GitHub account, and you are good to go!
+                      It's that simple, really!
                     </p>
                   </div>
                   <div className="flex-shrink-0">
