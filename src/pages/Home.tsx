@@ -2,6 +2,9 @@ import { useEffect, useRef } from "react";
 // @ts-ignore
 import Typed from "typed.js";
 // import { FaRegEnvelope } from "react-icons/fa";
+
+// Get the tb-react-icons from: https://react-icons.github.io/react-icons/icons/tb/
+
 import {
   TbAlpha,
   TbArtboard,
