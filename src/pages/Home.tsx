@@ -629,10 +629,10 @@ const Home = () => {
                     <p className="mb-0">
                       Having all kinds of notifications bugging you continuously
                       is not a good experience, right? So, fear not! You have
-                      the complete power over your AssistMe's notification system.
-                      Choose exactly which notification you want to receive and
-                      mute all other items, right now!
-                      Experience a safe and sound environment without irrelevant unwanted
+                      the complete power over your AssistMe's notification
+                      system. Choose exactly which notification you want to
+                      receive and mute all other items, right now! Experience a
+                      safe and sound environment without irrelevant unwanted
                       notifications bugging you.
                     </p>
                   </div>
