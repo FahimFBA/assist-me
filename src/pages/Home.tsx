@@ -18,6 +18,7 @@ import { TfiLayoutMediaCenterAlt } from "react-icons/tfi";
 import { LuGanttChartSquare } from "react-icons/lu";
 import { PiNotebookLight } from "react-icons/pi";
 import { HiOutlineArrowTrendingDown } from "react-icons/hi2";
+import { TbNote } from "react-icons/tb";
 // import { BiTargetLock } from "react-icons/bi";
 
 const Home = () => {
@@ -427,10 +428,10 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="150">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <TbBrandBlogger size={30} />
+                    <TbNote size={30} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Writing Blog Content</h5>
+                    <h5 className="text-white mb-4">Organize Your Daily Tasks</h5>
                     <p className="mb-0">
                       Writing blog content with AssistMe, make you stand out
                       in your tasks as you are getting a complete package
