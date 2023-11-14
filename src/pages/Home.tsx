@@ -2,22 +2,34 @@ import { useEffect, useRef } from "react";
 // @ts-ignore
 import Typed from "typed.js";
 // import { FaRegEnvelope } from "react-icons/fa";
+
+// Get the tb-react-icons from: https://react-icons.github.io/react-icons/icons/tb/
+
+
+// removing -   TbBrandBlogger,   TbAd,
+
 import {
   TbAlpha,
   TbArtboard,
   TbBrandJuejin,
-  TbBrandBlogger,
-  TbAd,
 } from "react-icons/tb";
 import { IoMdCheckmark } from "react-icons/io";
-import { FaRegNewspaper, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+// import { FaRegNewspaper } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
-import { BiTargetLock } from "react-icons/bi";
+// import { BiTargetLock } from "react-icons/bi";
 import { LuLayoutList } from "react-icons/lu";
-import { TfiLayoutMediaCenterAlt } from "react-icons/tfi";
-import { LuGanttChartSquare } from "react-icons/lu";
+// import { TfiLayoutMediaCenterAlt } from "react-icons/tfi";
+// import { LuGanttChartSquare } from "react-icons/lu";
 import { PiNotebookLight } from "react-icons/pi";
 import { HiOutlineArrowTrendingDown } from "react-icons/hi2";
+import { TbNote } from "react-icons/tb";
+import { TbLayoutDashboard } from "react-icons/tb";
+import { TbDeviceIpadMinus } from "react-icons/tb";
+import { TbDeviceDesktopSearch } from "react-icons/tb";
+import { TbBrandGithub } from "react-icons/tb";
+import { TbBrandGoogle } from "react-icons/tb";
+// import { TbNotification } from "react-icons/tb";
 // import { BiTargetLock } from "react-icons/bi";
 
 const Home = () => {
@@ -112,7 +124,9 @@ const Home = () => {
                     <li>Manage Your Day To Day Tasks</li>
                     <li>Use As Your All In One Grading Application</li>
                     <li>Check Your GMail Directly</li>
-                    <li>Check Latest News Directly Within A Single Application</li>
+                    <li>
+                      Check Latest News Directly Within A Single Application
+                    </li>
                     <li>Get Real Time Weather Update</li>
                     <li>Get Your Own Personalized Dashboard</li>
                   </ul>
@@ -187,8 +201,8 @@ const Home = () => {
                     </h4>
                     <p>
                       AssistMe writing tools can analyze data and generate
-                      insights to help you make better decisions. It can
-                      also help you to write better content faster.
+                      insights to help you make better decisions. It can also
+                      help you to write better content faster.
                     </p>
                   </div>
                 </div>
@@ -239,10 +253,10 @@ const Home = () => {
                     Let's Create AI-Powered Content With A Single Click
                   </h1>
                   <p className="mb-6">
-                    To create powerful content, initially you need to have
-                    the knowledge of AI prompts. But you don't need to
-                    worry anything if you simply use AssistMe. It will
-                    help you on the go based on your personal preferences.
+                    To create powerful content, initially you need to have the
+                    knowledge of AI prompts. But you don't need to worry
+                    anything if you simply use AssistMe. It will help you on the
+                    go based on your personal preferences.
                   </p>
                   <ul className="list-unstyled list-check mb-8">
                     <li>
@@ -300,12 +314,12 @@ const Home = () => {
                     A Magical Tool To Optimize Your Productivity
                   </h1>
                   <p className="mb-6">
-                    AssistMe always focusses on your productivity. It
-                    provides you with the best suggestions to improve your
-                    productivity. It also helps you to manage custom
-                    notifications and workflows. You can also set specific
-                    time for your tasks and notes. You can choose exactly which
-                    notifications you want to receive and when.
+                    AssistMe always focusses on your productivity. It provides
+                    you with the best suggestions to improve your productivity.
+                    It also helps you to manage custom notifications and
+                    workflows. You can also set specific time for your tasks and
+                    notes. You can choose exactly which notifications you want
+                    to receive and when.
                   </p>
                   <a
                     href="login.html"
@@ -340,35 +354,38 @@ const Home = () => {
                 <div className="content">
                   <p className="text-primary-dark">Features 3</p>
                   <h1 className="text-white mb-8">
-                    Check Your GMail & GitHub Directly Within A Single Application Using{" "}
+                    Check Your GMail & GitHub Directly Within A Single
+                    Application Using{" "}
                     <span className="text-primary-dark">AssistMe</span>.
                   </h1>
                   <p className="mb-6">
-                    AssistMe provides your Google Mail and GitHub notifications (Issues & Pull Requests)
-                    directly within it. Therefore, you don't need to open your Gmail or GitHub
-                    separately. You can also manage your Gmail and GitHub notifications
-                    within AssistMe.
+                    AssistMe provides your Google Mail and GitHub notifications
+                    (Issues & Pull Requests) directly within it. Therefore, you
+                    don't need to open your Gmail or GitHub separately. You can
+                    also manage your Gmail and GitHub notifications within
+                    AssistMe.
                   </p>
                   <ul className="list-unstyled list-check mb-8">
                     <li>
                       <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
-                        Start working on your other tasks instead of wasting time on
-                        checking your Gmail or GitHub as AssistMe has got you covered!
+                        Start working on your other tasks instead of wasting
+                        time on checking your Gmail or GitHub as AssistMe has
+                        got you covered!
                       </span>
                     </li>
                     <li>
                       <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
-                        Let's Manage your timeline, schedule and appointments from your Gmail
-                        and GitHub notifications
+                        Let's Manage your timeline, schedule and appointments
+                        from your Gmail and GitHub notifications
                       </span>
                     </li>
                     <li>
                       <IoMdCheckmark size={25} strokeWidth={1.5} />
                       <span>
-                        Use prioritization to make your GMail and GitHub notifications
-                        based on pre-defined rules.
+                        Use prioritization to make your GMail and GitHub
+                        notifications based on pre-defined rules.
                       </span>
                     </li>
                   </ul>
@@ -416,9 +433,8 @@ const Home = () => {
                     data-aos="fade-up-sm"
                     data-aos-delay="100"
                   >
-                    Manage Your Time & Tasks Efficiently With AssistMe,
-                    The Future Of AIO (All In One) Specialized Writing Tool
-                    is Here
+                    Manage Your Time & Tasks Efficiently With AssistMe, The
+                    Future Of AIO (All In One) Specialized Writing Tool is Here
                   </h1>
                 </div>
               </div>
@@ -427,15 +443,17 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="150">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <TbBrandBlogger size={30} />
+                    <TbNote size={30} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Writing Blog Content</h5>
+                    <h5 className="text-white mb-4">
+                      Organize Your Daily Tasks
+                    </h5>
                     <p className="mb-0">
-                      Writing blog content with AssistMe, make you stand out
-                      in your tasks as you are getting a complete package
-                      of features including AI-powered content generation
-                      and Markdown support.
+                      Writing your To-Do tasks with AssistMe, make you stand out
+                      in your tasks as you are getting a complete package of
+                      features including AI-powered content generation and
+                      Markdown support.
                     </p>
                   </div>
                   <div className="flex-shrink-0">
@@ -453,13 +471,14 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="200">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <TbAd size={35} strokeWidth={1} />
+                    <TbLayoutDashboard size={35} strokeWidth={1} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Device Synchronization</h5>
+                    <h5 className="text-white mb-4">Customized Dashboard</h5>
                     <p className="mb-0">
-                      A Magical Tool to Optimize you content for the first know
-                      who you're targeting. Identify your target.
+                      It's your application, and everything within it is owned
+                      by YOU! Customize the dashboard as you like. You have the
+                      full accessibility to modify them as you want!
                     </p>
                   </div>
                   <div className="flex-shrink-0">
@@ -476,13 +495,15 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="250">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <FaRegNewspaper size={27} />
+                    <TbDeviceIpadMinus size={27} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Website Copy</h5>
+                    <h5 className="text-white mb-4">Admin Panel</h5>
                     <p className="mb-0">
-                      Optimize you content for the first know who you're
-                      targeting. Identify your target audience.
+                      If you are thinking about using AssistMe in your
+                      organization, then you are more than welcome, as you can
+                      customize the features and accessibility depending on your
+                      need. You can also apply user role-based features.
                     </p>
                   </div>
                   <div className="flex-shrink-0">
@@ -499,13 +520,14 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="300">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <BiTargetLock size={30} />
+                    <TbDeviceDesktopSearch size={30} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Social Media Content</h5>
+                    <h5 className="text-white mb-4">Devices Synchronization</h5>
                     <p className="mb-0">
-                      First know who you're targeting. Identify your target
-                      audience and understand their needs.
+                      As this is a cloud based web application, your changes
+                      will be available on all across your devices and each of
+                      the devices get updated real-time.
                     </p>
                   </div>
                   <div className="flex-shrink-0">
@@ -525,10 +547,13 @@ const Home = () => {
                     <LuLayoutList size={25} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Landing Page Copy</h5>
+                    <h5 className="text-white mb-4">Grading</h5>
                     <p className="mb-0">
-                      First know who you're targeting. Identify your target
-                      audience and understand their needs.
+                      You can use AssistMe as your default grading application
+                      like Google Spreadsheet or Microsoft Application, or any
+                      kind of other applications relevant to these tasks. The
+                      bottomline is that you don't need to use different
+                      application for these types of tasks anymore from now on!
                     </p>
                   </div>
                   <div className="flex-shrink-0">
@@ -545,13 +570,15 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="200">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <TfiLayoutMediaCenterAlt size={25} />
+                    <TbBrandGoogle size={25} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Marketing Copy</h5>
+                    <h5 className="text-white mb-4">GMail Integration</h5>
                     <p className="mb-0">
-                      A Magical Tool to Optimize you content for the first know
-                      who you're targeting. Identify your target.
+                      You don't need to open your email client, or browser to
+                      check for your new Google emails anymore! You can check
+                      them directly from our application. You can also create
+                      your own custom notification system for each sender.
                     </p>
                   </div>
                   <div className="flex-shrink-0">
@@ -568,13 +595,16 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="250">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <LuGanttChartSquare size={27} />
+                    <TbBrandGithub size={27} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">eCommerce Copy</h5>
+                    <h5 className="text-white mb-4">GitHub Integration</h5>
                     <p className="mb-0">
-                      Writing blog content with GenAI, make sure you have a
-                      clear understanding of who your audience is.
+                      You don't need to open GitHub in your browser or mobile
+                      client for checking notifications of pull requests, issues
+                      and so on. AssistMe has all of them for you. Simply
+                      connect your GitHub account, and you are good to go! It's
+                      that simple, really!
                     </p>
                   </div>
                   <div className="flex-shrink-0">
@@ -594,10 +624,17 @@ const Home = () => {
                     <PiNotebookLight size={30} strokeWidth={1} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Product Description</h5>
+                    <h5 className="text-white mb-4">
+                      Customized Notification System
+                    </h5>
                     <p className="mb-0">
-                      Optimize you content for the first know who you're
-                      targeting. Identify your target audience.
+                      Having all kinds of notifications bugging you continuously
+                      is not a good experience, right? So, fear not! You have
+                      the complete power over your AssistMe's notification
+                      system. Choose exactly which notification you want to
+                      receive and mute all other items, right now! Experience a
+                      safe and sound environment without irrelevant unwanted
+                      notifications bugging you.
                     </p>
                   </div>
                   <div className="flex-shrink-0">
