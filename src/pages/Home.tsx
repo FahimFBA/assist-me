@@ -536,10 +536,13 @@ const Home = () => {
                     <LuLayoutList size={25} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Landing Page Copy</h5>
+                    <h5 className="text-white mb-4">Grading</h5>
                     <p className="mb-0">
-                      First know who you're targeting. Identify your target
-                      audience and understand their needs.
+                      You can use AssistMe as your default grading application
+                      like Google Spreadsheet or Microsoft Application, or any kind
+                      of other applications relevant to these tasks.
+                      The bottomline is that you don't need to use different application
+                      for these types of tasks anymore from now on!
                     </p>
                   </div>
                   <div className="flex-shrink-0">
