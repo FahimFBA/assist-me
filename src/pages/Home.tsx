@@ -5,11 +5,13 @@ import Typed from "typed.js";
 
 // Get the tb-react-icons from: https://react-icons.github.io/react-icons/icons/tb/
 
+
+// removing -   TbBrandBlogger,
+
 import {
   TbAlpha,
   TbArtboard,
   TbBrandJuejin,
-  TbBrandBlogger,
   TbAd,
 } from "react-icons/tb";
 import { IoMdCheckmark } from "react-icons/io";
