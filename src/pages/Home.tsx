@@ -433,7 +433,7 @@ const Home = () => {
                   <div className="content flex-grow-1">
                     <h5 className="text-white mb-4">Organize Your Daily Tasks</h5>
                     <p className="mb-0">
-                      Writing blog content with AssistMe, make you stand out
+                      Writing your To-Do tasks with AssistMe, make you stand out
                       in your tasks as you are getting a complete package
                       of features including AI-powered content generation
                       and Markdown support.
