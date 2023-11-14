@@ -23,6 +23,7 @@ import { PiNotebookLight } from "react-icons/pi";
 import { HiOutlineArrowTrendingDown } from "react-icons/hi2";
 import { TbNote } from "react-icons/tb";
 import { TbLayoutDashboard } from "react-icons/tb";
+import { TbDeviceIpadMinus } from "react-icons/tb";
 // import { BiTargetLock } from "react-icons/bi";
 
 const Home = () => {
@@ -482,13 +483,15 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="250">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <FaRegNewspaper size={27} />
+                    <TbDeviceIpadMinus size={27} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Website Copy</h5>
+                    <h5 className="text-white mb-4">Admin Panel</h5>
                     <p className="mb-0">
-                      Optimize you content for the first know who you're
-                      targeting. Identify your target audience.
+                      If you are thinking about using AssistMe in your organization, then
+                      you are more than welcome, as you can customize the features and
+                      accessibility depending on your need. You can also apply user role-based
+                      features.
                     </p>
                   </div>
                   <div className="flex-shrink-0">
