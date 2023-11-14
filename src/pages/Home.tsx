@@ -29,7 +29,7 @@ import { TbDeviceIpadMinus } from "react-icons/tb";
 import { TbDeviceDesktopSearch } from "react-icons/tb";
 import { TbBrandGithub } from "react-icons/tb";
 import { TbBrandGoogle } from "react-icons/tb";
-import { TbNotification } from "react-icons/tb";
+// import { TbNotification } from "react-icons/tb";
 // import { BiTargetLock } from "react-icons/bi";
 
 const Home = () => {
