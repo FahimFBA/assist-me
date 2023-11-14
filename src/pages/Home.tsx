@@ -24,6 +24,7 @@ import { HiOutlineArrowTrendingDown } from "react-icons/hi2";
 import { TbNote } from "react-icons/tb";
 import { TbLayoutDashboard } from "react-icons/tb";
 import { TbDeviceIpadMinus } from "react-icons/tb";
+import { TbDeviceDesktopSearch } from "react-icons/tb";
 // import { BiTargetLock } from "react-icons/bi";
 
 const Home = () => {
@@ -508,13 +509,14 @@ const Home = () => {
               <div className="col" data-aos="fade-up-sm" data-aos-delay="300">
                 <div className="d-flex flex-column justify-between gap-6 h-full">
                   <div className="icon w-14 h-14 flex-shrink-0 d-flex align-center justify-center rounded-3 p-2 border bg-gradient-3 text-primary-dark border-white border-opacity-10">
-                    <BiTargetLock size={30} />
+                    <TbDeviceDesktopSearch size={30} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Social Media Content</h5>
+                    <h5 className="text-white mb-4">Devices Synchronization</h5>
                     <p className="mb-0">
-                      First know who you're targeting. Identify your target
-                      audience and understand their needs.
+                    As this is a cloud based web application, your changes
+                    will be available on all across your devices
+                    and each of the devices get updated real-time.
                     </p>
                   </div>
                   <div className="flex-shrink-0">
