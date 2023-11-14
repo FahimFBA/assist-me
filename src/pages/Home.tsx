@@ -25,6 +25,7 @@ import { TbNote } from "react-icons/tb";
 import { TbLayoutDashboard } from "react-icons/tb";
 import { TbDeviceIpadMinus } from "react-icons/tb";
 import { TbDeviceDesktopSearch } from "react-icons/tb";
+import { TbBrandGoogle } from "react-icons/tb";
 // import { BiTargetLock } from "react-icons/bi";
 
 const Home = () => {
@@ -562,10 +563,12 @@ const Home = () => {
                     <TfiLayoutMediaCenterAlt size={25} />
                   </div>
                   <div className="content flex-grow-1">
-                    <h5 className="text-white mb-4">Marketing Copy</h5>
+                    <h5 className="text-white mb-4">GMail Integration</h5>
                     <p className="mb-0">
-                      A Magical Tool to Optimize you content for the first know
-                      who you're targeting. Identify your target.
+                      You don't need to open your email client, or browser to check
+                      for your new Google emails anymore! You can check them directly
+                      from our application. You can also create your own custom
+                      notification system for each sender.
                     </p>
                   </div>
                   <div className="flex-shrink-0">
