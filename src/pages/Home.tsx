@@ -663,7 +663,7 @@ const Home = () => {
                     data-aos="fade-up-sm"
                     data-aos-delay="50"
                   >
-                    <span className="text-primary-dark">GenAI.</span>
+                    <span className="text-primary-dark">AssistMe.</span>
                     Received <img src="/images/icons/star.png" alt="" /> 4.8/5
                     Stars in Over 10,000+ Reviews.
                   </h1>
@@ -1546,7 +1546,7 @@ const Home = () => {
                     data-aos="fade-up-sm"
                     data-aos-delay="50"
                   >
-                    Questions About our GenAI?{" "}
+                    Questions About our AssistMe?{" "}
                     <br className="d-none d-md-block" />
                     We have Answers!
                   </h1>
@@ -1575,7 +1575,7 @@ const Home = () => {
                         aria-controls="faq-collapseOne"
                       >
                         <span className="icon"></span>
-                        What Is GenAI Content Writing Tool?
+                        What Is AssistMe Content Writing Tool?
                       </button>
                     </h2>
                     <div
@@ -1734,7 +1734,7 @@ const Home = () => {
                   <div className="text-center pt-6 px-6 pt-md-10 px-md-10 pt-lg-18 px-lg-18">
                     <h2 className="mb-6 text-white">
                       Using
-                      <span className="text-primary-dark">GenAI</span>
+                      <span className="text-primary-dark">AssistME</span>
                       you can save hours each week creating long-form content.
                     </h2>
                     <a href="login.html" className="btn btn-primary-dark">
