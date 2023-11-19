@@ -31,8 +31,8 @@ const ResetPassword = () => {
                 <div className="bg-dark-blue-4 border rounded-4 h-full p-6 p-md-20 text-center d-flex flex-column justify-center">
                   <h2 className="text-white mb-12">
                     Unlock the Power of <br className="d-none d-xl-block" />
-                    <span className="text-primary-dark">AssistMe</span> Copywriting
-                    Tool
+                    <span className="text-primary-dark">AssistMe</span> Personalized
+                    Assistant Tool
                   </h2>
                   <img
                     src="/images/screens/screen-5.png"
