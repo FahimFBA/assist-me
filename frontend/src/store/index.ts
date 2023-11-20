@@ -19,6 +19,15 @@ import {
   useUpdateUserProfileMutation,
 } from "./API/userAuthAPI";
 
+// Email API
+import {
+  emailAPI,
+  useGetGoogleAccessTokenQuery,
+  useStartGmailAuthenticationQuery,
+} from "./API/emailAPI";
+
+import { tokenSlice, clearToken, collectTokens } from "./Slices/tokenSlice";
+
 const persistConfig = {
   key: "root",
   storage,
@@ -34,17 +43,24 @@ const persistedUserReducer = persistReducer(
   userDataSlice.reducer,
 );
 
+const persistedTokenDataReducer = persistReducer(
+  persistConfig,
+  tokenSlice.reducer,
+);
+
 export const store = configureStore({
   reducer: {
     system: persistedSystemReducer,
     user: persistedUserReducer,
+    tokenData: persistedTokenDataReducer,
     [userAuthAPI.reducerPath]: userAuthAPI.reducer,
     [taskAPI.reducerPath]: taskAPI.reducer,
+    [emailAPI.reducerPath]: emailAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }).concat(userAuthAPI.middleware, taskAPI.middleware),
+    }).concat(userAuthAPI.middleware, taskAPI.middleware, emailAPI.middleware),
 });
 
 export const persistedStore = persistStore(store);
@@ -70,4 +86,12 @@ export {
   useSendResetPassWordEmailMutation,
   useSetNewPassWordMutation,
   useUpdateUserProfileMutation,
+
+  //  Email API
+  useGetGoogleAccessTokenQuery,
+  useStartGmailAuthenticationQuery,
+
+  // tokenSlice
+  clearToken,
+  collectTokens,
 };

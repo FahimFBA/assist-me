@@ -10,6 +10,8 @@ import UseCases from "./UseCases";
 import Contact from "./Contact";
 import Email from "./Email";
 import Tasks from "./Tasks";
+import EmailSuccess from "./EmailSuccess";
+import EmailPage from "./EmailPage";
 
 export {
   Home,
@@ -24,4 +26,6 @@ export {
   Contact,
   Email,
   Tasks,
+  EmailSuccess,
+  EmailPage,
 };

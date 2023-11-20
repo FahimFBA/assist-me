@@ -12,6 +12,8 @@ import {
   Contact,
   Tasks,
   Email,
+  EmailSuccess,
+  EmailPage,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AOS from "aos";
@@ -30,6 +32,8 @@ const App = () => {
         const photoURL = user.photoURL as string;
         const name = user.displayName as string;
         const email = user.email as string;
+
+        console.log("User is signed in", uid);
         dispatch(
           loginSuccess({
             uid,
@@ -70,6 +74,8 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/email" element={<Email />} />
+          <Route path="/email-success/" element={<EmailSuccess />} />
+          <Route path="/email-page" element={<EmailPage />} />
         </Route>
 
         <Route path="*" element={<ErrorPage />} />
