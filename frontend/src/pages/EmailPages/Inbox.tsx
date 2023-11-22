@@ -1,20 +1,19 @@
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, clearToken, useGetAllEmailsQuery } from "../store";
+import { RootState, clearToken, useGetAllEmailsQuery } from "../../store";
 import { useNavigate } from "react-router-dom";
-import EmailList from "../components/Email/EmailList";
+import EmailList from "../../components/Email/EmailList";
 
-const EmailPage = () => {
+const Inbox = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const access_token = useSelector(
     (state: RootState) => state.tokenData.access_token,
   );
 
-  const { data, isLoading, isError, isSuccess, isFetching } =
-    useGetAllEmailsQuery({
-      x: "messages",
-      access_token: `${access_token}`,
-    });
+  const { data, isLoading, isError, isFetching } = useGetAllEmailsQuery({
+    x: "messages",
+    access_token: `${access_token}`,
+  });
 
   console.log("dtaa", data);
 
@@ -39,9 +38,11 @@ const EmailPage = () => {
         <button className="btn btn-secondary">Bulk Email</button>
         <button className="btn btn-secondary">Signout</button>
       </div>
-      {data?.map((item, index) => <EmailList key={index} {...item} />)}
+      {data?.map((item: any, index: number) => (
+        <EmailList key={index} {...item} />
+      ))}
     </div>
   );
 };
 
-export default EmailPage;
+export default Inbox;

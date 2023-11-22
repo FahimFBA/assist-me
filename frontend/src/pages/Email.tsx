@@ -11,7 +11,7 @@ const Email = () => {
 
   useEffect(() => {
     if (access_token) {
-      navigate("/email-page");
+      navigate("/email-inbox");
     }
   }, [access_token]);
 

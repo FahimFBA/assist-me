@@ -11,7 +11,9 @@ import Contact from "./Contact";
 import Email from "./Email";
 import Tasks from "./Tasks";
 import EmailSuccess from "./EmailSuccess";
-import EmailPage from "./EmailPage";
+import EmailDev from "./EmailDev";
+import Inbox from "./EmailPages/Inbox";
+import Templates from "./EmailPages/Templates";
 
 export {
   Home,
@@ -27,5 +29,7 @@ export {
   Email,
   Tasks,
   EmailSuccess,
-  EmailPage,
+  EmailDev,
+  Templates,
+  Inbox,
 };

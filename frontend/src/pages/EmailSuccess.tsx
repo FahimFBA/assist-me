@@ -21,7 +21,7 @@ const EmailSuccess = () => {
     toast.dismiss();
     toast.success("Authentication successful!, Logging you in");
     dispatch(collectTokens(data));
-    navigate("/email-page");
+    navigate("/email-inbox");
   }
 
   if (isError) {

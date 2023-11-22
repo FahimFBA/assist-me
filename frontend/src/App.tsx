@@ -13,7 +13,9 @@ import {
   Tasks,
   Email,
   EmailSuccess,
-  EmailPage,
+  EmailDev,
+  Inbox,
+  Templates,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AOS from "aos";
@@ -22,6 +24,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./config/firebase-config";
 import { loginSuccess, logoutSuccess } from "./store";
 import { AuthenticationRoutes, ProtectedRoutes } from "./pages/utils";
+import EmailProtectedRoutes from "./pages/utils/EmailProtectedRoutes";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -75,7 +78,12 @@ const App = () => {
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/email" element={<Email />} />
           <Route path="/email-success/" element={<EmailSuccess />} />
-          <Route path="/email-page" element={<EmailPage />} />
+        </Route>
+
+        <Route element={<EmailProtectedRoutes />}>
+          <Route path="/email-dev" element={<EmailDev />} />
+          <Route path="/email-inbox" element={<Inbox />} />
+          <Route path="/email-templates" element={<Templates />} />
         </Route>
 
         <Route path="*" element={<ErrorPage />} />
