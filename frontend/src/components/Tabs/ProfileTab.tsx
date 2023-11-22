@@ -28,7 +28,12 @@ const ProfileTab = () => {
         </li>
         <li className="me-2">
           <Link to="/" className={tabStyles("Settings")}>
-            Settings
+            Contact Info
+          </Link>
+        </li>
+        <li className="me-2">
+          <Link to="/" className={tabStyles("Settings")}>
+            Grades
           </Link>
         </li>
       </ul>

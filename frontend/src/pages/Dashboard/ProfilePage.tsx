@@ -50,7 +50,9 @@ const ProfilePage = () => {
         here later
       </p>
       <br />
-      <button onClick={appSignout}>click to logout</button>
+      <button className="btn btn-secondary" onClick={appSignout}>
+        click to logout
+      </button>
     </div>
   );
 };
