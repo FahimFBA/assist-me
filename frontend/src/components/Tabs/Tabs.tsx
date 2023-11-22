@@ -1,17 +1,12 @@
 import "../../styles/tailwind.css";
 
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Tabs = () => {
   const location = useLocation();
-
-  // Access the pathname to get the current route/page
   const currentPage = location.pathname;
 
-  console.log("currentPage", currentPage);
-
-  const tabStyles = (tabName) => {
+  const tabStyles = (tabName: string) => {
     const isActive = currentPage.includes(tabName);
     return `inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 ${
       isActive ? "text-blue-600 border-blue-600" : ""

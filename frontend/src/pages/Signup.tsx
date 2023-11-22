@@ -33,7 +33,7 @@ const Signup: React.FC = () => {
         error: "Error creating user",
       })
       .then(() => setData(initialState))
-      .then(() => navigate("/dashboard"))
+      .then(() => navigate("/profile-page"))
       .catch((err) => toast.error(err));
   };
 
@@ -45,7 +45,7 @@ const Signup: React.FC = () => {
         error: "Could not create user!",
       })
       .then((res) => console.log(res))
-      .then(() => navigate("/dashboard"))
+      .then(() => navigate("/profile-page"))
       .catch((err) => toast.error(err));
 
   return (

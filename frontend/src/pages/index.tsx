@@ -1,5 +1,4 @@
 import Home from "./Home";
-import Dashboard from "./Dashboard";
 import Login from "./Login";
 import Signup from "./Signup";
 import ResetPassword from "./ResetPassword";
@@ -14,6 +13,9 @@ import EmailSuccess from "./EmailSuccess";
 import EmailDev from "./EmailDev";
 import Inbox from "./EmailPages/Inbox";
 import Templates from "./EmailPages/Templates";
+//  dashboard
+import ProfilePage from "./Dashboard/ProfilePage";
+import DetailsPage from "./Dashboard/DetailsPage";
 
 export {
   Home,
@@ -21,7 +23,6 @@ export {
   Login,
   ResetPassword,
   ForgotPassword,
-  Dashboard,
   ErrorPage,
   Pricing,
   UseCases,
@@ -32,4 +33,8 @@ export {
   EmailDev,
   Templates,
   Inbox,
+
+  // dashboard
+  ProfilePage,
+  DetailsPage,
 };

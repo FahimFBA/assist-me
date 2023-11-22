@@ -4,14 +4,19 @@ import "../../styles/dashboardStyles/app-dark.css";
 import SidebarLink from "./SidebarLink";
 import { FaLock, Fa500Px, FaMailBulk, FaDashcube } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { useLogoutMutation } from "../../store";
+import { clearToken, logoutSuccess, useLogoutMutation } from "../../store";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
+  const dispatch = useDispatch();
   const [logout] = useLogoutMutation();
   const navigate = useNavigate();
 
-  const appSignout = async () =>
+  const appSignout = async () => {
+    dispatch(clearToken());
+    dispatch(logoutSuccess());
+
     await toast
       .promise(logout(null).unwrap, {
         pending: "Logging out...",
@@ -19,6 +24,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
         error: "Logout failed",
       })
       .then(() => navigate("/login"));
+  };
   return (
     <>
       <div className="vertical-menu">
@@ -30,7 +36,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
               <li className="menu-title">Menu</li>
 
               <SidebarLink
-                link="/dashboard"
+                link="/profile-page"
                 icon={<FaDashcube />}
                 label="Dashboard"
               />

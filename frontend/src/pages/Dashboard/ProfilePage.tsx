@@ -1,14 +1,23 @@
 import { toast } from "react-toastify";
-import { RootState, useLogoutMutation } from "../store";
+import {
+  RootState,
+  clearToken,
+  logoutSuccess,
+  useLogoutMutation,
+} from "../../store";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-const Dashboard = () => {
+const ProfilePage = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.user);
   const [logout] = useLogoutMutation();
 
-  const appSignout = async () =>
+  const appSignout = async () => {
+    dispatch(clearToken());
+    dispatch(logoutSuccess());
     await toast
       .promise(logout(null).unwrap, {
         pending: "Logging out...",
@@ -17,6 +26,7 @@ const Dashboard = () => {
       })
       // .then(() => setIsMenuOpen(false))
       .then(() => navigate("/login"));
+  };
 
   return (
     <div className="">
@@ -33,8 +43,8 @@ const Dashboard = () => {
         alt=""
       />
       <p>
-        This is the dashboard which is under development. Under this, you should
-        be able to edit user data and delete your account permanently.
+        This is the ProfilePage which is under development. Under this, you
+        should be able to edit user data and delete your account permanently.
         <br />
         the password changing system is under development, which you can access
         here later
@@ -45,4 +55,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default ProfilePage;

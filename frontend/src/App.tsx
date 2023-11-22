@@ -5,7 +5,6 @@ import {
   Login,
   ResetPassword,
   ForgotPassword,
-  Dashboard,
   ErrorPage,
   Pricing,
   UseCases,
@@ -16,6 +15,8 @@ import {
   EmailDev,
   Inbox,
   Templates,
+  DetailsPage,
+  ProfilePage,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AOS from "aos";
@@ -25,6 +26,7 @@ import { auth } from "./config/firebase-config";
 import { loginSuccess, logoutSuccess } from "./store";
 import { AuthenticationRoutes, ProtectedRoutes } from "./pages/utils";
 import EmailProtectedRoutes from "./pages/utils/EmailProtectedRoutes";
+import DashboardProtectedRoutes from "./pages/utils/DashboardProtectedRoutes";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -74,10 +76,14 @@ const App = () => {
         </Route>
 
         <Route element={<ProtectedRoutes />}>
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/email" element={<Email />} />
           <Route path="/email-success/" element={<EmailSuccess />} />
+        </Route>
+
+        <Route element={<DashboardProtectedRoutes />}>
+          <Route path="/profile-page" element={<ProfilePage />} />
+          <Route path="/details-page" element={<DetailsPage />} />
         </Route>
 
         <Route element={<EmailProtectedRoutes />}>
