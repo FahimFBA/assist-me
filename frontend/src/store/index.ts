@@ -26,6 +26,8 @@ import {
   useStartGmailAuthenticationQuery,
 } from "./API/emailAPI";
 
+import { gmailAPI, useGetAllEmailsQuery } from "./API/gmailAPI";
+
 import { tokenSlice, clearToken, collectTokens } from "./Slices/tokenSlice";
 
 const persistConfig = {
@@ -56,11 +58,17 @@ export const store = configureStore({
     [userAuthAPI.reducerPath]: userAuthAPI.reducer,
     [taskAPI.reducerPath]: taskAPI.reducer,
     [emailAPI.reducerPath]: emailAPI.reducer,
+    [gmailAPI.reducerPath]: gmailAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }).concat(userAuthAPI.middleware, taskAPI.middleware, emailAPI.middleware),
+    }).concat(
+      userAuthAPI.middleware,
+      taskAPI.middleware,
+      emailAPI.middleware,
+      gmailAPI.middleware,
+    ),
 });
 
 export const persistedStore = persistStore(store);
@@ -94,4 +102,7 @@ export {
   // tokenSlice
   clearToken,
   collectTokens,
+
+  // Gmail API
+  useGetAllEmailsQuery,
 };

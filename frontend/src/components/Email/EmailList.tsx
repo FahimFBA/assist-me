@@ -32,21 +32,11 @@ const EmailList: FC<IEmailListProps> = ({ message, senderName }) => {
                 </div>
                 <div className="f-body">
                   <div className="meta-mail-time">
-                    <p className="user-email" data-mailTo="laurieFox@mail.com">
-                      {senderName}
-                    </p>
+                    <p className="user-email">{senderName}</p>
                   </div>
                   <div className="meta-title-tag">
-                    <p
-                      className="mail-content-excerpt"
-                      data-mailDescription='{"ops":[{"insert":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.\n"}]}'
-                    >
-                      <span
-                        className="mail-title"
-                        data-mailTitle="Promotion Page"
-                      >
-                        {message}
-                      </span>
+                    <p className="mail-content-excerpt">
+                      <span className="mail-title">{message}</span>
                     </p>
                     <p className="meta-time align-self-center">2:00 PM</p>
                   </div>
