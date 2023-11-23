@@ -38,7 +38,7 @@ const App = () => {
         const name = user.displayName as string;
         const email = user.email as string;
 
-        console.log("User is signed in", uid);
+        // console.log("User is signed in", user);
         dispatch(
           loginSuccess({
             uid,

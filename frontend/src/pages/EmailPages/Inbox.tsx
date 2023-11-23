@@ -15,7 +15,7 @@ const Inbox = () => {
     access_token: `${access_token}`,
   });
 
-  console.log("dtaa", data);
+  // console.log("dtaa", data);
 
   if (!access_token) {
     navigate("/email");

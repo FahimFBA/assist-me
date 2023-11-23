@@ -1,5 +1,5 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { auth, googleProvider } from "../../config/firebase-config";
+import { auth, db, googleProvider } from "../../config/firebase-config";
 import {
   createUserWithEmailAndPassword,
   UserCredential,
@@ -11,6 +11,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { IUserSignInData, IUpdateUser } from "../../types/interface";
+import { addDoc, collection } from "firebase/firestore";
+
+const usersCollectionName = "users";
 
 export const userAuthAPI = createApi({
   reducerPath: "userAuthAPI",
@@ -41,6 +44,20 @@ export const userAuthAPI = createApi({
             email,
             password,
           );
+
+          await addDoc(collection(db, usersCollectionName), {
+            uid: response?.user?.uid,
+            displayName: response?.user?.displayName,
+            firstName: "",
+            lastName: "",
+            universityName: "",
+            department: "",
+            major: "",
+            studentID: "",
+            phoneNumber: response?.user?.phoneNumber,
+            photoURL: response?.user?.photoURL,
+          });
+
           return {
             data: response,
           };
@@ -61,6 +78,20 @@ export const userAuthAPI = createApi({
             email,
             password,
           );
+
+          await addDoc(collection(db, usersCollectionName), {
+            uid: response?.user?.uid,
+            displayName: response?.user?.displayName,
+            firstName: "",
+            lastName: "",
+            universityName: "",
+            department: "",
+            major: "",
+            studentID: "",
+            phoneNumber: response?.user?.phoneNumber,
+            photoURL: response?.user?.photoURL,
+          });
+
           return {
             data: response,
           };
