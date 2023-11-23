@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
-    "prepare": "husky install",
+    "prepare": "cd .. && husky install frontend/.husky",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
