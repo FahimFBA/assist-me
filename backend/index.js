@@ -14,7 +14,7 @@ const port = 3001; // Choose any port you prefer
 // Replace these with your actual OAuth2 credentials
 const GOOGLE_API_CLIENT_ID = process.env.GOOGLE_API_CLIENT_ID;
 const GOOGLE_API_CLIENT_SECRET = process.env.GOOGLE_API_CLIENT_SECRET;
-const YOUR_REDIRECT_URL = "http://localhost:5173/email-success";
+const YOUR_REDIRECT_URL = `${process.env.FRONTEND_URL}/email-success`;
 
 const oauth2Client = new google.auth.OAuth2(
   GOOGLE_API_CLIENT_ID,
