@@ -4,7 +4,9 @@ import { IGmailTokenReturnData } from "../../types/interface";
 // Define a service using a base URL and expected endpoints
 export const emailAPI = createApi({
   reducerPath: "emailAPI",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: import.meta.env.VITE_APP_GMAIL_BACKEND_URL,
+  }),
   tagTypes: ["Email"],
   endpoints: (builder) => ({
     startGmailAuthentication: builder.query({
