@@ -9,7 +9,6 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
-    "prepare": "cd .. && husky install frontend/.husky",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
@@ -52,7 +51,6 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "husky": "^8.0.0",
     "i": "^0.3.7",
     "lint": "^0.8.19",
     "lint-staged": "^14.0.1",
