@@ -15,8 +15,6 @@ const Inbox = () => {
     access_token: `${access_token}`,
   });
 
-  // console.log("dtaa", data);
-
   if (!access_token) {
     navigate("/email");
   }
@@ -36,7 +34,12 @@ const Inbox = () => {
       <div className="d-flex justify-center gap-2 my-5">
         <button className="btn btn-primary">Single Email</button>
         <button className="btn btn-secondary">Bulk Email</button>
-        <button className="btn btn-secondary">Signout</button>
+        <button
+          onClick={() => dispatch(clearToken())}
+          className="btn btn-secondary"
+        >
+          Signout
+        </button>
       </div>
       {data?.map((item: any, index: number) => (
         <EmailList key={index} {...item} />

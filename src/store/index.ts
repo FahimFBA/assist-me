@@ -20,11 +20,7 @@ import {
 } from "./API/userAuthAPI";
 
 // Email API
-import {
-  emailAPI,
-  useGetGoogleAccessTokenQuery,
-  useStartGmailAuthenticationQuery,
-} from "./API/emailAPI";
+import { emailAPI, useStartGmailAuthenticationMutation } from "./API/emailAPI";
 
 import { gmailAPI, useGetAllEmailsQuery } from "./API/gmailAPI";
 
@@ -96,8 +92,7 @@ export {
   useUpdateUserProfileMutation,
 
   //  Email API
-  useGetGoogleAccessTokenQuery,
-  useStartGmailAuthenticationQuery,
+  useStartGmailAuthenticationMutation,
 
   // tokenSlice
   clearToken,

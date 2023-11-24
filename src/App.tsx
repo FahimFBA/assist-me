@@ -11,8 +11,6 @@ import {
   Contact,
   Tasks,
   Email,
-  EmailSuccess,
-  EmailDev,
   Inbox,
   Templates,
   DetailsPage,
@@ -78,7 +76,6 @@ const App = () => {
         <Route element={<ProtectedRoutes />}>
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/email" element={<Email />} />
-          <Route path="/email-success/" element={<EmailSuccess />} />
         </Route>
 
         <Route element={<DashboardProtectedRoutes />}>
@@ -87,7 +84,6 @@ const App = () => {
         </Route>
 
         <Route element={<EmailProtectedRoutes />}>
-          <Route path="/email-dev" element={<EmailDev />} />
           <Route path="/email-inbox" element={<Inbox />} />
           <Route path="/email-templates" element={<Templates />} />
         </Route>
