@@ -9,8 +9,6 @@ import UseCases from "./UseCases";
 import Contact from "./Contact";
 import Email from "./Email";
 import Tasks from "./Tasks";
-import EmailSuccess from "./EmailSuccess";
-import EmailDev from "./EmailDev";
 import Inbox from "./EmailPages/Inbox";
 import Templates from "./EmailPages/Templates";
 //  dashboard
@@ -29,8 +27,6 @@ export {
   Contact,
   Email,
   Tasks,
-  EmailSuccess,
-  EmailDev,
   Templates,
   Inbox,
 

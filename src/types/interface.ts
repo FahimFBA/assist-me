@@ -33,7 +33,8 @@ export interface ITaskProps {
 
 export interface IGmailTokenReturnData {
   access_token: string;
-  expiry_date: number;
+  authuser: string;
+  expires_in: number;
   refresh_token: string;
   scope: string;
   token_type: string;
