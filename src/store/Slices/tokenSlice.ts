@@ -4,10 +4,11 @@ import { IGmailTokenReturnData } from "../../types/interface";
 
 export const initialState: IGmailTokenReturnData = {
   access_token: "",
-  expiry_date: 0,
+  expires_in: 0,
   refresh_token: "",
   scope: "",
   token_type: "",
+  authuser: "",
 };
 
 export const tokenSlice = createSlice({
