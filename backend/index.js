@@ -8,7 +8,12 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+  })
+);
+
 const port = 3001; // Choose any port you prefer
 
 // Replace these with your actual OAuth2 credentials
