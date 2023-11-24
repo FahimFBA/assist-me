@@ -12,6 +12,8 @@ import { RootState } from "../store";
 import { NewTaskType } from "../types/types";
 import TaskForm from "../components/Forms/TaskForm";
 
+import { Button } from "@/components/ui/button";
+
 const Tasks = () => {
   const userID = useSelector((state: RootState) => state.user.uid);
   const initialState: NewTaskType = {
@@ -63,7 +65,7 @@ const Tasks = () => {
   return (
     <div className="row">
       <TaskModal
-        button={<button className="btn btn-primary">Create Task</button>}
+        button={<Button className="btn btn-primary">Create Task</Button>}
         title="Create Task"
         onCancel={() => console.log("cancel")}
         onClose={() => console.log("close")}
