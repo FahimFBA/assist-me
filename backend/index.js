@@ -36,6 +36,12 @@ const scopes = [
 ];
 
 app.get("/startGoogleAuthentication", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   const url = oauth2Client.generateAuthUrl({
     access_type: "offline",
     scope: scopes,
@@ -46,6 +52,12 @@ app.get("/startGoogleAuthentication", (req, res) => {
 
 // Handle the callback from Google
 app.get("/googleCallback", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   const { code } = req.query;
   try {
     if (!code) {
@@ -62,6 +74,12 @@ app.get("/googleCallback", async (req, res) => {
       error: error.message,
     });
   }
+});
+
+app.get("/", async (req, res) => {
+  res.status(200).json({
+    message: "Welcome ! You need the Google Auth code to use the API ",
+  });
 });
 
 app.listen(port, () => {
