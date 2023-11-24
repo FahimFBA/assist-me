@@ -1,7 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, clearToken, useGetAllEmailsQuery } from "../../store";
 import { useNavigate } from "react-router-dom";
-import EmailList from "../../components/Email/EmailList";
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const Inbox = () => {
   const navigate = useNavigate();
@@ -31,6 +39,7 @@ const Inbox = () => {
 
   return (
     <div>
+      {/*  */}
       <div className="d-flex justify-center gap-2 my-5">
         <button className="btn btn-primary">Single Email</button>
         <button className="btn btn-secondary">Bulk Email</button>
@@ -41,9 +50,24 @@ const Inbox = () => {
           Signout
         </button>
       </div>
-      {data?.map((item: any, index: number) => (
-        <EmailList key={index} {...item} />
-      ))}
+      <Table className="w-full">
+        <TableHeader>
+          <TableRow>
+            <TableHead className="col-span-2">Time</TableHead>
+            <TableHead className="col-span-2">Sender</TableHead>
+            <TableHead className="col-span-8">Message</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {data?.map((item: any, index: number) => (
+            <TableRow>
+              <TableCell>sdjncsdkjn</TableCell>
+              <TableCell>{item?.senderName}</TableCell>
+              <TableCell>{item?.message}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   );
 };
