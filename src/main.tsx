@@ -10,11 +10,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.js";
-import "./styles/plugin.css";
-import "./styles/style.css";
-
 import "aos/dist/aos.css"; // Import AOS styles
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
