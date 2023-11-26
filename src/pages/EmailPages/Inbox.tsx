@@ -50,7 +50,7 @@ const Inbox = () => {
           Signout
         </button>
       </div>
-      <Table className="w-full">
+      <Table className="w-full rounded-md border">
         <TableHeader>
           <TableRow>
             <TableHead className="col-span-2">Time</TableHead>
@@ -59,8 +59,8 @@ const Inbox = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.map((item: any, index: number) => (
-            <TableRow>
+          {data?.map((item, index: number) => (
+            <TableRow key={index}>
               <TableCell>sdjncsdkjn</TableCell>
               <TableCell>{item?.senderName}</TableCell>
               <TableCell>{item?.message}</TableCell>

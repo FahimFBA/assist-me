@@ -1,96 +1,40 @@
-import { useState } from "react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 const DeleteModal = ({
-  button,
   title,
+  icon,
   description,
-  onClose,
-  onCancel,
   onConfirm,
 }: {
-  button: JSX.Element;
   title: string;
+  icon: React.ReactNode;
   description: string;
-  onClose: () => void;
-  onCancel: () => void;
-  onConfirm: () => void;
+  onConfirm: (id: string) => Promise<string>;
 }) => {
-  const [showModal, setShowModal] = useState(false);
-
   return (
-    <>
-      <button
-        style={{
-          border: "none",
-          background: "none",
-        }}
-        onClick={() => setShowModal(true)}
-      >
-        {button}
-      </button>
-
-      {showModal && (
-        <>
-          <div
-            className="modal-backdrop fade show"
-            style={{ opacity: 0.7 }}
-          ></div>
-          <div
-            className="modal fade show"
-            tabIndex={-1}
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-            style={{
-              display: "block",
-              backgroundColor: "rgba(0, 0, 0, 0.7)",
-            }}
-          >
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="exampleModalLabel">
-                    {title}
-                  </h1>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                    onClick={() => {
-                      setShowModal(false);
-                      onClose();
-                    }}
-                  ></button>
-                </div>
-                <div className="modal-body">{description}</div>
-                <div className="modal-footer">
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={() => {
-                      setShowModal(false);
-                      onCancel();
-                    }}
-                  >
-                    Close
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={() => {
-                      setShowModal(false);
-                      onConfirm();
-                    }}
-                  >
-                    Confirm
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
-    </>
+    <AlertDialog>
+      <AlertDialogTrigger asChild>{icon}</AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>{title}</AlertDialogTitle>
+          <AlertDialogDescription>{description}</AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction onClick={onConfirm}>Continue</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 };
 

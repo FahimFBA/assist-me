@@ -3,7 +3,6 @@ import {
   useDeleteOneTaskMutation,
   useCreateOneTaskMutation,
 } from "../store/API/taskAPI";
-import Task from "../components/Tasks/Task";
 import { toast } from "react-toastify";
 import TaskModal from "../components/Modal/TaskModal";
 import React from "react";
@@ -11,6 +10,19 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store";
 import { NewTaskType } from "../types/types";
 import TaskForm from "../components/Forms/TaskForm";
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import dayjs from "dayjs";
+import { ITaskProps } from "@/types/interface";
+import TaskDropdown from "@/components/Dropdown/TaskDropdown";
+import { Button } from "@/components/ui/button";
 
 const Tasks = () => {
   const userID = useSelector((state: RootState) => state.user.uid);
@@ -63,23 +75,62 @@ const Tasks = () => {
   }
 
   return (
-    <div className="row">
-      <TaskModal
-        onConfirm={onSubmit}
-        buttonText="Add Task"
-        dialogueDescription="Make Tasks for a productive Day! Click save when you're done."
-        dialogueTitle="Create New Task"
-        confirmButtonText="Create"
-      >
-        <TaskForm
-          {...newTask}
-          handleInput={handleInput}
-          onDateChange={onDateChange}
-        />
-      </TaskModal>
-      {data?.map((task) => {
-        return <Task key={task.id} {...task} deleteTask={deleteTask} />;
-      })}
+    <div className="flex flex-col gap-5">
+      {/* Modal */}
+      <div className="flex justify-center">
+        <TaskModal
+          onConfirm={onSubmit}
+          buttonText="Add Task"
+          dialogueDescription="Make Tasks for a productive Day! Click save when you're done."
+          dialogueTitle="Create New Task"
+          confirmButtonText="Create"
+        >
+          <TaskForm
+            {...newTask}
+            handleInput={handleInput}
+            onDateChange={onDateChange}
+          />
+        </TaskModal>
+      </div>
+      {/* Table */}
+      <Table className="w-full rounded-md border">
+        <TableHeader>
+          <TableRow>
+            <TableHead className="col-span-1">Task</TableHead>
+            <TableHead className="col-span-1">Deadline</TableHead>
+            <TableHead className="col-span-1">Status</TableHead>
+            <TableHead className="col-span-9">Description</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {data?.map((task: ITaskProps) => {
+            console.log(task);
+            return (
+              <TableRow key={task?.id}>
+                <TableCell>{task?.title}</TableCell>
+                <TableCell>
+                  {task?.deadline
+                    ? // @ts-ignore
+                      dayjs(task?.deadline?.seconds).format(
+                        "dddd, MMMM D, YYYY",
+                      )
+                    : "No Deadline"}
+                </TableCell>
+                <TableCell>{task?.status}</TableCell>
+                <TableCell className="flex gap-2 items-center">
+                  <Button variant="outline" size="sm" className="text-xs">
+                    {task?.label ? task?.label : "No Label"}
+                  </Button>
+                  {task?.description}
+                </TableCell>
+                <TableCell>
+                  <TaskDropdown deleteTask={() => deleteTask(task?.id)} />
+                </TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
     </div>
   );
 };
