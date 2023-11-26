@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { API_KEY, CLIENT_ID, DISCOVERY_DOC, SCOPES } from "../CONSTANT";
 import { collectTokens } from "../store";
 import { useDispatch } from "react-redux";
+import { Button } from "@/components/ui/button";
 
 const Email = () => {
   const navigate = useNavigate();
@@ -59,10 +60,13 @@ const Email = () => {
 
   if (!access_token) {
     return (
-      <div>
-        <button className="btn btn-primary" onClick={handleAuthClick}>
-          Authenticate Email
-        </button>
+      <div
+        style={{
+          backgroundColor: "#f5f5f5",
+        }}
+        className="h-[95vh] flex justify-center items-center"
+      >
+        <Button onClick={handleAuthClick}>Authenticate Email</Button>
       </div>
     );
   }
