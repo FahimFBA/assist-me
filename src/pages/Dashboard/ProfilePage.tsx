@@ -8,6 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { Button } from "@/components/ui/button";
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -50,9 +51,9 @@ const ProfilePage = () => {
         here later
       </p>
       <br />
-      <button className="btn btn-secondary" onClick={appSignout}>
-        click to logout
-      </button>
+      <Button variant="default" onClick={appSignout}>
+        Logout
+      </Button>
     </div>
   );
 };

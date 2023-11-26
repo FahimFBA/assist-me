@@ -1,4 +1,7 @@
 import React from "react";
+import InputField3 from "../Forms/InputField3";
+import DatePicker from "./DatePicker";
+import { Label } from "@radix-ui/react-label";
 
 const TaskForm = ({
   title,
@@ -7,69 +10,66 @@ const TaskForm = ({
   label,
   description,
   handleInput,
+  onDateChange,
 }: {
   title: string;
-  deadline: string;
+  deadline: Date;
   status: string;
   label: string;
   description: string;
   handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onDateChange: (date: Date) => void;
 }) => {
   return (
-    <form
-      onSubmit={(e: React.ChangeEvent<HTMLFormElement>) => e.preventDefault()}
-    >
-      <label htmlFor="" className="">
-        Title
-      </label>
-      <input
+    <div className="grid gap-4 py-4">
+      <InputField3
+        label="Task Name"
+        placeholder="scdjn"
         type="text"
-        className="form-control"
         onChange={handleInput}
         name="title"
         value={title}
+        required
       />
-      <label htmlFor="" className="">
-        Deadline
-      </label>
-      <input
-        type="date"
-        className="form-control"
-        onChange={handleInput}
-        name="deadline"
-        value={deadline}
-      />
-      <label htmlFor="" className="">
-        Description
-      </label>
-      <input
+      <div className="grid grid-cols-4 items-center gap-4">
+        <Label
+          htmlFor="deadline"
+          className="text-right font-semibold"
+          style={{ fontSize: "0.875rem" }}
+        >
+          deadline
+        </Label>
+        <DatePicker setvalue={onDateChange} value={deadline} />
+      </div>
+
+      <InputField3
+        label="description"
+        placeholder="description"
         type="text"
-        className="form-control"
         onChange={handleInput}
         name="description"
         value={description}
+        required
       />
-      <label htmlFor="" className="">
-        Status
-      </label>
-      <input
+      <InputField3
+        label="status"
+        placeholder="status"
         type="text"
-        className="form-control"
         onChange={handleInput}
         name="status"
         value={status}
+        required
       />
-      <label htmlFor="" className="">
-        Label
-      </label>
-      <input
+      <InputField3
+        label="label"
+        placeholder="label"
         type="text"
-        className="form-control"
         onChange={handleInput}
         name="label"
         value={label}
+        required
       />
-    </form>
+    </div>
   );
 };
 

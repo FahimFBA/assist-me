@@ -1,5 +1,6 @@
 import { useState } from "react";
-import InputField from "../../components/InputField";
+import InputField2 from "@/components/Forms/InputField2";
+import { Button } from "@/components/ui/button";
 
 const DetailsPage = () => {
   const [data, setData] = useState({
@@ -17,48 +18,50 @@ const DetailsPage = () => {
   };
 
   return (
-    <form>
-      x
-      <InputField
-        name="name"
-        onChange={handleInputChange}
-        placeholder="Your First Name"
-        type="text"
-        value={data?.name}
-        className=""
-        icon={<div>N</div>}
-      />
-      x
-      <InputField
-        name="firstName"
-        onChange={handleInputChange}
-        placeholder="Your Last Name"
-        type="text"
-        value={data?.firstName}
-        className=""
-        icon={<div>N</div>}
-      />
-      x
-      <InputField
-        name="lastName"
-        onChange={handleInputChange}
-        placeholder="Your Last Name"
-        type="text"
-        value={data?.lastName}
-        className=""
-        icon={<div>N</div>}
-      />
-      x
-      <InputField
-        name="universityName"
-        onChange={handleInputChange}
-        placeholder="Your university Name"
-        type="text"
-        value={data?.universityName}
-        className=""
-        icon={<div>N</div>}
-      />
-    </form>
+    <div className="flex flex-col gap-7 items-center justify-center h-[90vh]">
+      <h1 className="text-2xl font-bold">Profile Details</h1>
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        style={{
+          width: "100%",
+        }}
+        className="flex flex-col gap-3 max-w-[400px]"
+      >
+        <InputField2
+          name="name"
+          onChange={handleInputChange}
+          placeholder="Display Name"
+          type="text"
+          value={data?.name}
+          label="Display Name"
+        />
+        <InputField2
+          name="firstName"
+          onChange={handleInputChange}
+          placeholder="Your Last Name"
+          type="text"
+          value={data?.firstName}
+          label="First Name"
+        />
+        <InputField2
+          name="lastName"
+          onChange={handleInputChange}
+          placeholder="Your Last Name"
+          type="text"
+          value={data?.lastName}
+          label="Last Name"
+        />
+        <InputField2
+          name="universityName"
+          onChange={handleInputChange}
+          placeholder="Your university Name"
+          type="text"
+          value={data?.universityName}
+          label="university Name"
+        />
+        <Button>Edit Details</Button>
+      </form>
+    </div>
   );
 };
 

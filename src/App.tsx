@@ -22,9 +22,12 @@ import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./config/firebase-config";
 import { loginSuccess, logoutSuccess } from "./store";
-import { AuthenticationRoutes, ProtectedRoutes } from "./pages/utils";
-import EmailProtectedRoutes from "./pages/utils/EmailProtectedRoutes";
-import DashboardProtectedRoutes from "./pages/utils/DashboardProtectedRoutes";
+import {
+  AuthenticationRoutes,
+  ProtectedRoutes,
+  EmailProtectedRoutes,
+  DashboardProtectedRoutes,
+} from "./pages/utils";
 
 const App = () => {
   const dispatch = useDispatch();

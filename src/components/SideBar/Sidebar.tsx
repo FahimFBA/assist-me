@@ -1,17 +1,19 @@
-import "../../styles/dashboardStyles/bootstrap-dark.css";
-import "../../styles/dashboardStyles/icons.min.css";
-import "../../styles/dashboardStyles/app-dark.css";
-import SidebarLink from "./SidebarLink";
-import { FaLock, Fa500Px, FaMailBulk, FaDashcube } from "react-icons/fa";
-import { toast } from "react-toastify";
-import { clearToken, logoutSuccess, useLogoutMutation } from "../../store";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
+import { toast } from "react-toastify";
+import { clearToken, logoutSuccess, useLogoutMutation } from "../../store";
+import { RxHome, RxExit, RxEnvelopeClosed, RxClipboard } from "react-icons/rx";
+import SidebarLink from "./SidebarLink";
+import DarkModeSwitch from "./DarkModeSwitch";
+
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation(); // Get the current route
+  console.log(location.pathname);
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const [logout] = useLogoutMutation();
-  const navigate = useNavigate();
 
   const appSignout = async () => {
     dispatch(clearToken());
@@ -25,36 +27,41 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
       })
       .then(() => navigate("/login"));
   };
-  return (
-    <>
-      <div className="vertical-menu">
-        <div data-simplebar className="h-100">
-          {/* <!--- Sidemenu --> */}
-          <div id="sidebar-menu">
-            {/* <!-- Left Menu Start --> */}
-            <ul className="metismenu list-unstyled" id="side-menu">
-              <li className="menu-title">Menu</li>
 
-              <SidebarLink
-                link="/profile-page"
-                icon={<FaDashcube />}
-                label="Dashboard"
-              />
-              <SidebarLink link="/tasks" icon={<Fa500Px />} label="Task" />
-              <SidebarLink link="/email" icon={<FaMailBulk />} label="Email" />
-              <SidebarLink
-                link="/login"
-                icon={<FaLock />}
-                label="Logout"
-                onClick={appSignout}
-              />
-            </ul>
-          </div>
-          {/* <!-- Sidebar --> */}
+  return (
+    <div className="flex">
+      <aside className="sticky top-0 h-screen w-56 bg-gray-100 text-gray-800 p-4">
+        <div className="flex items-center mb-4 space-x-1">
+          <h1 className="text-lg font-medium">Assist Me</h1>
         </div>
-      </div>
-      <div className="container my-4">{children}</div>
-    </>
+        <nav className="space-y-2">
+          <SidebarLink
+            icon={<RxHome className="w-4 h-4" />}
+            label="Dashboard"
+            path="/profile-page"
+          />
+          <SidebarLink
+            icon={<RxClipboard className="w-4 h-4" />}
+            label="Tasks"
+            path="/tasks"
+          />
+          <SidebarLink
+            icon={<RxEnvelopeClosed className="w-4 h-4" />}
+            label="Email"
+            path="/email"
+          />
+          <div onClick={appSignout}>
+            <SidebarLink
+              icon={<RxExit className="w-4 h-4" />}
+              label="Signout"
+              path="/login"
+            />
+          </div>
+          <DarkModeSwitch />
+        </nav>
+      </aside>
+      <main className="flex-grow p-6">{children}</main>
+    </div>
   );
 };
 
