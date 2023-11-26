@@ -12,8 +12,6 @@ import { RootState } from "../store";
 import { NewTaskType } from "../types/types";
 import TaskForm from "../components/Forms/TaskForm";
 
-import { Button } from "@/components/ui/button";
-
 const Tasks = () => {
   const userID = useSelector((state: RootState) => state.user.uid);
   const initialState: NewTaskType = {
@@ -25,6 +23,7 @@ const Tasks = () => {
     userOwner: userID,
   };
   const [newTask, setNewTask] = React.useState<NewTaskType>(initialState);
+  console.log(newTask);
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>
     setNewTask({
@@ -38,15 +37,14 @@ const Tasks = () => {
   const [deleteOneTask] = useDeleteOneTaskMutation();
   const [createOneTask] = useCreateOneTaskMutation();
 
-  const deleteTask = async (id: string) => {
+  const deleteTask = async (id: string) =>
     toast.promise(deleteOneTask({ id }).unwrap(), {
       pending: "Deleting task...",
       success: "Task deleted successfully",
       error: "Error deleting task",
     });
-  };
 
-  const onSubmit = () => {
+  const onSubmit = () =>
     toast
       .promise(createOneTask(newTask).unwrap(), {
         pending: "Creating task...",
@@ -54,7 +52,6 @@ const Tasks = () => {
         error: "Error creating task",
       })
       .then(() => setNewTask(initialState));
-  };
 
   if (isLoading || isFetching) {
     return <div className="">Loading please wait....</div>;
@@ -65,11 +62,11 @@ const Tasks = () => {
   return (
     <div className="row">
       <TaskModal
-        button={<Button className="btn btn-primary">Create Task</Button>}
-        title="Create Task"
-        onCancel={() => console.log("cancel")}
-        onClose={() => console.log("close")}
         onConfirm={onSubmit}
+        buttonText="Add Task"
+        dialogueDescription="Make Tasks for a productive Day! Click save when you're done."
+        dialogueTitle="Create New Task"
+        confirmButtonText="Create"
       >
         <TaskForm {...newTask} handleInput={handleInput} />
       </TaskModal>

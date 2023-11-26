@@ -1,37 +1,40 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-const InputField2 = ({
-  label,
+const InputField3 = ({
   name,
-  placeholder,
-  type,
   onChange,
   value,
+  placeholder,
+  type,
   disabled,
+  label,
 }: {
-  label: string;
-  placeholder: string;
   name: string;
+  placeholder: string;
   type: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
+  label: string;
   disabled?: boolean;
 }) => {
   return (
-    <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Label htmlFor={name}>{label}</Label>
+    <div className="grid grid-cols-4 items-center gap-4">
+      <Label htmlFor={name} className="text-right">
+        {label}
+      </Label>
       <Input
-        type={type}
-        id={name}
         name={name}
-        placeholder={placeholder}
-        onChange={onChange}
+        id={name}
+        type={type}
         value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className="col-span-3"
         disabled={disabled}
       />
     </div>
   );
 };
 
-export default InputField2;
+export default InputField3;

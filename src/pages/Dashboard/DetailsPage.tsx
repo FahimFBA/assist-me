@@ -21,6 +21,7 @@ const DetailsPage = () => {
     <div className="flex flex-col gap-7 items-center justify-center h-[90vh]">
       <h1 className="text-2xl font-bold">Profile Details</h1>
       <form
+        onSubmit={(e) => e.preventDefault()}
         style={{
           width: "100%",
         }}
@@ -58,7 +59,7 @@ const DetailsPage = () => {
           value={data?.universityName}
           label="university Name"
         />
-        <Button>Save</Button>
+        <Button>Edit Details</Button>
       </form>
     </div>
   );

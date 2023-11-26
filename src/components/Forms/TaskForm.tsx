@@ -1,4 +1,5 @@
 import React from "react";
+import InputField3 from "../Forms/InputField3";
 
 const TaskForm = ({
   title,
@@ -16,60 +17,49 @@ const TaskForm = ({
   handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
   return (
-    <form
-      onSubmit={(e: React.ChangeEvent<HTMLFormElement>) => e.preventDefault()}
-    >
-      <label htmlFor="" className="">
-        Title
-      </label>
-      <input
+    <div className="grid gap-4 py-4">
+      <InputField3
+        label="Task Name"
+        placeholder="scdjn"
         type="text"
-        className="form-control"
         onChange={handleInput}
         name="title"
         value={title}
       />
-      <label htmlFor="" className="">
-        Deadline
-      </label>
-      <input
-        type="date"
-        className="form-control"
+      <InputField3
+        label="deadline"
+        placeholder="scdjn"
+        type="text"
         onChange={handleInput}
         name="deadline"
         value={deadline}
       />
-      <label htmlFor="" className="">
-        Description
-      </label>
-      <input
+      <InputField3
+        label="description"
+        placeholder="description"
         type="text"
-        className="form-control"
         onChange={handleInput}
         name="description"
         value={description}
       />
-      <label htmlFor="" className="">
-        Status
-      </label>
-      <input
+      <InputField3
+        label="status"
+        placeholder="status"
         type="text"
-        className="form-control"
         onChange={handleInput}
         name="status"
         value={status}
       />
-      <label htmlFor="" className="">
-        Label
-      </label>
-      <input
+
+      <InputField3
+        label="label"
+        placeholder="label"
         type="text"
-        className="form-control"
         onChange={handleInput}
         name="label"
         value={label}
       />
-    </form>
+    </div>
   );
 };
 
