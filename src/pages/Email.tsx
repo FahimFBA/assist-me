@@ -60,13 +60,10 @@ const Email = () => {
 
   if (!access_token) {
     return (
-      <div
-        style={{
-          backgroundColor: "#f5f5f5",
-        }}
-        className="h-[95vh] flex justify-center items-center"
-      >
-        <Button onClick={handleAuthClick}>Authenticate Email</Button>
+      <div className="h-[95vh] flex justify-center items-center">
+        <Button variant="default" onClick={handleAuthClick}>
+          Authenticate Email
+        </Button>
       </div>
     );
   }

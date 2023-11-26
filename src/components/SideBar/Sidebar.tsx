@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { clearToken, logoutSuccess, useLogoutMutation } from "../../store";
 import { RxHome, RxExit, RxEnvelopeClosed, RxClipboard } from "react-icons/rx";
 import SidebarLink from "./SidebarLink";
-// import DarkModeSwitch from "./DarkModeSwitch";
+import DarkModeSwitch from "./DarkModeSwitch";
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation(); // Get the current route
@@ -57,8 +57,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
               path="/login"
             />
           </div>
-          {/* Dark mode is a work in progress */}
-          {/* <DarkModeSwitch /> */}
+          <DarkModeSwitch />
         </nav>
       </aside>
       <main className="flex-grow p-6">{children}</main>

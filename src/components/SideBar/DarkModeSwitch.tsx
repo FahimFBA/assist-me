@@ -1,20 +1,22 @@
-import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { RxMoon } from "react-icons/rx";
 
 const DarkModeSwitch = () => {
   return (
-    <div className="ms-2 flex justify-between align-center space-x-2 cursor-pointer">
-      <Label htmlFor="airplane-mode" className="text-gray-500">
-        Theme
-      </Label>
+    <button
+      // onClick={() => navigate(path)}
+      className={`w-full flex items-center justify-between py-2 px-2 rounded-lg text-gray-500`}
+    >
+      <div className="flex items-center space-x-2">
+        {/* {icon} */}
+        <RxMoon className="w-4 h-4" />
+        <span className="text-sm font-medium">sdljck</span>
+      </div>
       <Switch
-        style={{
-          backgroundColor: "lightgray", // Set a background color
-          border: "2px solid red",
-        }}
-        id="airplane-mode"
+        // checked={true}
+        onCheckedChange={() => console.log("Theme change")}
       />
-    </div>
+    </button>
   );
 };
 
