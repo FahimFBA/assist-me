@@ -9,6 +9,7 @@ const InputField3 = ({
   type,
   disabled,
   label,
+  required,
 }: {
   name: string;
   placeholder: string;
@@ -17,6 +18,7 @@ const InputField3 = ({
   value: string;
   label: string;
   disabled?: boolean;
+  required?: boolean;
 }) => {
   return (
     <div className="grid grid-cols-4 items-center gap-4">
@@ -32,6 +34,7 @@ const InputField3 = ({
         placeholder={placeholder}
         className="col-span-3"
         disabled={disabled}
+        required={required}
       />
     </div>
   );

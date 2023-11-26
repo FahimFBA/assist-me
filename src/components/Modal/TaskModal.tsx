@@ -33,16 +33,23 @@ const TaskModal: FC<TaskModalProps> = ({
         <Button variant="default">{buttonText}</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>{dialogueTitle}</DialogTitle>
-          <DialogDescription>{dialogueDescription}</DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4">{children}</div>
-        <DialogFooter>
-          <Button onClick={onConfirm} type="submit" className="w-full">
-            {confirmButtonText}
-          </Button>
-        </DialogFooter>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onConfirm();
+          }}
+        >
+          <DialogHeader>
+            <DialogTitle>{dialogueTitle}</DialogTitle>
+            <DialogDescription>{dialogueDescription}</DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4">{children}</div>
+          <DialogFooter>
+            <Button type="submit" className="w-full">
+              {confirmButtonText}
+            </Button>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
   );

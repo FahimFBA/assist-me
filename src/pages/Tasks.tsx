@@ -15,7 +15,7 @@ import TaskForm from "../components/Forms/TaskForm";
 const Tasks = () => {
   const userID = useSelector((state: RootState) => state.user.uid);
   const initialState: NewTaskType = {
-    deadline: "",
+    deadline: new Date(),
     description: "",
     label: "",
     status: "",
@@ -23,13 +23,15 @@ const Tasks = () => {
     userOwner: userID,
   };
   const [newTask, setNewTask] = React.useState<NewTaskType>(initialState);
-  console.log(newTask);
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>
     setNewTask({
       ...newTask,
       [e.target.name]: e.target.value,
     });
+
+  const onDateChange = (date: Date) =>
+    setNewTask({ ...newTask, deadline: date });
 
   const { data, isError, isFetching, isLoading } = useGetAllTasksQuery({
     userID,
@@ -59,6 +61,7 @@ const Tasks = () => {
   if (isError) {
     return <div className="">Error, please try again</div>;
   }
+
   return (
     <div className="row">
       <TaskModal
@@ -68,7 +71,11 @@ const Tasks = () => {
         dialogueTitle="Create New Task"
         confirmButtonText="Create"
       >
-        <TaskForm {...newTask} handleInput={handleInput} />
+        <TaskForm
+          {...newTask}
+          handleInput={handleInput}
+          onDateChange={onDateChange}
+        />
       </TaskModal>
       {data?.map((task) => {
         return <Task key={task.id} {...task} deleteTask={deleteTask} />;

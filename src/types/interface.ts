@@ -26,7 +26,7 @@ export interface ITaskProps {
   title: string;
   description: string;
   status: string;
-  deadline: string;
+  deadline: Date;
   label: string;
   userOwner: string;
 }
