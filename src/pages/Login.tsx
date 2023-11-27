@@ -166,11 +166,11 @@ const Login: React.FC = () => {
             <h1 className="text-3xl font-bold">Login</h1>
             <p className="text-zinc-500 dark:text-zinc-400">
               By logging in, you accept our
-              <Link className="text-blue-500 hover:text-blue-700" href="#">
+              <Link className="text-blue-500 hover:text-blue-700" to="#">
                 terms
               </Link>
               and
-              <Link className="text-blue-500 hover:text-blue-700" href="#">
+              <Link className="text-blue-500 hover:text-blue-700" to="#">
                 privacy policy
               </Link>
               .{"\n                            "}

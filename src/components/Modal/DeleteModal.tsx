@@ -31,6 +31,7 @@ const DeleteModal = ({
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
+          {/* @ts-ignore */}
           <AlertDialogAction onClick={onConfirm}>Continue</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
