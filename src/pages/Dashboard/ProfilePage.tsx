@@ -37,6 +37,7 @@ const ProfilePage = () => {
         className="mb-3"
         style={{
           width: "120px",
+          height: "120px",
         }}
         src={
           user?.photoURL ? user?.photoURL : "/images/blank-profile-picture.svg"

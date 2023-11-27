@@ -2,6 +2,7 @@ import {
   useGetAllTasksQuery,
   useDeleteOneTaskMutation,
   useCreateOneTaskMutation,
+  useEditOneTaskMutation,
 } from "../store/API/taskAPI";
 import { toast } from "react-toastify";
 import TaskModal from "../components/Modal/TaskModal";
@@ -48,6 +49,8 @@ const Tasks = () => {
   const { data, isError, isFetching, isLoading } = useGetAllTasksQuery({
     userID,
   });
+
+  const [editOneTask] = useEditOneTaskMutation();
   const [deleteOneTask] = useDeleteOneTaskMutation();
   const [createOneTask] = useCreateOneTaskMutation();
 
@@ -66,6 +69,16 @@ const Tasks = () => {
         error: "Error creating task",
       })
       .then(() => setNewTask(initialState));
+
+  const onEdit = async (data: ITaskProps) => {
+    toast
+      .promise(editOneTask(data).unwrap(), {
+        pending: "Updating task...",
+        success: "Task updated successfully",
+        error: "Error updating task",
+      })
+      .then(() => setNewTask(initialState));
+  };
 
   if (isLoading || isFetching) {
     return <div className="">Loading please wait....</div>;
@@ -96,9 +109,9 @@ const Tasks = () => {
       <Table className="w-full rounded-md border">
         <TableHeader>
           <TableRow>
-            <TableHead className="col-span-1">Task</TableHead>
-            <TableHead className="col-span-1">Deadline</TableHead>
-            <TableHead className="col-span-1">Status</TableHead>
+            <TableHead className="w-[150px]">Task</TableHead>
+            <TableHead className="w-[240px]">Deadline</TableHead>
+            <TableHead className="w-[150px]">Status</TableHead>
             <TableHead className="col-span-9">Description</TableHead>
           </TableRow>
         </TableHeader>
@@ -111,7 +124,7 @@ const Tasks = () => {
                 <TableCell>
                   {task?.deadline
                     ? // @ts-ignore
-                      dayjs(task?.deadline?.seconds).format(
+                      dayjs(task?.deadline?.seconds * 1000).format(
                         "dddd, MMMM D, YYYY",
                       )
                     : "No Deadline"}
@@ -124,7 +137,11 @@ const Tasks = () => {
                   {task?.description}
                 </TableCell>
                 <TableCell>
-                  <TaskDropdown deleteTask={() => deleteTask(task?.id)} />
+                  <TaskDropdown
+                    deleteTask={() => deleteTask(task?.id)}
+                    taskData={task}
+                    onEdit={onEdit}
+                  />
                 </TableCell>
               </TableRow>
             );

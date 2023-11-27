@@ -13,10 +13,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import DeleteModal from "../Modal/DeleteModal";
 import { FC } from "react";
+import EditTaskSheet from "../Sheets/EditTaskSheet";
+import { ITaskProps } from "@/types/interface";
 
 const TaskDropdown: FC<{
   deleteTask: (id: string) => Promise<string>;
-}> = ({ deleteTask }) => {
+  taskData: ITaskProps;
+  onEdit: (data: ITaskProps) => Promise<void>;
+}> = ({ deleteTask, taskData, onEdit }) => {
   return (
     <>
       <DropdownMenu>
@@ -43,10 +47,18 @@ const TaskDropdown: FC<{
                 onConfirm={deleteTask}
               />
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Pencil className="mr-2 h-4 w-4" />
-              <span>Edit Task</span>
-              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+            <DropdownMenuItem asChild>
+              <EditTaskSheet
+                icon={
+                  <div className="flex items-center px-2 py-2 cursor-default hover:bg-slate-100 rounded-md">
+                    <Pencil className="mr-2 h-4 w-4" />
+                    <span>Edit Task</span>
+                    <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                  </div>
+                }
+                taskData={taskData}
+                onEdit={onEdit}
+              />
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>

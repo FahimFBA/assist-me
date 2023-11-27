@@ -9,9 +9,9 @@ const AuthenticationRoutes = () => {
     <Navigate to="/profile-page" replace />
   ) : (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
