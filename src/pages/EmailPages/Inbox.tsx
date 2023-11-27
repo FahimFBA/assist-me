@@ -10,6 +10,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+
+import { MoreHorizontal } from "lucide-react";
 
 const Inbox = () => {
   const navigate = useNavigate();
@@ -40,17 +43,22 @@ const Inbox = () => {
   return (
     <div>
       {/*  */}
-      <div className="d-flex justify-center gap-2 my-5">
-        <button className="btn btn-primary">Single Email</button>
-        <button className="btn btn-secondary">Bulk Email</button>
-        <button
+      <div className="flex justify-center gap-3 my-4">
+        <Button variant="default" className="btn btn-primary">
+          Single Email
+        </Button>
+        <Button variant="default" className="btn btn-secondary">
+          Bulk Email
+        </Button>
+        <Button
+          variant="destructive"
           onClick={() => dispatch(clearToken())}
           className="btn btn-secondary"
         >
           Signout
-        </button>
+        </Button>
       </div>
-      <Table className="w-full">
+      <Table className="w-full rounded-md border">
         <TableHeader>
           <TableRow>
             <TableHead className="col-span-2">Time</TableHead>
@@ -59,11 +67,14 @@ const Inbox = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.map((item: any, index: number) => (
-            <TableRow>
+          {data?.map((item, index: number) => (
+            <TableRow key={index}>
               <TableCell>sdjncsdkjn</TableCell>
               <TableCell>{item?.senderName}</TableCell>
               <TableCell>{item?.message}</TableCell>
+              <TableCell>
+                <MoreHorizontal className="w-5 cursor-pointer" />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
