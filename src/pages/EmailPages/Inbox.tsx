@@ -67,16 +67,25 @@ const Inbox = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.map((item, index: number) => (
-            <TableRow key={index}>
-              <TableCell>sdjncsdkjn</TableCell>
-              <TableCell>{item?.senderName}</TableCell>
-              <TableCell>{item?.message}</TableCell>
-              <TableCell>
-                <MoreHorizontal className="w-5 cursor-pointer" />
-              </TableCell>
-            </TableRow>
-          ))}
+          {data?.map(
+            (
+              item: {
+                senderName: string;
+                message: string;
+                time: string;
+              },
+              index: number,
+            ) => (
+              <TableRow key={index}>
+                <TableCell>sdjncsdkjn</TableCell>
+                <TableCell>{item?.senderName}</TableCell>
+                <TableCell>{item?.message}</TableCell>
+                <TableCell>
+                  <MoreHorizontal className="w-5 cursor-pointer" />
+                </TableCell>
+              </TableRow>
+            ),
+          )}
         </TableBody>
       </Table>
     </div>
