@@ -9,11 +9,11 @@ import {
   themeSwitch,
   useLogoutMutation,
 } from "../../store";
-import { RxHome, RxExit, RxEnvelopeClosed, RxClipboard } from "react-icons/rx";
-import SidebarLink from "./SidebarLink";
-import DarkModeSwitch from "./DarkModeSwitch";
 import { useEffect } from "react";
 import { ThemeTypesEnum } from "@/types/enums";
+// import MobileSideBar from "./MobileSideBar";
+import SideBarMenu from "./SideBarMenu";
+import MobileSideBar from "./MobileSideBar";
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation(); // Get the current route
@@ -56,37 +56,23 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="flex">
-      <aside className="sticky top-0 h-screen w-56 bg-gray-100 text-gray-800 p-4">
-        <div className="flex items-center mb-4 space-x-1">
-          <h1 className="text-lg font-medium">Assist Me</h1>
-        </div>
-        <nav className="space-y-2">
-          <SidebarLink
-            icon={<RxHome className="w-4 h-4" />}
-            label="Dashboard"
-            path="/profile-page"
-          />
-          <SidebarLink
-            icon={<RxClipboard className="w-4 h-4" />}
-            label="Tasks"
-            path="/tasks"
-          />
-          <SidebarLink
-            icon={<RxEnvelopeClosed className="w-4 h-4" />}
-            label="Email"
-            path="/email"
-          />
-          <div onClick={appSignout}>
-            <SidebarLink
-              icon={<RxExit className="w-4 h-4" />}
-              label="Signout"
-              path="/login"
-            />
-          </div>
-          <DarkModeSwitch theme={theme} onClick={handleChangeTheme} />
-        </nav>
+      <aside className="hidden md:block sticky top-0 h-screen min-w-[220px] bg-background border-r-2 text-foreground p-4">
+        <SideBarMenu
+          theme={theme}
+          appSignout={appSignout}
+          handleChangeTheme={handleChangeTheme}
+        />
       </aside>
       <main className="flex-grow p-6">{children}</main>
+      <MobileSideBar
+        menu={
+          <SideBarMenu
+            theme={theme}
+            appSignout={appSignout}
+            handleChangeTheme={handleChangeTheme}
+          />
+        }
+      />
     </div>
   );
 };
