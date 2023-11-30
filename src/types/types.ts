@@ -1,9 +1,9 @@
-import { MuiThemeEnums } from "./enums";
+import { ThemeTypesEnum } from "./enums";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
 import { SerializedError } from "@reduxjs/toolkit";
 import { ITaskProps } from "./interface";
 
-export type ThemeTypes = MuiThemeEnums.DARK | MuiThemeEnums.LIGHT;
+export type ThemeTypes = ThemeTypesEnum.DARK | ThemeTypesEnum.LIGHT;
 
 export interface iErrorState {
   isLoading: boolean;

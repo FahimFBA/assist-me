@@ -1,5 +1,4 @@
 import { Trash, Pencil, MoreHorizontal } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -36,7 +35,7 @@ const TaskDropdown: FC<{
             <DropdownMenuItem asChild>
               <DeleteModal
                 icon={
-                  <div className="flex items-center px-2 py-2 cursor-default hover:bg-slate-100 rounded-md">
+                  <div className="flex items-center px-2 py-2 cursor-default hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md">
                     <Trash className="mr-2 h-4 w-4" />
                     <span className="text-[0.875rem]">Delete Task</span>
                     <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
@@ -50,7 +49,7 @@ const TaskDropdown: FC<{
             <DropdownMenuItem asChild>
               <EditTaskSheet
                 icon={
-                  <div className="flex items-center px-2 py-2 cursor-default hover:bg-slate-100 rounded-md">
+                  <div className="flex items-center px-2 py-2 cursor-default hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md">
                     <Pencil className="mr-2 h-4 w-4" />
                     <span>Edit Task</span>
                     <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
