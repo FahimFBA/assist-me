@@ -68,7 +68,6 @@ const Login: React.FC = () => {
               onChange={handleChange}
               value={data?.email}
             />
-
             <Label htmlFor="password">Password</Label>
             <Input
               id="password"
@@ -79,6 +78,13 @@ const Login: React.FC = () => {
               onChange={handleChange}
               value={data?.password}
             />
+            <Button
+              onClick={() => navigate("/forgot-password")}
+              variant="link"
+              size="sm"
+            >
+              Forgot Password
+            </Button>
             <Button type="submit" className="w-full">
               Login
             </Button>

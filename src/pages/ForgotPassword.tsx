@@ -1,97 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaArrowLeft, FaRegEnvelope } from "react-icons/fa";
-import { GrFormClose } from "react-icons/gr";
-import PassInputField from "../components/PassInputField";
+import { Label } from "@radix-ui/react-label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useSendResetPassWordEmailMutation } from "@/store";
+import { toast } from "react-toastify";
+import { IUserSignInData } from "@/types/interface";
 
 const ForgotPassword = () => {
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+  const initialState: Pick<IUserSignInData, "email"> = {
+    email: "",
   };
 
-  const handlePasswordReset = (e: React.FormEvent) => {
+  const [data, setData] = useState(initialState);
+
+  const [sendResetPassWordEmail] = useSendResetPassWordEmailMutation();
+
+  const handlePasswordReset = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement your password reset logic here, e.g., send a reset link to the provided email.
+    await toast
+      .promise(
+        sendResetPassWordEmail({
+          email: data.email,
+        }).unwrap(),
+        {
+          pending: "Sending email...",
+          success: "Email Sent! Please Check your Mail",
+          error: "Failed to send email!",
+        },
+      )
+      .then(() => setData(initialState))
+      .catch((err) => console.log(err));
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setData({ ...data, [e.target.name]: e.target.value });
 
   return (
-    <div
-      className="wrapper d-flex flex-column justify-between"
-      style={{ marginTop: "80px", marginBottom: "40px" }}
-    >
-      <main className="flex-grow-1">
-        <section className="account-section password-reset-page py-6 h-full">
-          <div className="container-fluid h-full">
-            <div className="row h-full">
-              <div
-                className="col-lg-6 d-none d-lg-block"
-                data-aos="fade-up-sm"
-                data-aos-delay="50"
-              >
-                <div className="bg-dark-blue-4 border rounded-4 h-full p-6 p-md-20 text-center d-flex flex-column justify-center">
-                  <h2 className="text-white mb-12">
-                    Unlock the Power of <br className="d-none d-xl-block" />
-                    <span className="text-primary-dark">AssistMe</span> Personalized
-                    Assistant Tool
-                  </h2>
-                  <img
-                    src="/images/screens/screen-5.png"
-                    alt=""
-                    className="img-fluid w-full"
-                  />
-                </div>
-              </div>
-              <div
-                className="col-lg-6"
-                data-aos="fade-up-sm"
-                data-aos-delay="100"
-              >
-                <div className="close-btn">
-                  <Link
-                    to="/"
-                    className="icon bg-gradient-3 text-white w-12 h-12 rounded p-3 border border-white border-opacity-10 d-flex align-center justify-center ms-auto"
-                  >
-                    <GrFormClose strokeWidth={2} />
-                  </Link>
-                </div>
-                <div className="account-wrapper h-full d-flex flex-column justify-center">
-                  <div className="text-center">
-                    <div className="mb-4 text-start d-flex align-center gap-2">
-                      <Link
-                        to="/login"
-                        className="btn btn-sm p-0 d-flex align-center text-decoration-none w-8 h-8 justify-center"
-                      >
-                        <FaArrowLeft strokeWidth={2} />
-                      </Link>
-                      <p className="lead fw-normal mb-0">
-                        Password Reset Request
-                      </p>
-                    </div>
-                    <form
-                      onSubmit={handlePasswordReset}
-                      className="vstack gap-4"
-                    >
-                      <PassInputField
-                        placeholder="Enter Your Email"
-                        onChange={handleEmailChange}
-                        icon={<FaRegEnvelope strokeWidth={1.5} />}
-                      />
-                      <div className="text-center">
-                        <button
-                          type="submit"
-                          className="btn btn-primary-dark w-full py-4"
-                        >
-                          Reset Password
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+      <div className="w-[300px] md:w-[400px] rounded-lg shadow-lg bg-white p-6 space-y-6 border border-gray-200 dark:border-gray-700">
+        <div className="space-y-2 text-center">
+          <h1 className="text-3xl font-bold">Password Reset</h1>
+          <p className="text-zinc-500 dark:text-zinc-400">
+            Our servers{" "}
+            <Link className="text-blue-500 hover:text-blue-700" to="/login">
+              terms
+            </Link>{" "}
+            and{" "}
+            <Link className="text-blue-500 hover:text-blue-700" to="/login">
+              privacy policy
+            </Link>
+          </p>
+        </div>
+        <div className="space-y-4">
+          <form onSubmit={handlePasswordReset} className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              placeholder="someone@gmail.com"
+              required
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={data.email}
+            />
+            <Button type="submit" className="w-full">
+              Login
+            </Button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
