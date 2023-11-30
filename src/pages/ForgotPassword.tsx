@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useSendResetPassWordEmailMutation } from "@/store";
 import { toast } from "react-toastify";
 import { IUserSignInData } from "@/types/interface";
+import { useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
+  const navigate = useNavigate();
   const initialState: Pick<IUserSignInData, "email"> = {
     email: "",
   };
@@ -42,14 +43,8 @@ const ForgotPassword = () => {
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Password Reset</h1>
           <p className="text-zinc-500 dark:text-zinc-400">
-            Our servers{" "}
-            <Link className="text-blue-500 hover:text-blue-700" to="/login">
-              terms
-            </Link>{" "}
-            and{" "}
-            <Link className="text-blue-500 hover:text-blue-700" to="/login">
-              privacy policy
-            </Link>
+            Our servers will send password reset link to your email within 2
+            minutes
           </p>
         </div>
         <div className="space-y-4">
@@ -65,9 +60,17 @@ const ForgotPassword = () => {
               value={data.email}
             />
             <Button type="submit" className="w-full">
-              Login
+              Send Email
             </Button>
           </form>
+          <Button
+            onClick={() => navigate("/login")}
+            variant="link"
+            className="flex gap-1 w-full"
+          >
+            <span>Have an account?</span>
+            <span className="text-blue-500">Login</span>
+          </Button>
         </div>
       </div>
     </div>
