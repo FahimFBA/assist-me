@@ -15,6 +15,7 @@ import {
   Templates,
   DetailsPage,
   ProfilePage,
+  VerifyEmail,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AOS from "aos";
@@ -38,6 +39,8 @@ const App = () => {
         const photoURL = user.photoURL as string;
         const name = user.displayName as string;
         const email = user.email as string;
+        const emailVerified = user.emailVerified;
+        console.log("user", user);
 
         dispatch(
           loginSuccess({
@@ -45,6 +48,7 @@ const App = () => {
             photoURL,
             name,
             email,
+            emailVerified: emailVerified,
           }),
         );
       } else {
@@ -52,8 +56,6 @@ const App = () => {
       }
     });
 
-    // AOS library
-    // window.addEventListener("load", () => );
     AOS.init({
       duration: 800,
     });
@@ -91,6 +93,7 @@ const App = () => {
         </Route>
 
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
       </Routes>
     </BrowserRouter>
   );

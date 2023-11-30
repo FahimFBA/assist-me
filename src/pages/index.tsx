@@ -11,6 +11,9 @@ import Email from "./Email";
 import Tasks from "./Tasks";
 import Inbox from "./EmailPages/Inbox";
 import Templates from "./EmailPages/Templates";
+
+import VerifyEmail from "./VerifyEmail";
+
 //  dashboard
 import ProfilePage from "./Dashboard/ProfilePage";
 import DetailsPage from "./Dashboard/DetailsPage";
@@ -29,6 +32,7 @@ export {
   Tasks,
   Templates,
   Inbox,
+  VerifyEmail,
 
   // dashboard
   ProfilePage,
