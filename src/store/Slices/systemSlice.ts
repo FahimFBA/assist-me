@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { ThemeTypes } from "../../types/types";
-import { MuiThemeEnums } from "../../types/enums";
+import { ThemeTypesEnum } from "../../types/enums";
 
 interface SystemState {
   mode: ThemeTypes;
 }
 
 const initialState: SystemState = {
-  mode: MuiThemeEnums.DARK,
+  mode: ThemeTypesEnum.DARK,
 };
 
 export const sysmtemSlice = createSlice({

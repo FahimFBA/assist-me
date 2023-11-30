@@ -1,20 +1,25 @@
 import { Switch } from "@/components/ui/switch";
+import { ThemeTypesEnum } from "@/types/enums";
 import { RxMoon } from "react-icons/rx";
 
-const DarkModeSwitch = () => {
+const DarkModeSwitch = ({
+  onClick,
+  theme,
+}: {
+  onClick: () => void;
+  theme: ThemeTypesEnum.DARK | ThemeTypesEnum.LIGHT;
+}) => {
   return (
     <button
-      // onClick={() => navigate(path)}
       className={`w-full flex items-center justify-between py-2 px-2 rounded-lg text-gray-500`}
     >
       <div className="flex items-center space-x-2">
-        {/* {icon} */}
         <RxMoon className="w-4 h-4" />
-        <span className="text-sm font-medium">sdljck</span>
+        <span className="text-sm font-medium">Theme</span>
       </div>
       <Switch
-        // checked={true}
-        onCheckedChange={() => console.log("Theme change")}
+        checked={theme === ThemeTypesEnum.DARK ? true : false}
+        onCheckedChange={onClick}
       />
     </button>
   );
