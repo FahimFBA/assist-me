@@ -8,6 +8,9 @@ import { useEffect } from "react";
 const EmailProtectedRoutes = () => {
   const navigate = useNavigate();
   const userUid = useSelector((state: RootState) => state.user.uid);
+  const emailVerified = useSelector(
+    (state: RootState) => state.user.emailVerified,
+  );
   const access_token: string = useSelector(
     (state: RootState) => state.tokenData.access_token,
   );
@@ -18,16 +21,20 @@ const EmailProtectedRoutes = () => {
     }
   }, [access_token]);
 
-  return userUid ? (
-    <>
+  if (userUid && emailVerified) {
+    return (
       <Sidebar>
         <Tabs />
         <Outlet />
       </Sidebar>
-    </>
-  ) : (
-    <Navigate to="/login" replace />
-  );
+    );
+  }
+
+  if (userUid && !emailVerified) {
+    return <Navigate to="/verify-email" replace />;
+  }
+
+  return <Navigate to="/login" replace />;
 };
 
 export default EmailProtectedRoutes;

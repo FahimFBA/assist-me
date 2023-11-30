@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { toast } from "react-toastify";
@@ -11,13 +11,10 @@ import {
 } from "../../store";
 import { useEffect } from "react";
 import { ThemeTypesEnum } from "@/types/enums";
-// import MobileSideBar from "./MobileSideBar";
 import SideBarMenu from "./SideBarMenu";
 import MobileSideBar from "./MobileSideBar";
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
-  const location = useLocation(); // Get the current route
-  console.log(location.pathname);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();

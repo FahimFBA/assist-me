@@ -15,6 +15,7 @@ export interface UserState {
   name: string;
   email: string;
   photoURL: string;
+  emailVerified: boolean;
 }
 
 export interface ITokenState {

@@ -9,6 +9,7 @@ import {
   confirmPasswordReset,
   sendPasswordResetEmail,
   updateProfile,
+  sendEmailVerification,
 } from "firebase/auth";
 import { IUserSignInData, IUpdateUser } from "../../types/interface";
 import { addDoc, collection } from "firebase/firestore";
@@ -56,6 +57,9 @@ export const userAuthAPI = createApi({
             studentID: "",
             phoneNumber: response?.user?.phoneNumber,
             photoURL: response?.user?.photoURL,
+          }).then(() => {
+            // @ts-ignore
+            sendEmailVerification(auth.currentUser);
           });
 
           return {

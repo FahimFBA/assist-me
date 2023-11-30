@@ -5,15 +5,23 @@ import Sidebar from "../../components/SideBar/Sidebar";
 
 const ProtectedRoutes = () => {
   const userUid = useSelector((state: RootState) => state.user.uid);
-  return userUid ? (
-    <>
+  const emailVerified = useSelector(
+    (state: RootState) => state.user.emailVerified,
+  );
+
+  if (userUid && emailVerified) {
+    return (
       <Sidebar>
         <Outlet />
       </Sidebar>
-    </>
-  ) : (
-    <Navigate to="/login" replace />
-  );
+    );
+  }
+
+  if (userUid && !emailVerified) {
+    return <Navigate to="/verify-email" replace />;
+  }
+
+  return <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoutes;
