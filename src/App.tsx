@@ -18,7 +18,6 @@ import {
   VerifyEmail,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AOS from "aos";
 import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./config/firebase-config";
@@ -41,7 +40,6 @@ const App = () => {
         const email = user.email as string;
         const emailVerified = user.emailVerified;
         console.log("user", user);
-
         dispatch(
           loginSuccess({
             uid,
@@ -54,10 +52,6 @@ const App = () => {
       } else {
         dispatch(logoutSuccess());
       }
-    });
-
-    AOS.init({
-      duration: 800,
     });
   }, []);
 

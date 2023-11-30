@@ -21,13 +21,7 @@ const EmailProtectedRoutes = () => {
     }
   }, [access_token]);
 
-  useEffect(() => {
-    if (!emailVerified) {
-      navigate("/verify-email");
-    }
-  }, [emailVerified]);
-
-  if (userUid) {
+  if (userUid && emailVerified) {
     return (
       <Sidebar>
         <Tabs />
@@ -35,6 +29,11 @@ const EmailProtectedRoutes = () => {
       </Sidebar>
     );
   }
+
+  if (userUid && !emailVerified) {
+    return <Navigate to="/verify-email" replace />;
+  }
+
   return <Navigate to="/login" replace />;
 };
 
