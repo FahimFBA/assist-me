@@ -25,7 +25,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
     dispatch(logoutSuccess());
 
     await toast
-      .promise(logout(null).unwrap, {
+      .promise(logout(null).unwrap(), {
         pending: "Logging out...",
         success: "Logout successful",
         error: "Logout failed",

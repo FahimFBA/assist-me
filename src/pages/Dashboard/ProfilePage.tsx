@@ -20,7 +20,7 @@ const ProfilePage = () => {
     dispatch(clearToken());
     dispatch(logoutSuccess());
     await toast
-      .promise(logout(null).unwrap, {
+      .promise(logout(null).unwrap(), {
         pending: "Logging out...",
         success: "Logout successful",
         error: "Logout failed",
