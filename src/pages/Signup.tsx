@@ -40,7 +40,7 @@ const Signup: React.FC = () => {
     await toast
       .promise(googleSignup(null).unwrap(), {
         pending: "Creating user...",
-        success: "Successfully created user!",
+        success: "Successfully created user! Plesae verify your email",
         error: "Could not create user!",
       })
       .then((res) => console.log(res))

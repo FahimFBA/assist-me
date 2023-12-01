@@ -17,6 +17,7 @@ import {
   useSendResetPassWordEmailMutation,
   useSetNewPassWordMutation,
   useUpdateUserProfileMutation,
+  useSendEmailVerificationMutation,
 } from "./API/userAuthAPI";
 
 // Email API
@@ -90,6 +91,7 @@ export {
   useSendResetPassWordEmailMutation,
   useSetNewPassWordMutation,
   useUpdateUserProfileMutation,
+  useSendEmailVerificationMutation,
 
   //  Email API
   useStartGmailAuthenticationMutation,

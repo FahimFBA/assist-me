@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useSendEmailVerificationMutation } from "@/store";
 
 const VerifyEmail = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const VerifyEmail = () => {
   const emailVerified = useSelector(
     (state: RootState) => state.user.emailVerified,
   );
+  const [sendEmailVerification] = useSendEmailVerificationMutation();
   const [logout] = useLogoutMutation();
 
   const appSignout = async () => {
@@ -24,13 +26,20 @@ const VerifyEmail = () => {
     dispatch(logoutSuccess());
 
     await toast
-      .promise(logout(null).unwrap, {
+      .promise(logout(null).unwrap(), {
         pending: "Logging out...",
         success: "Logout successful",
         error: "Logout failed",
       })
       .then(() => navigate("/login"));
   };
+
+  const sendVerificationEmailFn = async () =>
+    await toast.promise(sendEmailVerification(null).unwrap(), {
+      pending: "Sending verification email...",
+      success: "Verification email sent",
+      error: "Verification email failed to send",
+    });
 
   useEffect(() => {
     if (emailVerified) {
@@ -53,7 +62,11 @@ const VerifyEmail = () => {
         </div>
         <div className="space-y-4">
           <p className="text-slate-600">Didn't receive an email?</p>
-          <Button className="w-full" variant="default">
+          <Button
+            onClick={sendVerificationEmailFn}
+            className="w-full"
+            variant="default"
+          >
             Resend Email
           </Button>
           <Button onClick={appSignout} className="w-full" variant="secondary">

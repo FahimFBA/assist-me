@@ -73,6 +73,21 @@ export const userAuthAPI = createApi({
       },
       invalidatesTags: ["User"],
     }),
+    sendEmailVerification: builder.mutation<void, null>({
+      queryFn: async () => {
+        try {
+          // @ts-ignore
+          await sendEmailVerification(auth.currentUser);
+          return {
+            data: undefined,
+          };
+        } catch (err) {
+          return {
+            error: (err as Error)?.message,
+          };
+        }
+      },
+    }),
     emailLogin: builder.mutation<UserCredential, IUserSignInData>({
       queryFn: async (user: IUserSignInData) => {
         try {
@@ -206,4 +221,5 @@ export const {
   useSendResetPassWordEmailMutation,
   useSetNewPassWordMutation,
   useUpdateUserProfileMutation,
+  useSendEmailVerificationMutation,
 } = userAuthAPI;
