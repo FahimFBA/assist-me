@@ -16,6 +16,7 @@ import {
   DetailsPage,
   ProfilePage,
   VerifyEmail,
+  ActivityLogs,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -28,11 +29,16 @@ import {
   EmailProtectedRoutes,
   DashboardProtectedRoutes,
 } from "./pages/utils";
+// import { getAuth } from "firebase/auth";
 
 const App = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    // under the config there is all the browser details like chrome, platform, web/mobile etc.
+    // console.log("getAuth()", getAuth());
+
+    onAuthStateChanged(auth, async (user) => {
       if (user) {
         const uid = user.uid;
         const photoURL = user.photoURL as string;
@@ -73,6 +79,7 @@ const App = () => {
 
         <Route element={<ProtectedRoutes />}>
           <Route path="/tasks" element={<Tasks />} />
+          <Route path="/activity-logs" element={<ActivityLogs />} />
           <Route path="/email" element={<Email />} />
         </Route>
 

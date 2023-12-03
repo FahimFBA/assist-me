@@ -11,8 +11,14 @@ import {
   updateProfile,
   sendEmailVerification,
 } from "firebase/auth";
-import { IUserSignInData, IUpdateUser } from "../../types/interface";
-import { addDoc, collection } from "firebase/firestore";
+import {
+  IUserSignInData,
+  IUpdateUser,
+  iActivityLogData,
+} from "../../types/interface";
+import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import { nanoid } from "@reduxjs/toolkit";
+import { getAuth } from "firebase/auth";
 
 const usersCollectionName = "users";
 
@@ -46,7 +52,10 @@ export const userAuthAPI = createApi({
             password,
           );
 
-          await addDoc(collection(db, usersCollectionName), {
+          const documentName = response?.user?.uid;
+          const userDocRef = doc(db, usersCollectionName, documentName);
+
+          await setDoc(userDocRef, {
             uid: response?.user?.uid,
             displayName: response?.user?.displayName,
             firstName: "",
@@ -60,6 +69,17 @@ export const userAuthAPI = createApi({
           }).then(() => {
             // @ts-ignore
             sendEmailVerification(auth.currentUser);
+          });
+
+          const logsCollectionRef = collection(userDocRef, "logs");
+          const logDocumentName = nanoid();
+
+          await setDoc(doc(logsCollectionRef, logDocumentName), {
+            // @ts-ignore
+            clientPlatform: getAuth()?.config?.clientPlatform,
+            sdkClientVersion: getAuth()?.config?.sdkClientVersion,
+            action: "New Account Created With Email",
+            time: new Date(),
           });
 
           return {
@@ -98,17 +118,20 @@ export const userAuthAPI = createApi({
             password,
           );
 
-          await addDoc(collection(db, usersCollectionName), {
-            uid: response?.user?.uid,
-            displayName: response?.user?.displayName,
-            firstName: "",
-            lastName: "",
-            universityName: "",
-            department: "",
-            major: "",
-            studentID: "",
-            phoneNumber: response?.user?.phoneNumber,
-            photoURL: response?.user?.photoURL,
+          const collectionName = usersCollectionName;
+          const documentName = response?.user?.uid;
+          const subCollectionName = "logs";
+          const subDocumentName = nanoid();
+
+          const userDocRef = doc(db, collectionName, documentName);
+          const logsCollectionRef = collection(userDocRef, subCollectionName);
+
+          await setDoc(doc(logsCollectionRef, subDocumentName), {
+            // @ts-ignore
+            clientPlatform: getAuth()?.config?.clientPlatform,
+            sdkClientVersion: getAuth()?.config?.sdkClientVersion,
+            action: "Account Login With Email",
+            time: new Date(),
           });
 
           return {
@@ -126,6 +149,49 @@ export const userAuthAPI = createApi({
       queryFn: async () => {
         try {
           const response = await signInWithPopup(auth, googleProvider);
+
+          const collectionName = usersCollectionName;
+          const documentName = response?.user?.uid;
+          const subCollectionName = "logs";
+          const subDocumentName = nanoid();
+
+          const userDocRef = doc(db, collectionName, documentName);
+          // Check if the user document exists
+          const userDocSnapshot = await getDoc(userDocRef);
+
+          if (userDocSnapshot.exists()) {
+            const logsCollectionRef = collection(userDocRef, subCollectionName);
+            await setDoc(doc(logsCollectionRef, subDocumentName), {
+              // @ts-ignore
+              clientPlatform: getAuth()?.config?.clientPlatform,
+              sdkClientVersion: getAuth()?.config?.sdkClientVersion,
+              action: "Account Login with Google",
+              time: new Date(),
+            });
+          } else {
+            await setDoc(userDocRef, {
+              uid: response?.user?.uid,
+              displayName: response?.user?.displayName,
+              firstName: "",
+              lastName: "",
+              universityName: "",
+              department: "",
+              major: "",
+              studentID: "",
+              phoneNumber: response?.user?.phoneNumber,
+              photoURL: response?.user?.photoURL,
+            });
+
+            const logsCollectionRef = collection(userDocRef, subCollectionName);
+            await setDoc(doc(logsCollectionRef, subDocumentName), {
+              // @ts-ignore
+              clientPlatform: getAuth()?.config?.clientPlatform,
+              sdkClientVersion: getAuth()?.config?.sdkClientVersion,
+              action: "New Account Signup with Google",
+              time: new Date(),
+            });
+          }
+
           return {
             data: response,
           };
@@ -210,6 +276,37 @@ export const userAuthAPI = createApi({
       },
       invalidatesTags: ["User"],
     }),
+
+    activityLogs: builder.query<
+      iActivityLogData[],
+      {
+        uid: string;
+      }
+    >({
+      queryFn: async ({ uid }) => {
+        try {
+          const logsCollectionRef = collection(
+            db,
+            usersCollectionName,
+            uid, // this is the name of document
+            "logs", // name of subcollection
+          );
+
+          const querySnapshot = await getDocs(logsCollectionRef);
+          const logsData = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+
+          return { data: logsData as iActivityLogData[] };
+        } catch (err) {
+          return {
+            error: (err as Error)?.message,
+          };
+        }
+      },
+      providesTags: ["User"],
+    }),
   }),
 });
 
@@ -222,4 +319,5 @@ export const {
   useSetNewPassWordMutation,
   useUpdateUserProfileMutation,
   useSendEmailVerificationMutation,
+  useActivityLogsQuery,
 } = userAuthAPI;

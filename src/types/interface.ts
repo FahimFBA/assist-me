@@ -40,3 +40,14 @@ export interface IGmailTokenReturnData {
   scope: string;
   token_type: string;
 }
+
+export interface iActivityLogData {
+  id: string;
+  time: {
+    seconds: number;
+    nanoseconds: number;
+  };
+  clientPlatform: string;
+  action: string;
+  sdkClientVersion: string;
+}
