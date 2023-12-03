@@ -2,6 +2,7 @@ import { ThemeTypesEnum } from "@/types/enums";
 import DarkModeSwitch from "./DarkModeSwitch";
 import SidebarLink from "./SidebarLink";
 import { RxHome, RxExit, RxEnvelopeClosed, RxClipboard } from "react-icons/rx";
+import { LuList } from "react-icons/lu";
 
 const SideBarMenu = ({
   theme,
@@ -32,6 +33,11 @@ const SideBarMenu = ({
           icon={<RxEnvelopeClosed className="w-4 h-4" />}
           label="Email"
           path="/email"
+        />
+        <SidebarLink
+          icon={<LuList className="w-4 h-4" />}
+          label="Activity Logs"
+          path="/activity-logs"
         />
         <div onClick={appSignout}>
           <SidebarLink
