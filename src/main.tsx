@@ -9,12 +9,18 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "aos/dist/aos.css"; // Import AOS styles
 
-import "./styles/global.css";
+// import "./styles/global.css";
 
 // import "bootstrap/dist/css/bootstrap.css";
 // import "bootstrap/dist/js/bootstrap.js";
 // import "../../styles/plugin.css";
 // import "../../styles/style.css";
+
+
+import "./styles/style.css";
+import "./styles/plugin.css";
+import "./styles/dashboardStyles/bootstrap.css";
+// import "./styles/dashboardStyles/bootstrap.js";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

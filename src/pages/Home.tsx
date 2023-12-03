@@ -73,25 +73,25 @@ const Home = () => {
       >
         {/* <!-- Hero --> */}
         <section
-          className="hero-section style-1 overflow-hidden bg-dark py-10 py-lg-15"
-          data-bs-theme="dark"
+          className="hero-section style-1 overflow-hidden gradient-bg pt-30 pb-15 pb-lg-20 pt-xl-36"
+          data-bs-theme="light"
         >
           <div className="container">
             <div className="row justify-center">
               <div className="col-lg-9">
                 <div className="text-center">
                   <div className="position-relative z-1">
-                    <p className="text-primary-dark" data-aos="fade-up-sm">
+                    <p className="text-primary" data-aos="fade-up-sm">
                       Personalized Web Application
                     </p>
                     <h1
-                      className="text-white mb-8"
+                      className="text-dark mb-8"
                       data-aos="fade-up-sm"
                       data-aos-delay="150"
                     >
                       An Application That You Need EVERYDAY! <br />
                       <span
-                        className="fw-bold text-gradient-2 typed-animation"
+                        className="fw-bold text-gradient-1 typed-animation"
                         ref={el}
                       ></span>
                     </h1>
@@ -111,7 +111,7 @@ const Home = () => {
                         alt=""
                         className="shape animate-scale"
                       />
-                      <div className="mt-12 rounded-5 border border-primary-dark shadow-lg overflow-hidden position-relative z-1">
+                      <div className="mt-12 rounded-5 border border-primary shadow-lg overflow-hidden position-relative z-1">
                         <img
                           className="img-fluid d-inline-block"
                           src="/images/screens/screen-1.jpg"
