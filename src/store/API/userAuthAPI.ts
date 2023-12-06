@@ -8,13 +8,12 @@ import {
   signOut,
   confirmPasswordReset,
   sendPasswordResetEmail,
-  updateProfile,
   sendEmailVerification,
 } from "firebase/auth";
 import {
   IUserSignInData,
-  IUpdateUser,
   iActivityLogData,
+  IUserData,
 } from "../../types/interface";
 import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
 import { nanoid } from "@reduxjs/toolkit";
@@ -248,25 +247,47 @@ export const userAuthAPI = createApi({
       },
       invalidatesTags: ["User"],
     }),
-    // update user profile
-    updateUserProfile: builder.mutation<
-      IUpdateUser,
-      Pick<IUpdateUser, "name" | "photoURL">
+
+    // get user profile
+    getProfileData: builder.query<
+      IUserData,
+      {
+        userId: string;
+      }
     >({
-      queryFn: async ({ name, photoURL }) => {
+      queryFn: async ({ userId }) => {
         try {
-          const user = auth.currentUser;
-          if (user) {
-            // Update the user's profile with the provided name and photoURL
-            await updateProfile(user, { displayName: name, photoURL });
-          }
+          const userDoc = await getDoc(doc(db, usersCollectionName, userId));
+          const docData = userDoc.data();
+
           return {
-            data: {
-              name,
-              photoURL,
-              email: user?.email,
-              uid: user?.uid,
-            } as IUpdateUser,
+            data: docData as IUserData,
+          };
+        } catch (err) {
+          return {
+            error: (err as Error)?.message,
+          };
+        }
+      },
+      providesTags: ["User"],
+    }),
+
+    // update user profile
+    updateUserProfile: builder.mutation({
+      queryFn: async (data: IUserData) => {
+        try {
+          const findUserDoc = await getDoc(
+            doc(db, usersCollectionName, data?.uid),
+          );
+
+          if (findUserDoc.exists()) {
+            await setDoc(doc(db, usersCollectionName, data?.uid), {
+              ...data,
+            });
+          }
+
+          return {
+            data: null,
           };
         } catch (err) {
           return {
@@ -320,4 +341,5 @@ export const {
   useUpdateUserProfileMutation,
   useSendEmailVerificationMutation,
   useActivityLogsQuery,
+  useGetProfileDataQuery,
 } = userAuthAPI;
