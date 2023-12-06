@@ -86,7 +86,10 @@ const Inbox = () => {
         </TableHeader>
         <TableBody>
           {data?.map((item: iGetAllEmailProps, index: number) => (
-            <TableRow key={index}>
+            <TableRow
+              key={index}
+              onClick={() => navigate(`/email-inbox/${item?.id}`)}
+            >
               <TableCell>{item?.time}</TableCell>
               <TableCell>{item?.senderName}</TableCell>
               <TableCell>{item?.message}</TableCell>

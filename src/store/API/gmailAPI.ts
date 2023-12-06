@@ -30,7 +30,7 @@ export const gmailAPI = createApi({
               const messageData: iMailListDataProps =
                 await messageResponse.json();
 
-              console.log("messageData", messageData);
+              // console.log("messageData", messageData);
 
               const message = messageData.snippet; // Use snippet for message content
               // @ts-ignore
@@ -53,6 +53,14 @@ export const gmailAPI = createApi({
       providesTags: ["Email"],
     }),
 
+    getOneEmail: builder.query({
+      query: ({ x, id, access_token }) => ({
+        url: `/${x}/${id}?access_token=${access_token}`,
+        method: "GET",
+      }),
+      providesTags: ["Email"],
+    }),
+
     deleteOneEmail: builder.mutation<
       null,
       {
@@ -70,4 +78,8 @@ export const gmailAPI = createApi({
   }),
 });
 
-export const { useGetAllEmailsQuery, useDeleteOneEmailMutation } = gmailAPI;
+export const {
+  useGetAllEmailsQuery,
+  useDeleteOneEmailMutation,
+  useGetOneEmailQuery,
+} = gmailAPI;
