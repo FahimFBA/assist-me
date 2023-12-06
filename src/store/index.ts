@@ -19,6 +19,7 @@ import {
   useUpdateUserProfileMutation,
   useSendEmailVerificationMutation,
   useActivityLogsQuery,
+  useGetProfileDataQuery,
 } from "./API/userAuthAPI";
 
 // Email API
@@ -100,6 +101,7 @@ export {
   useUpdateUserProfileMutation,
   useSendEmailVerificationMutation,
   useActivityLogsQuery,
+  useGetProfileDataQuery,
 
   //  Email API
   useStartGmailAuthenticationMutation,

@@ -3,6 +3,19 @@ export interface IUserSignInData {
   password: string;
 }
 
+export interface IUserData {
+  firstName: string;
+  lastName: string;
+  department: string;
+  displayName: string;
+  major: string;
+  phoneNumber: string;
+  photoURL: string;
+  studentID: string;
+  uid: string;
+  universityName: string;
+}
+
 export interface IUpdateUser {
   name: string;
   photoURL: string;
