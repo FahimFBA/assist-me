@@ -28,6 +28,8 @@ import {
   gmailAPI,
   useGetAllEmailsQuery,
   useDeleteOneEmailMutation,
+  useGetOneEmailQuery,
+  useSendOneEmailMutation,
 } from "./API/gmailAPI";
 
 import { tokenSlice, clearToken, collectTokens } from "./Slices/tokenSlice";
@@ -109,4 +111,6 @@ export {
   // Gmail API
   useGetAllEmailsQuery,
   useDeleteOneEmailMutation,
+  useGetOneEmailQuery,
+  useSendOneEmailMutation,
 };

@@ -12,6 +12,7 @@ import Tasks from "./Tasks";
 import Inbox from "./EmailPages/Inbox";
 import Templates from "./EmailPages/Templates";
 import ActivityLogs from "./ActivityLogs";
+import InboxDetails from "./EmailPages/InboxDetails";
 
 import VerifyEmail from "./VerifyEmail";
 
@@ -35,6 +36,7 @@ export {
   Inbox,
   VerifyEmail,
   ActivityLogs,
+  InboxDetails,
 
   // dashboard
   ProfilePage,

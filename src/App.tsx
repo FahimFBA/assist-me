@@ -17,6 +17,7 @@ import {
   ProfilePage,
   VerifyEmail,
   ActivityLogs,
+  InboxDetails,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -90,6 +91,7 @@ const App = () => {
 
         <Route element={<EmailProtectedRoutes />}>
           <Route path="/email-inbox" element={<Inbox />} />
+          <Route path="/email-inbox/:id" element={<InboxDetails />} />
           <Route path="/email-templates" element={<Templates />} />
         </Route>
 
