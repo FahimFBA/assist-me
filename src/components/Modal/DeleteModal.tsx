@@ -19,7 +19,7 @@ const DeleteModal = ({
   title: string;
   icon: React.ReactNode;
   description: string;
-  onConfirm: (id: string) => Promise<null>;
+  onConfirm: (id: string) => Promise<string | null>;
 }) => {
   return (
     <AlertDialog>
