@@ -51,3 +51,33 @@ export interface iActivityLogData {
   action: string;
   sdkClientVersion: string;
 }
+
+export interface iMailListDataProps {
+  historyId: string;
+  id: string;
+  internalDate: string;
+  labelIds: string[];
+  payload: {
+    body: {
+      attachmentId: string;
+      size: number;
+    };
+    filename: string;
+    headers: {
+      name: string;
+      value: string;
+    }[];
+    mimeType: string;
+    partId: string;
+  };
+  sizeEstimate: number;
+  snippet: string;
+  threadId: string;
+}
+
+export interface iGetAllEmailProps {
+  id: string;
+  senderName: string;
+  message: string;
+  time: string;
+}

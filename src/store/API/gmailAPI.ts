@@ -1,3 +1,4 @@
+import { iGetAllEmailProps, iMailListDataProps } from "@/types/interface";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Define a service using a base URL and expected endpoints
@@ -8,7 +9,10 @@ export const gmailAPI = createApi({
   }),
   tagTypes: ["Email"],
   endpoints: (builder) => ({
-    getAllEmails: builder.query({
+    getAllEmails: builder.query<
+      iGetAllEmailProps[],
+      { x: string; access_token: string }
+    >({
       query: ({ x, access_token }) => ({
         url: `/${x}?access_token=${access_token}`,
         method: "GET",
@@ -23,15 +27,23 @@ export const gmailAPI = createApi({
               const messageResponse = await fetch(
                 `https://www.googleapis.com/gmail/v1/users/me/messages/${messageId}?access_token=${access_token}`,
               );
-              const messageData = await messageResponse.json();
+              const messageData: iMailListDataProps =
+                await messageResponse.json();
+
+              console.log("messageData", messageData);
 
               const message = messageData.snippet; // Use snippet for message content
+              // @ts-ignore
               const senderName = messageData.payload.headers.find(
-                // @ts-ignore
                 (header) => header.name === "From",
-              ).value;
+              ).value as string;
 
-              return { senderName, message };
+              // @ts-ignore
+              const time = messageData.payload.headers.find(
+                (header) => header.name === "Date",
+              ).value as string;
+
+              return { id: messageData.id, senderName, message, time };
             }),
           );
 
@@ -40,7 +52,22 @@ export const gmailAPI = createApi({
       }),
       providesTags: ["Email"],
     }),
+
+    deleteOneEmail: builder.mutation<
+      null,
+      {
+        x: string;
+        id: string;
+        access_token: string;
+      }
+    >({
+      query: ({ x, id, access_token }) => ({
+        url: `/${x}/${id}?access_token=${access_token}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Email"],
+    }),
   }),
 });
 
-export const { useGetAllEmailsQuery } = gmailAPI;
+export const { useGetAllEmailsQuery, useDeleteOneEmailMutation } = gmailAPI;
