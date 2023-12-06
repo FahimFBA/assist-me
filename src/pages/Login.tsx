@@ -41,8 +41,8 @@ const Login: React.FC = () => {
       .then(() => navigate("/profile-page"))
       .catch((err) => toast.error(err));
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="max-w-sm rounded-lg shadow-lg bg-white p-6 space-y-6 border border-gray-200 dark:border-gray-700">
+    <div className="bg-primary-foreground min-h-screen flex items-center justify-center">
+      <div className="max-w-sm rounded-lg shadow-lg bg-primary-foreground p-6 space-y-6 border border-gray-200 dark:border-gray-700">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Login</h1>
           <p className="text-zinc-500 dark:text-zinc-400">

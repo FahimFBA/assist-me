@@ -1,5 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { RootState, clearToken, useGetAllEmailsQuery } from "../../store";
+import {
+  RootState,
+  clearToken,
+  useGetAllEmailsQuery,
+  useDeleteOneEmailMutation,
+} from "../../store";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -11,8 +16,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-
-import { MoreHorizontal } from "lucide-react";
+import MailDropdown from "@/components/Dropdown/MailDropdown";
+import { toast } from "react-toastify";
+import { iGetAllEmailProps } from "@/types/interface";
 
 const Inbox = () => {
   const navigate = useNavigate();
@@ -23,8 +29,20 @@ const Inbox = () => {
 
   const { data, isLoading, isError, isFetching } = useGetAllEmailsQuery({
     x: "messages",
-    access_token: `${access_token}`,
+    access_token,
   });
+
+  const [deleteOneEmail] = useDeleteOneEmailMutation();
+
+  const handleDelete = async (id: string) =>
+    await toast.promise(
+      deleteOneEmail({ x: "messages", id, access_token }).unwrap(),
+      {
+        pending: "Deleting...",
+        success: "Deleted successfully",
+        error: "Error occured",
+      },
+    );
 
   if (!access_token) {
     navigate("/email");
@@ -67,25 +85,16 @@ const Inbox = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.map(
-            (
-              item: {
-                senderName: string;
-                message: string;
-                time: string;
-              },
-              index: number,
-            ) => (
-              <TableRow key={index}>
-                <TableCell>sdjncsdkjn</TableCell>
-                <TableCell>{item?.senderName}</TableCell>
-                <TableCell>{item?.message}</TableCell>
-                <TableCell>
-                  <MoreHorizontal className="w-5 cursor-pointer" />
-                </TableCell>
-              </TableRow>
-            ),
-          )}
+          {data?.map((item: iGetAllEmailProps, index: number) => (
+            <TableRow key={index}>
+              <TableCell>{item?.time}</TableCell>
+              <TableCell>{item?.senderName}</TableCell>
+              <TableCell>{item?.message}</TableCell>
+              <TableCell>
+                <MailDropdown deleteTask={() => handleDelete(item?.id)} />
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>

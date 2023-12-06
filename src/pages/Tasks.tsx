@@ -117,7 +117,6 @@ const Tasks = () => {
         </TableHeader>
         <TableBody>
           {data?.map((task: ITaskProps) => {
-            console.log(task);
             return (
               <TableRow key={task?.id}>
                 <TableCell>{task?.title}</TableCell>

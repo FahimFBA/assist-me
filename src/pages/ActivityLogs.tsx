@@ -25,7 +25,12 @@ const ActivityLogs = () => {
     return <div>Error</div>;
   }
 
-  console.log("logs data", data);
+  const sortedData = data
+    ? [...data]?.sort(
+        (a: iActivityLogData, b: iActivityLogData) =>
+          b.time.seconds - a.time.seconds,
+      )
+    : [];
 
   return (
     <div>
@@ -39,7 +44,7 @@ const ActivityLogs = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.map((log: iActivityLogData) => {
+          {sortedData?.map((log: iActivityLogData) => {
             return (
               <TableRow key={log?.id}>
                 <TableCell>

@@ -24,7 +24,11 @@ import {
 // Email API
 import { emailAPI, useStartGmailAuthenticationMutation } from "./API/emailAPI";
 
-import { gmailAPI, useGetAllEmailsQuery } from "./API/gmailAPI";
+import {
+  gmailAPI,
+  useGetAllEmailsQuery,
+  useDeleteOneEmailMutation,
+} from "./API/gmailAPI";
 
 import { tokenSlice, clearToken, collectTokens } from "./Slices/tokenSlice";
 
@@ -104,4 +108,5 @@ export {
 
   // Gmail API
   useGetAllEmailsQuery,
+  useDeleteOneEmailMutation,
 };

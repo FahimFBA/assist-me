@@ -13,7 +13,7 @@ import TaskForm from "../Forms/TaskForm";
 import { ITaskProps } from "@/types/interface";
 import { useState } from "react";
 
-const EditTaskSheet = ({
+const MailSheet = ({
   icon,
   taskData,
   onEdit,
@@ -79,4 +79,4 @@ const EditTaskSheet = ({
   );
 };
 
-export default EditTaskSheet;
+export default MailSheet;

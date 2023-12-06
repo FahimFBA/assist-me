@@ -38,7 +38,7 @@ export const emailAPI = createApi({
               throw resp; // Throw an error if there is an error in the response
             }
 
-            console.log("this is callbackl", resp);
+            // console.log("this is callbackl", resp);
             return {
               data: resp as IGmailTokenReturnData,
             };
