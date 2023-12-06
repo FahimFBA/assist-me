@@ -4,8 +4,10 @@ import {
   clearToken,
   useGetAllEmailsQuery,
   useDeleteOneEmailMutation,
+  useSendOneEmailMutation,
 } from "../../store";
 import { useNavigate } from "react-router-dom";
+import CreateSingleMail from "@/components/Modal/CreateSingleMail";
 
 import {
   Table,
@@ -19,13 +21,30 @@ import { Button } from "@/components/ui/button";
 import MailDropdown from "@/components/Dropdown/MailDropdown";
 import { toast } from "react-toastify";
 import { iGetAllEmailProps } from "@/types/interface";
+import { useState } from "react";
+import SingleEmailForm from "@/components/Forms/SingleEmailForm";
 
 const Inbox = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const newMailInitialState = {
+    to: "",
+    subject: "",
+    message: "",
+  };
+
+  const [newMail, setNewMail] = useState(newMailInitialState);
+
   const access_token = useSelector(
     (state: RootState) => state.tokenData.access_token,
   );
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setNewMail({
+      ...newMail,
+      [e.target.name]: e.target.value,
+    });
 
   const { data, isLoading, isError, isFetching } = useGetAllEmailsQuery({
     x: "messages",
@@ -33,6 +52,7 @@ const Inbox = () => {
   });
 
   const [deleteOneEmail] = useDeleteOneEmailMutation();
+  const [sendOneEmail] = useSendOneEmailMutation();
 
   const handleDelete = async (id: string) =>
     await toast.promise(
@@ -43,6 +63,35 @@ const Inbox = () => {
         error: "Error occured",
       },
     );
+
+  const payload = {
+    to: "${newMail.to}",
+    subject: "${newMail.subject}",
+    // Use the RFC822 format for the email body
+    body:
+      `To: ${newMail.to}\r\n` +
+      `Subject: ${newMail.subject}\r\n\r\n` +
+      `${newMail.message}`,
+  };
+
+  const handleSend = async () => {
+    toast
+      .promise(
+        sendOneEmail({
+          x: "messages",
+          access_token,
+          data: {
+            raw: btoa(payload.body), // Convert the RFC822 message to base64
+          },
+        }).unwrap(),
+        {
+          pending: "Sending...",
+          success: "Sent successfully",
+          error: "Error occured",
+        },
+      )
+      .then(() => setNewMail(newMailInitialState));
+  };
 
   if (!access_token) {
     navigate("/email");
@@ -62,9 +111,15 @@ const Inbox = () => {
     <div>
       {/*  */}
       <div className="flex justify-center gap-3 my-4">
-        <Button variant="default" className="btn btn-primary">
-          Single Email
-        </Button>
+        <CreateSingleMail
+          buttonText="Single Email"
+          confirmButtonText="Send Email"
+          dialogueDescription="Write your message, receiver email and subject"
+          dialogueTitle="Create Email"
+          onConfirm={handleSend}
+        >
+          <SingleEmailForm {...newMail} handleInput={handleInput} />
+        </CreateSingleMail>
         <Button variant="default" className="btn btn-secondary">
           Bulk Email
         </Button>

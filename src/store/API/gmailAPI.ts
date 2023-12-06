@@ -75,6 +75,15 @@ export const gmailAPI = createApi({
       }),
       invalidatesTags: ["Email"],
     }),
+
+    sendOneEmail: builder.mutation({
+      query: ({ x, access_token, data }) => ({
+        url: `/${x}/send?access_token=${access_token}`,
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["Email"],
+    }),
   }),
 });
 
@@ -82,4 +91,5 @@ export const {
   useGetAllEmailsQuery,
   useDeleteOneEmailMutation,
   useGetOneEmailQuery,
+  useSendOneEmailMutation,
 } = gmailAPI;
