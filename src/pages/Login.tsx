@@ -94,11 +94,12 @@ const Login: React.FC = () => {
             <span className="text-zinc-400 dark:text-zinc-300 text-sm">OR</span>
             <hr className="flex-grow border-zinc-200 dark:border-zinc-700" />
           </div>
-          <Button className="w-full bg-[#4285F4] text-white" variant="outline">
-            <div
-              onClick={GoogleAuth}
-              className="flex items-center justify-center"
-            >
+          <Button
+            onClick={GoogleAuth}
+            className="w-full bg-[#4285F4] text-white"
+            variant="outline"
+          >
+            <div className="flex items-center justify-center">
               <LuChrome className="w-5 h-5 mr-2" />
               Login with Google
             </div>
