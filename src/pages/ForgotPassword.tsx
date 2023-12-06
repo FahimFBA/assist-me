@@ -38,8 +38,8 @@ const ForgotPassword = () => {
     setData({ ...data, [e.target.name]: e.target.value });
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="w-[300px] md:w-[400px] rounded-lg shadow-lg bg-white p-6 space-y-6 border border-gray-200 dark:border-gray-700">
+    <div className="bg-primary-foreground min-h-screen flex items-center justify-center">
+      <div className="w-[300px] md:w-[400px] rounded-lg shadow-lg bg-primary-foreground p-6 space-y-6 border border-gray-200 dark:border-gray-700">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Password Reset</h1>
           <p className="text-zinc-500 dark:text-zinc-400">

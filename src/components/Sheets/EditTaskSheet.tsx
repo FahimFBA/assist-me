@@ -23,7 +23,6 @@ const EditTaskSheet = ({
   onEdit: (data: ITaskProps) => Promise<void>;
 }) => {
   const [localdata, setLocalData] = useState(taskData);
-  console.log(localdata);
 
   const onDateChange = (date: Date) => {
     const parsedDate = new Date(date);

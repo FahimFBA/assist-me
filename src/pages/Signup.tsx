@@ -28,7 +28,7 @@ const Signup: React.FC = () => {
     await toast
       .promise(emailSignup(data).unwrap(), {
         pending: "Creating user...",
-        success: "User created successfully",
+        success: "User created successfully! Plesae verify your email",
         error: "Error creating user",
       })
       .then(() => setData(initialState))
@@ -40,7 +40,7 @@ const Signup: React.FC = () => {
     await toast
       .promise(googleSignup(null).unwrap(), {
         pending: "Creating user...",
-        success: "Successfully created user! Plesae verify your email",
+        success: "Successfully created user!",
         error: "Could not create user!",
       })
       .then((res) => console.log(res))
@@ -48,8 +48,8 @@ const Signup: React.FC = () => {
       .catch((err) => toast.error(err));
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="max-w-sm rounded-lg shadow-lg bg-white p-6 space-y-6 border border-gray-200 dark:border-gray-700">
+    <div className="bg-primary-foreground min-h-screen flex items-center justify-center">
+      <div className="max-w-sm rounded-lg shadow-lg bg-primary-foreground p-6 space-y-6 border border-gray-200 dark:border-gray-700">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Signup</h1>
           <p className="text-zinc-500 dark:text-zinc-400">

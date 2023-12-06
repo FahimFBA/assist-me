@@ -45,7 +45,7 @@ const App = () => {
         const name = user.displayName as string;
         const email = user.email as string;
         const emailVerified = user.emailVerified;
-        console.log("user", user);
+        // console.log("user", user);
         dispatch(
           loginSuccess({
             uid,
