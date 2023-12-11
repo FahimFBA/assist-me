@@ -141,15 +141,15 @@ const Inbox = () => {
         </TableHeader>
         <TableBody>
           {data?.map((item: iGetAllEmailProps, index: number) => (
-            <TableRow
-              key={index}
-              onClick={() => navigate(`/email-inbox/${item?.id}`)}
-            >
+            <TableRow key={index}>
               <TableCell>{item?.time}</TableCell>
               <TableCell>{item?.senderName}</TableCell>
               <TableCell>{item?.message}</TableCell>
               <TableCell>
-                <MailDropdown deleteTask={() => handleDelete(item?.id)} />
+                <MailDropdown
+                  deleteTask={() => handleDelete(item?.id)}
+                  viewMail={() => navigate(`/email-inbox/${item?.id}`)}
+                />
               </TableCell>
             </TableRow>
           ))}
