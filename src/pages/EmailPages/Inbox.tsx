@@ -148,6 +148,7 @@ const Inbox = () => {
               <TableCell>
                 <MailDropdown
                   deleteTask={() => handleDelete(item?.id)}
+                  // @ts-ignore
                   viewMail={() => navigate(`/email-inbox/${item?.id}`)}
                 />
               </TableCell>
