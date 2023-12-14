@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Terms = ({ showTerms, onClose }) => {
     const termsAndConditions = `
@@ -9,12 +9,32 @@ const Terms = ({ showTerms, onClose }) => {
     5. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   `;
 
+    const termsRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (termsRef.current && !termsRef.current.contains(event.target)) {
+                onClose();
+            }
+        };
+
+        if (showTerms) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showTerms, onClose]);
+
     if (!showTerms) {
         return null; // Don't render if showTerms is false
     }
 
     return (
-        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 p-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-md shadow-lg z-50">
+        <div ref={termsRef} className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 p-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-md shadow-lg z-50 terms-box">
             <div className="flex justify-end">
                 <button className="text-white" onClick={onClose}>
                     X
