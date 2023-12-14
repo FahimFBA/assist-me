@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Bookmark, SearchIcon, ShareIcon } from "lucide-react";
+import { RefreshCcwDot, Mails, Github, CalendarCheck, ActivitySquare, ShieldCheck, FolderLock, ShieldPlus, TimerOff } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -29,24 +29,66 @@ const Home = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
               <div className="flex flex-col items-center">
-                <SearchIcon className="h-12 w-12" />
-                <h3 className="text-lg font-bold mt-4">Easy Search</h3>
+                <CalendarCheck className="h-12 w-12" />
+                <h3 className="text-lg font-bold mt-4">To-Do List</h3>
                 <p className="text-gray-500 dark:text-gray-400 mt-2">
-                  Easily search for the documents you need.
+                  Add tasks to your to-do list so that you never forget them.
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <Bookmark className="h-12 w-12" />
-                <h3 className="text-lg font-bold mt-4">Bookmark</h3>
+                <Mails className="h-12 w-12" />
+                <h3 className="text-lg font-bold mt-4">GMail Integration</h3>
                 <p className="text-gray-500 dark:text-gray-400 mt-2">
-                  Bookmark documents for easy access later.
+                  Integrate your Google account and check, send and receive your emails.
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <ShareIcon className="h-12 w-12" />
-                <h3 className="text-lg font-bold mt-4">Share</h3>
+                <RefreshCcwDot className="h-12 w-12" />
+                <h3 className="text-lg font-bold mt-4">Synchronization</h3>
                 <p className="text-gray-500 dark:text-gray-400 mt-2">
-                  Share documents with your team.
+                  Synchronize your data across all your devices.
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <ActivitySquare className="h-12 w-12" />
+                <h3 className="text-lg font-bold mt-4">Activity Log</h3>
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
+                  Keep track of your activity with the activity log.
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <ShieldCheck className="h-12 w-12" />
+                <h3 className="text-lg font-bold mt-4">Secured APIs</h3>
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
+                  All our APIs are secured with JWT tokens, so you don't have to worry about your data.
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <FolderLock className="h-12 w-12" />
+                <h3 className="text-lg font-bold mt-4">Data Encryption</h3>
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
+                  All your data is encrypted with SCRYPT encryption.
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <ShieldPlus className="h-12 w-12" />
+                <h3 className="text-lg font-bold mt-4">Verification System</h3>
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
+                  Strong email verification system to prevent spam.
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <TimerOff className="h-12 w-12" />
+                <h3 className="text-lg font-bold mt-4">IP Based Login Throttling</h3>
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
+                  Login throttling to prevent brute force attacks.
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Github className="h-12 w-12" />
+                <h3 className="text-lg font-bold mt-4">Open Source</h3>
+                <p className="text-gray-500 dark:text-gray-400 mt-2">
+                  Our code is open source and available on GitHub.
                 </p>
               </div>
             </div>
