@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Terms = ({ showTerms }) => {
+const Terms = ({ showTerms, onClose }) => {
     const termsAndConditions = `
     1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -14,7 +14,12 @@ const Terms = ({ showTerms }) => {
     }
 
     return (
-        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 p-4 bg-white border border-gray-300 shadow-md z-50">
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 p-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-md shadow-lg z-50">
+            <div className="flex justify-end">
+                <button className="text-white" onClick={onClose}>
+                    X
+                </button>
+            </div>
             <h2 className="text-lg font-semibold mb-2">Terms and Conditions</h2>
             <p className="text-sm">{termsAndConditions}</p>
         </div>
