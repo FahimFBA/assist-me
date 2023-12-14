@@ -1,6 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, MouseEvent } from 'react';
 
-const Terms = ({ showTerms, onClose }) => {
+interface Props {
+    showTerms: boolean;
+    onClose: () => void;
+}
+
+const Terms: React.FC<Props> = ({ showTerms, onClose }) => {
     const termsAndConditions = `
     By using AssistMe, you agree to the following terms and conditions.\n
     1. AssistMe provides tools for managing tasks and integrating Gmail accounts for email management.\n
@@ -11,26 +16,31 @@ const Terms = ({ showTerms, onClose }) => {
     6. These terms may be modified or replaced at any time. Users are responsible for reviewing changes.\n
     `;
 
-    const termsRef = useRef(null);
-    const [isVisible, setIsVisible] = useState(showTerms);
-    const [isClosing, setIsClosing] = useState(false);
+    const termsRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState<boolean>(showTerms);
+    const [isClosing, setIsClosing] = useState<boolean>(false);
 
     useEffect(() => {
         setIsVisible(showTerms);
-        if (showTerms) {
-            setIsClosing(false);
-            document.addEventListener('mousedown', handleClickOutside);
-        } else {
-            setIsClosing(true);
-            document.removeEventListener('mousedown', handleClickOutside);
-        }
     }, [showTerms]);
 
-    const handleClickOutside = (event) => {
-        if (termsRef.current && !termsRef.current.contains(event.target)) {
-            onClose();
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (termsRef.current && !termsRef.current.contains(event.target as Node)) {
+                onClose();
+            }
+        };
+
+        if (isVisible) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
         }
-    };
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isVisible, onClose]);
 
     const handleAnimationEnd = () => {
         if (isClosing) {
