@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Bookmark, SearchIcon, ShareIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -14,9 +15,11 @@ const Home = () => {
               Our comprehensive guide helps you get started with our mobile
               application in no time.
             </p>
-            <Button className="mt-4" variant="secondary">
-              Get Started
-            </Button>
+            <Link to="/signup">
+              <Button className="mt-4" variant="secondary">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
