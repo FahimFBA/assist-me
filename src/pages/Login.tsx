@@ -69,7 +69,7 @@ const Login: React.FC = () => {
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
-              placeholder="m@example.coxxm"
+              placeholder="your_email@gmail.com"
               required
               type="email"
               name="email"
