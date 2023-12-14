@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, MouseEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface Props {
     showTerms: boolean;
@@ -18,7 +18,6 @@ const Terms: React.FC<Props> = ({ showTerms, onClose }) => {
 
     const termsRef = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState<boolean>(showTerms);
-    const [isClosing, setIsClosing] = useState<boolean>(false);
 
     useEffect(() => {
         setIsVisible(showTerms);
@@ -43,8 +42,7 @@ const Terms: React.FC<Props> = ({ showTerms, onClose }) => {
     }, [isVisible, onClose]);
 
     const handleAnimationEnd = () => {
-        if (isClosing) {
-            setIsVisible(false);
+        if (!isVisible) {
             onClose();
         }
     };
@@ -56,18 +54,17 @@ const Terms: React.FC<Props> = ({ showTerms, onClose }) => {
     return (
         <div
             ref={termsRef}
-            className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${isClosing ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+            className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
                 } w-96 p-4 bg-gray-100 text-gray-800 rounded-md shadow-lg z-50 terms-box transition-transform transition-opacity duration-300 overflow-y-auto max-h-80`}
             onAnimationEnd={handleAnimationEnd}
         >
-            <div className="flex justify-end">
+            <div className="flex justify-end mb-4">
                 <button
                     type="button"
-                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                     onClick={onClose}
+                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                 >
                     <span className="sr-only">Close menu</span>
-                    {/* Heroicon name: outline/x */}
                     <svg
                         className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +73,7 @@ const Terms: React.FC<Props> = ({ showTerms, onClose }) => {
                         stroke="currentColor"
                         aria-hidden="true"
                     >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
