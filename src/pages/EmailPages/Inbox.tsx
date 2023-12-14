@@ -120,9 +120,9 @@ const Inbox = () => {
         >
           <SingleEmailForm {...newMail} handleInput={handleInput} />
         </CreateSingleMail>
-        <Button variant="default" className="btn btn-secondary">
+        {/* <Button variant="default" className="btn btn-secondary">
           Bulk Email
-        </Button>
+        </Button> */}
         <Button
           variant="destructive"
           onClick={() => dispatch(clearToken())}
