@@ -7,6 +7,7 @@ import { LuChrome } from "react-icons/lu";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Terms from "./Terms";
 
 const Login: React.FC = () => {
   const initialState: IUserSignInData = {
@@ -40,21 +41,28 @@ const Login: React.FC = () => {
       })
       .then(() => navigate("/profile-page"))
       .catch((err) => toast.error(err));
+
+  const [showTerms, setShowTerms] = useState(false); // Add this line for state
+
   return (
     <div className="bg-primary-foreground min-h-screen flex items-center justify-center">
-      <div className="max-w-sm rounded-lg shadow-lg bg-primary-foreground p-6 space-y-6 border border-gray-200 dark:border-gray-700">
+      <div className="max-w-sm rounded-lg shadow-lg bg-primary-foreground p-6 space-y-6 border border-gray-200 dark:border-gray-700 relative">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Login</h1>
           <p className="text-zinc-500 dark:text-zinc-400">
             By logging in, you accept our{" "}
-            <Link className="text-blue-500 hover:text-blue-700" to="/login">
+            <button
+              className="text-blue-500 hover:text-blue-700"
+              onClick={() => setShowTerms(true)} // Set showTerms to true on click
+            >
               terms
-            </Link>{" "}
-            and{" "}
+            </button>{' '}
+            and{' '}
             <Link className="text-blue-500 hover:text-blue-700" to="/login">
               privacy policy
             </Link>
           </p>
+          <Terms showTerms={showTerms} onClose={() => setShowTerms(false)} /> {/* Add Terms component */}
         </div>
         <div className="space-y-4">
           <form onSubmit={onSubmit} className="space-y-2">
