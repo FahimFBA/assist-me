@@ -1,4 +1,4 @@
-import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
+import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -18,19 +18,19 @@ const Footer = () => {
           </Link>
         </nav>
         <div className="flex gap-4 mt-4 sm:mt-0">
-          <Link to="#">
+          <Link to="https://twitter.com/Fahim_FBA" target="_blank">
             <TwitterIcon className="h-5 w-5" />
           </Link>
-          <Link to="#">
-            <FacebookIcon className="h-5 w-5" />
+          <Link to="https://github.com/FahimFBA/assist-me" target="_blank">
+            <GithubIcon className="h-5 w-5" />
           </Link>
-          <Link to="#">
+          <Link to="https://www.linkedin.com/in/fahimfba/" target="_blank">
             <LinkedinIcon className="h-5 w-5" />
           </Link>
         </div>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-        © AssistMe. All rights reserved.
+        © AssistMe. All rights reserved by Team Iphim.
       </p>
     </footer>
   );
