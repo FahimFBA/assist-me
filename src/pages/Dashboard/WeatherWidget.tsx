@@ -1,5 +1,3 @@
-import React from 'react';
-
 const WeatherWidget = () => {
     return (
         <div className="weather-widget max-w-full overflow-hidden">
