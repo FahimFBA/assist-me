@@ -24,7 +24,7 @@ const TaskForm = ({
     <div className="grid gap-4 py-4">
       <InputField3
         label="Task Name"
-        placeholder="scdjn"
+        placeholder="Going to Gym"
         type="text"
         onChange={handleInput}
         name="title"
@@ -37,14 +37,14 @@ const TaskForm = ({
           className="text-right font-semibold"
           style={{ fontSize: "0.875rem" }}
         >
-          deadline
+          Deadline
         </Label>
         <DatePicker setvalue={onDateChange} value={deadline} />
       </div>
 
       <InputField3
-        label="description"
-        placeholder="description"
+        label="Description"
+        placeholder="Details about your task"
         type="text"
         onChange={handleInput}
         name="description"
@@ -52,8 +52,8 @@ const TaskForm = ({
         required
       />
       <InputField3
-        label="status"
-        placeholder="status"
+        label="Status"
+        placeholder="Current status of your task"
         type="text"
         onChange={handleInput}
         name="status"
@@ -61,8 +61,8 @@ const TaskForm = ({
         required
       />
       <InputField3
-        label="label"
-        placeholder="label"
+        label="Label"
+        placeholder="Label for your task"
         type="text"
         onChange={handleInput}
         name="label"
