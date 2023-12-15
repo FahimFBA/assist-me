@@ -86,7 +86,7 @@ const Signup: React.FC = () => {
               value={data?.password}
             />
             <Button type="submit" className="w-full">
-              Login
+              Signup!
             </Button>
           </form>
           <div className="flex items-center space-x-2">
@@ -101,7 +101,7 @@ const Signup: React.FC = () => {
           >
             <div className="flex items-center justify-center">
               <LuChrome className="w-5 h-5 mr-2" />
-              Login with Google
+              Signup with Google
             </div>
           </Button>
           <Button
