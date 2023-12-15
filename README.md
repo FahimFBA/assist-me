@@ -82,7 +82,7 @@ cd assist-me
 npm install
 ```
 
-3. Create a Firebase Project and add your own environment variables in `.env` file.
+3. Create a Firebase Project and add your own environment variables in `.env` file. Follow the variables in `.env.sample` file.
 4. Run the app
 
 ```bash
