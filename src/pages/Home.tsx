@@ -17,15 +17,17 @@ const Home = () => {
             lg:text-5xl will be applied on large screens and above (lg: breakpoint). */}
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
               Manage Your Tasks and Emails in One Place
+              {/* <br />
               <br />
-              <br />
-              Effortlessly!
+              Effortlessly! */}
             </h1>
-            <br />
+            {/* <br />
+            <br /> */}
             <br />
             <p className="text-gray-500 mt-2 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Streamline Your Day with Integrated Email and Todo List Management!
+              Effortlessly streamline Your Day with Integrated Email and Todo List Management!
             </p>
+            <br />
             <Link to="/signup">
               <Button className="mt-4" variant="secondary">
                 Get Started
