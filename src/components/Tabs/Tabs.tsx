@@ -8,9 +8,8 @@ const Tabs = () => {
 
   const tabStyles = (tabName: string) => {
     const isActive = currentPage.includes(tabName);
-    return `inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 ${
-      isActive ? "text-blue-600 border-blue-600" : ""
-    }`;
+    return `inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 ${isActive ? "text-blue-600 border-blue-600" : ""
+      }`;
   };
 
   return (
@@ -21,11 +20,11 @@ const Tabs = () => {
             Inbox
           </Link>
         </li>
-        <li className="me-2">
+        {/* <li className="me-2">
           <Link to="/email-templates" className={tabStyles("email-templates")}>
             Templates
           </Link>
-        </li>
+        </li> */}
         <li className="me-2">
           <Link to="/" className={tabStyles("Settings")}>
             Settings
