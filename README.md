@@ -18,3 +18,4 @@ Effortlessly streamline Your Day with Integrated Email and Todo List Management!
 - [x] Activity Log
 - [x] User Profile
 - [x] Timeout Implementation Based on IP Address
+- [x] Dark Mode/Light Mode 
