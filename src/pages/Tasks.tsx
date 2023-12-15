@@ -94,7 +94,7 @@ const Tasks = () => {
         <TaskModal
           onConfirm={onSubmit}
           buttonText="Add Task"
-          dialogueDescription="Make Tasks for a productive Day! Click save when you're done."
+          dialogueDescription="Create your To-Do tasks for a productive day! Click create when you're done."
           dialogueTitle="Create New Task"
           confirmButtonText="Create"
         >
@@ -123,9 +123,9 @@ const Tasks = () => {
                 <TableCell>
                   {task?.deadline
                     ? // @ts-ignore
-                      dayjs(task?.deadline?.seconds * 1000).format(
-                        "dddd, MMMM D, YYYY",
-                      )
+                    dayjs(task?.deadline?.seconds * 1000).format(
+                      "dddd, MMMM D, YYYY",
+                    )
                     : "No Deadline"}
                 </TableCell>
                 <TableCell>{task?.status}</TableCell>
