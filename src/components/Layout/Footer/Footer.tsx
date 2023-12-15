@@ -1,4 +1,4 @@
-import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
+import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
