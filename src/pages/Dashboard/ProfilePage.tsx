@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Button } from "@/components/ui/button";
+import WeatherWidget from "./WeatherWidget";
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const ProfilePage = () => {
 
   return (
     <div className="">
-      <h3>Welcome {user?.name}</h3> 
+      <h3>Welcome {user?.name}</h3>
       <p>email: {user?.email}</p>
       <img
         className="mb-3"
@@ -51,6 +52,9 @@ const ProfilePage = () => {
         the password changing system is under development, which you can access
         here later
       </p> */}
+
+      <WeatherWidget />
+
       <br />
       <Button variant="default" onClick={appSignout}>
         Logout
