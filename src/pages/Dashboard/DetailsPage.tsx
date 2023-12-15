@@ -88,7 +88,7 @@ const DetailsPage = () => {
         <InputField2
           name="firstName"
           onChange={handleInputChange}
-          placeholder="Your Last Name"
+          placeholder="Your First Name"
           type="text"
           value={data?.firstName}
           label="First Name"
@@ -104,10 +104,10 @@ const DetailsPage = () => {
         <InputField2
           name="universityName"
           onChange={handleInputChange}
-          placeholder="Your university Name"
+          placeholder="Your University Name"
           type="text"
           value={data?.universityName}
-          label="university Name"
+          label="University Name"
         />
         <InputField2
           name="phoneNumber"
@@ -128,20 +128,20 @@ const DetailsPage = () => {
         <InputField2
           name="department"
           onChange={handleInputChange}
-          placeholder="Your department"
+          placeholder="Your Department"
           type="text"
           value={data?.department}
-          label="Your department"
+          label="Your Department"
         />
         <InputField2
           name="studentID"
           onChange={handleInputChange}
-          placeholder="Your studentID"
+          placeholder="Your Student ID"
           type="text"
           value={data?.studentID}
-          label="Your studentID"
+          label="Your Student ID"
         />
-        <Button type="submit">Edit Details</Button>
+        <Button type="submit">Save Profile Details</Button>
       </form>
     </div>
   );
