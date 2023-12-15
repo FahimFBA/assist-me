@@ -31,8 +31,8 @@ const ProfilePage = () => {
 
   return (
     <div className="">
-      <h3>Welcome {user?.name}</h3>
-      <p>email: @ {user?.email}</p>
+      <h3>Welcome {user?.name}</h3> 
+      <p>email: {user?.email}</p>
       <img
         className="mb-3"
         style={{
@@ -44,13 +44,13 @@ const ProfilePage = () => {
         }
         alt=""
       />
-      <p>
+      {/* <p>
         This is the ProfilePage which is under development. Under this, you
         should be able to edit user data and delete your account permanently.
         <br />
         the password changing system is under development, which you can access
         here later
-      </p>
+      </p> */}
       <br />
       <Button variant="default" onClick={appSignout}>
         Logout
