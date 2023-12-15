@@ -24,7 +24,7 @@ const Footer = () => {
           <Link to="https://github.com/FahimFBA/assist-me" target="_blank">
             <GithubIcon className="h-5 w-5" />
           </Link>
-          <Link to="#">
+          <Link to="https://www.linkedin.com/in/fahimfba/" target="_blank">
             <LinkedinIcon className="h-5 w-5" />
           </Link>
         </div>
