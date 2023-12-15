@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-        © AssistMe. All rights reserved.
+        © AssistMe. All rights reserved by Team Iphim.
       </p>
     </footer>
   );
