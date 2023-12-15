@@ -1,4 +1,4 @@
-import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
+import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -21,8 +21,8 @@ const Footer = () => {
           <Link to="https://twitter.com/Fahim_FBA" target="_blank">
             <TwitterIcon className="h-5 w-5" />
           </Link>
-          <Link to="#">
-            <FacebookIcon className="h-5 w-5" />
+          <Link to="https://github.com/FahimFBA/assist-me" target="_blank">
+            <GithubIcon className="h-5 w-5" />
           </Link>
           <Link to="#">
             <LinkedinIcon className="h-5 w-5" />
