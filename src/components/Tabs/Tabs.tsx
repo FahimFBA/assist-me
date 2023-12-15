@@ -25,11 +25,11 @@ const Tabs = () => {
             Templates
           </Link>
         </li> */}
-        <li className="me-2">
+        {/* <li className="me-2">
           <Link to="/" className={tabStyles("Settings")}>
             Settings
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
