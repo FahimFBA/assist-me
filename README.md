@@ -2,7 +2,9 @@
 
 Effortlessly streamline Your Day with Integrated Email and Todo List Management!
 
-### Don't forget to ⭐ the repository.
+:star: The website is live at [https://assist-me.vercel.app/](https://assist-me.vercel.app/)
+
+### Don't forget to :star: the repository.
 
 ![Landing Page (White Mode)](img/4.png)
 
