@@ -18,7 +18,7 @@ const Footer = () => {
           </Link>
         </nav>
         <div className="flex gap-4 mt-4 sm:mt-0">
-          <Link to="#">
+          <Link to="https://twitter.com/Fahim_FBA" target="_blank">
             <TwitterIcon className="h-5 w-5" />
           </Link>
           <Link to="#">
