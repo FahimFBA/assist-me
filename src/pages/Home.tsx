@@ -97,12 +97,12 @@ const Home = () => {
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Getting Started
+              Let's Get Started...
             </h2>
             <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 mt-4">
-              To get started with our documentation, simply click on the "Docs"
+              {/* To get started with our documentation, simply click on the "Docs"
               link in the navigation menu. You can search for specific topics or
-              browse through the categories.
+              browse through the categories. */}
             </p>
           </div>
         </section>
