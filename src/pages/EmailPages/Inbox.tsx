@@ -112,10 +112,10 @@ const Inbox = () => {
       {/*  */}
       <div className="flex justify-center gap-3 my-4">
         <CreateSingleMail
-          buttonText="Single Email"
+          buttonText="Write & Send Email"
           confirmButtonText="Send Email"
-          dialogueDescription="Write your message, receiver email and subject"
-          dialogueTitle="Create Email"
+          dialogueDescription="Write receiver email ID, mail subject and your message"
+          dialogueTitle="Write & Send Email"
           onConfirm={handleSend}
         >
           <SingleEmailForm {...newMail} handleInput={handleInput} />

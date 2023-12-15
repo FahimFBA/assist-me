@@ -15,7 +15,7 @@ const SingleEmailForm = ({
     <div className="grid gap-4 py-4">
       <InputField3
         label="To"
-        placeholder="anyone@gmail.com"
+        placeholder="receiver_email@gmail.com"
         type="text"
         onChange={handleInput}
         name="to"
@@ -24,7 +24,7 @@ const SingleEmailForm = ({
       />
       <InputField3
         label="Subject"
-        placeholder="subject"
+        placeholder="Write the subject here"
         type="text"
         onChange={handleInput}
         name="subject"
@@ -33,7 +33,7 @@ const SingleEmailForm = ({
       />
       <InputField3
         label="Message"
-        placeholder="message"
+        placeholder="Write the message here"
         type="text"
         onChange={handleInput}
         name="message"
