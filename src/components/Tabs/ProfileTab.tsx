@@ -21,8 +21,8 @@ const ProfileTab = () => {
           >
             Details
           </TabsTrigger>
-          <TabsTrigger value="contact-info">Contact Info</TabsTrigger>
-          <TabsTrigger value="grades">Grades</TabsTrigger>
+          {/* <TabsTrigger value="contact-info">Contact Info</TabsTrigger> */}
+          {/* <TabsTrigger value="grades">Grades</TabsTrigger> */}
         </TabsList>
       </Tabs>
     </>
